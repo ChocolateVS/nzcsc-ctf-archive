@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>User details : NZCSC 2022 - New Zealand Cyber Security Challenge 2022</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://scoreboard.nzcsc.org.nz/img/favicon.png" type="image/png" />
+
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://scoreboard.nzcsc.org.nz/css/mellivora.css" rel="stylesheet"><script type="text/javascript">
+        var global_dict = {};
+        
+    </script>
+</head>
+
+<body>
+    <div class="modal fade" id="login-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="login-dialog-form" method="post" class="form-signin" action="/actions/login">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Log in</h4>
+                    </div>
+                    <div class="modal-body">
+                            <input name="5c2b0ee9b37773d279e5d8069a39eb37" type="email" class="form-control" placeholder="Email address" id="login-email-input" required autofocus />
+                            <input name="a7b34a961af151da1b5cd026a66a0d7e" type="password" class="form-control" placeholder="Password" id="login-password-input" required />
+                            <input type="hidden" name="action" value="login" />
+                            <input type="hidden" name="redirect" value="/team?id=56" />
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember_me" value="1" checked> Remember me
+                                </label>
+                            </div>
+                            <a href="reset_password">I've forgotten my password</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="login-button">Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+<div class="page">
+    <nav class="header" id="header">
+        <div id="header-inner">
+            <div id="header-logo">
+                <a href="https://scoreboard.nzcsc.org.nz/">
+                    <h3 id="site-logo-text">NZCSC 2022</h3>
+                    <div id="site-logo">
+                        <object data="https://scoreboard.nzcsc.org.nz/img/mellivora.svg" type="image/svg+xml"></object>
+                    </div>
+                </a>
+            </div>
+            <div id="header-menu">
+                <ul class="nav nav-pills pull-right" id="menu-main">
+                            <li><a href="https://scoreboard.nzcsc.org.nz/home">Home</a></li>
+                            <li><a href="https://scoreboard.nzcsc.org.nz/scores">Scoreboard</a></li>
+                            
+                            <li><a href="https://scoreboard.nzcsc.org.nz/register">Register</a></li>
+                            <li><a href="" data-toggle="modal" data-target="#login-dialog">Log in</a></li>
+                        
+                </ul>
+            </div>
+        </div>
+    </nav><!-- navbar -->
+
+    <div class="container" id="body-container">
+
+        <div id="content-container">
+        
+    <div class="row">
+        <div class="col-lg-12">
+          <h2 class="page-header">The Pi Guys </h2>
+        </div>
+    </div>
+    <strong>NZCSC 2022 - Round 2</strong>, 700 / 1,450 (48%)
+    <div class="progress progress-striped">
+        <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="48.275862068966" aria-valuemin="0" aria-valuemax="100" style="width: 48.275862068966%">
+            <span class="sr-only">48.275862068966% complete</span>
+        </div>
+    </div>
+    Total: 700 / 1,450 (48.3%)
+    <div class="row">
+        <div class="col-lg-12">
+          <h2 class="page-header">Team Members </h2>
+        </div>
+    </div>
+    
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr><th> Member #1 </th><th> Member #2 </th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+       
+        <td class="team-name col-6">
+            <a href="user?id=327">
+                <span class="team_327">
+                The Pi Guy
+                </span>
+            </a>
+        </td>
+        
+        <td class="team-name col-6">
+            <a href="user?id=396">
+                <span class="team_396">
+                obwan02
+                </span>
+            </a>
+        </td>
+        
+        </tr>
+        </tbody>
+        </table>
+        
+    <div class="row">
+        <div class="col-lg-12">
+          <h2 class="page-header">Solved challenges </h2>
+        </div>
+    </div>
+    
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Challenge</th>
+            <th>Solved</th>
+            <th> Solved by</th>
+            <th>Points</th>
+          </tr>
+        </thead>
+        <tbody>
+       
+              <tr>
+                <td>
+                    <a href="https://scoreboard.nzcsc.org.nz/challenge?id=46">
+                    Round 2 - Challenge 13
+                    </a> (NZCSC 2022 - Round 2)
+                </td>
+
+                <td>
+                    #6, 
+                    2 hours, 44 minutes after release (2022-07-23 15:44:37)
+                </td>
+                <td>
+                    obwan02
+                </td>
+                <td>50</td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <a href="https://scoreboard.nzcsc.org.nz/challenge?id=41">
+                    Round 2 - Challenge 08
+                    </a> (NZCSC 2022 - Round 2)
+                </td>
+
+                <td>
+                    #17, 
+                    1 hour, 53 minutes after release (2022-07-23 14:53:19)
+                </td>
+                <td>
+                    The Pi Guy
+                </td>
+                <td>50</td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <a href="https://scoreboard.nzcsc.org.nz/challenge?id=37">
+                    Round 2 - Challenge 04
+                    </a> (NZCSC 2022 - Round 2)
+                </td>
+
+                <td>
+                    #28, 
+                    1 hour, 43 minutes after release (2022-07-23 14:43:56)
+                </td>
+                <td>
+                    obwan02
+                </td>
+                <td>100</td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <a href="https://scoreboard.nzcsc.org.nz/challenge?id=45">
+                    Round 2 - Challenge 12
+                    </a> (NZCSC 2022 - Round 2)
+                </td>
+
+                <td>
+                    #5, 
+                    1 hour, 23 minutes after release (2022-07-23 14:23:49)
+                </td>
+                <td>
+                    obwan02
+                </td>
+                <td>200</td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <a href="https://scoreboard.nzcsc.org.nz/challenge?id=39">
+                    Round 2 - Challenge 06
+                    </a> (NZCSC 2022 - Round 2)
+                </td>
+
+                <td>
+                    #16, 
+                    41 minutes, 42 seconds after release (2022-07-23 13:41:42)
+                </td>
+                <td>
+                    The Pi Guy
+                </td>
+                <td>50</td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <a href="https://scoreboard.nzcsc.org.nz/challenge?id=42">
+                    Round 2 - Challenge 09
+                    </a> (NZCSC 2022 - Round 2)
+                </td>
+
+                <td>
+                    #12, 
+                    35 minutes, 45 seconds after release (2022-07-23 13:35:45)
+                </td>
+                <td>
+                    The Pi Guy
+                </td>
+                <td>100</td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <a href="https://scoreboard.nzcsc.org.nz/challenge?id=43">
+                    Round 2 - Challenge 10
+                    </a> (NZCSC 2022 - Round 2)
+                </td>
+
+                <td>
+                    #4, 
+                    26 minutes, 4 seconds after release (2022-07-23 13:26:04)
+                </td>
+                <td>
+                    The Pi Guy
+                </td>
+                <td>50</td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <a href="https://scoreboard.nzcsc.org.nz/challenge?id=36">
+                    Round 2 - Challenge 03
+                    </a> (NZCSC 2022 - Round 2)
+                </td>
+
+                <td>
+                    #8, 
+                    9 minutes, 3 seconds after release (2022-07-23 13:09:03)
+                </td>
+                <td>
+                    The Pi Guy
+                </td>
+                <td>50</td>
+              </tr>
+              
+              <tr>
+                <td>
+                    <a href="https://scoreboard.nzcsc.org.nz/challenge?id=21">
+                    Round 2 - Challenge 01
+                    </a> (NZCSC 2022 - Round 2)
+                </td>
+
+                <td>
+                    #4, 
+                    6 minutes, 34 seconds after release (2022-07-23 13:06:34)
+                </td>
+                <td>
+                    The Pi Guy
+                </td>
+                <td>50</td>
+              </tr>
+              
+        </tbody>
+      </table>
+          
+
+    </div> <!-- / content container -->
+
+</div> <!-- /container -->
+
+<div id="footer">
+    <div class="fade">
+        <div id="footer-logo"/>
+            <object data="https://scoreboard.nzcsc.org.nz/img/mellivora.svg" type="image/svg+xml"></object>
+        </div>
+        <p>Powered by <a href="https://github.com/Nakiami/mellivora">Mellivora</a></p>
+    </div>
+</div>
+
+</div> <!-- /page -->
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://scoreboard.nzcsc.org.nz/js/mellivora.js"></script>
+
+</body>
+</html>

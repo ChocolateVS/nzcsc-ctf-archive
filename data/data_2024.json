@@ -1,0 +1,226 @@
+{
+ "category": "NZCSC 2024 R0",
+ "year": "2024",
+ "note": "Flags + titles + prompts verified verbatim against the official NZCSC24_R0_writeup.pdf (Wayback). Points/difficulty + solve notes from the owner's 2024 sheet.",
+ "challenges": [
+  {
+   "num": 1,
+   "title": "Robots",
+   "topic": "Web Exploitation",
+   "difficulty": "Easy",
+   "value": 10,
+   "flag": "NZCSC{HhjPKO7ZwAv7qCzQz7p9}",
+   "method": "robots.txt reveals a disallowed path leading to the flag.",
+   "files": [
+    "2024-c1-robots.zip"
+   ],
+   "connection_info": "https://ctf.nzcsc.xyz/live/2024/challenge1/"
+  },
+  {
+   "num": 2,
+   "title": "RCVS Exploit",
+   "topic": "Web Exploitation",
+   "difficulty": "Easy",
+   "value": 10,
+   "flag": "NZCSC{i_am_a_rcvs_haxor}",
+   "method": "The flag is hidden in the page source / inspect element."
+  },
+  {
+   "num": 3,
+   "title": "Traversal Troubles",
+   "topic": "Web Exploitation",
+   "difficulty": "Easy",
+   "value": 10,
+   "flag": "NZCSC{A_TRULY_TR34CH3R0US_TR4V3RS4L}",
+   "method": "Directory traversal via the ?file= parameter (../../../../flag.txt).",
+   "files": [
+    "2024-c3-traversal.zip"
+   ],
+   "connection_info": "https://ctf.nzcsc.xyz/live/2024/challenge3/"
+  },
+  {
+   "num": 4,
+   "title": "Hidden Flag",
+   "topic": "Cryptography",
+   "difficulty": "Easy-ish",
+   "value": 20,
+   "flag": "NZCSC{HMRmHI2JjIs8ZCP241sK}",
+   "method": "Whitespace characters encode binary; pad and decode to ASCII.",
+   "prompt": "The flag is securely nestled within the labyrinth. Only those with advanced skills and a tenacious determination can extract it, a testament to the intricate dance of technology and the exhilaration of unravelling digital mysteries that draws hackers into the depths of cyberspace.",
+   "files": [
+    "2024-c4-hidden-flag.txt"
+   ]
+  },
+  {
+   "num": 5,
+   "title": "Interjection",
+   "topic": "Forensics",
+   "difficulty": "Medium",
+   "value": 40,
+   "flag": "NZCSC{1M4G1N3_B31NG_INJ3CT4BL3_1N_2024}",
+   "method": "Time-based blind SQL injection.",
+   "prompt": "We created a honeypot database but accidentally put a production flag in it! Luckily, we had Endace hardware running a 100 Gbps packet capture when the attacker hit it and we didn't drop a single packet. Find out what the attacker stole.",
+   "files": [
+    "2024-c5-interjection.zip"
+   ],
+   "connection_info": "https://ctf.nzcsc.xyz/live/2024/challenge5/"
+  },
+  {
+   "num": 6,
+   "title": "Behind the Scenes",
+   "topic": "Reverse Engineering",
+   "difficulty": "Medium",
+   "value": 40,
+   "flag": "NZCSC{c0ngr4ts_y0u_winAPI}",
+   "method": "Debug the executable in WinDBG; at the automatic breakpoint read the flag bytes from memory, hex > base64 > strip null bytes.",
+   "prompt": "What are all those random bytes and what do they do? Note: The executable is safe to run.",
+   "files": [
+    "2024-c6-behind-the-scenes.zip"
+   ],
+   "connection_info": "https://ctf.nzcsc.xyz/live/2024/challenge6/"
+  },
+  {
+   "num": 7,
+   "title": "Burren Waffet's Last Hurrah",
+   "topic": "Other",
+   "difficulty": "Medium",
+   "value": 40,
+   "flag": "NZCSC{ST3G_W1TH_0N35_4ND_Z3R05}",
+   "method": "For each number, print 1 if the next is larger else 0; binary > ASCII.",
+   "prompt": "Burren Waffet has thrown in the investment towel, but we believe he's left bits of information in the chart we found on his computer."
+  },
+  {
+   "num": 8,
+   "title": "Flag Trader",
+   "topic": "Other",
+   "difficulty": "Medium",
+   "value": 40,
+   "flag": "NZCSC{C0NGR4T5_0N_TH3_PR3_R3LE4SE_FL4G}",
+   "method": "OSINT: Trade Me auction > seller stagflealer420 > Twitter > reconstruct a git repo to find the user > bash history > unlock the ZIP.",
+   "prompt": "We found someone was obtaining NZCSC flags illegally so we set up a honeypot to catch them out. Can you figure out who is trying to get flags and what they're up to? The TradeMe auction ID is 4717209839.",
+   "files": [
+    "2024-c8-flag-trader.zip"
+   ],
+   "connection_info": "https://ctf.nzcsc.xyz/live/2024/challenge8/"
+  },
+  {
+   "num": 9,
+   "title": "RAM > Disk",
+   "topic": "Forensics",
+   "difficulty": "Hard",
+   "value": 80,
+   "flag": "NZCSC{l1v1ng_1n_m3m0ry_r3nt_fr33}",
+   "method": "Memory dump; Volatility shows the bash commands that were executed (possible malware).",
+   "prompt": "I was just installing some software on my new OS but I've done something bad, things freeze up when I try basic commands. I've taken a memory dump, investigate."
+  },
+  {
+   "num": 10,
+   "title": "rm -rf",
+   "topic": "Forensics",
+   "difficulty": "Hard",
+   "value": 80,
+   "flag": "NZCSC{D3L3T3D_BUT_N3V3R_F0RG0TTEN}",
+   "method": "Reconstruct the RAID array, find the file containing the message about strings, decode base64; the URL no longer exists so use the Wayback Machine.",
+   "prompt": "He deleted his website, deleted all files referencing it, and deleted one of his hard-drives with a hammer. Why bother."
+  },
+  {
+   "num": 11,
+   "title": "Sharp Snake",
+   "topic": "Reverse Engineering",
+   "difficulty": "Hard",
+   "value": 80,
+   "flag": "NZCSC{python3_and_csharp_rev_is_kwl}",
+   "method": "Malware > dotPeek > find the .dll; the DLL runs the hacks section as a zip; take the hash of the zip plus the debug value to decrypt main.",
+   "prompt": "We found some malware that \"pops calc.exe\" ... can you reverse it and figure out how it works?"
+  },
+  {
+   "num": 12,
+   "title": "Substitute Teacher",
+   "topic": "Cryptography",
+   "difficulty": "Easy",
+   "value": 10,
+   "flag": "NZCSC{3NCRYPT1ON_VS_3NC0D1NG}",
+   "method": "base64 > hex > Vigenere cipher."
+  },
+  {
+   "num": 13,
+   "title": "Backwards",
+   "topic": "Steganography",
+   "difficulty": "Easy-ish",
+   "value": 20,
+   "flag": "NZCSC{1T5_4LL_B4CKW4RD5}",
+   "method": "zsteg > reverse > base64 > reverse > hex > reverse > flag.",
+   "files": [
+    "backwards.png"
+   ]
+  },
+  {
+   "num": 14,
+   "title": "Ret3Win",
+   "topic": "Binary Exploitation",
+   "difficulty": "Medium",
+   "value": 40,
+   "flag": "NZCSC{B3TT3R_C4LL_W1N}",
+   "method": "Buffer overflow over netcat (ret2win): place the address just after the win function so you jump into win with no segfault."
+  },
+  {
+   "num": 15,
+   "title": "All Roads Lead to Flags",
+   "topic": "Cryptography",
+   "difficulty": "Easy-ish",
+   "value": 20,
+   "flag": "NZCSC{R0M4N_4R0UND}",
+   "method": "Split the GIF frames > Roman numerals > ASCII codes > flag."
+  },
+  {
+   "num": 16,
+   "title": "Fragile Lock",
+   "topic": "Reverse Engineering",
+   "difficulty": "Easy-ish",
+   "value": 20,
+   "flag": "NZCSC{X9fZ2tAQ9kNc5Vzd25rH}",
+   "method": "Obfuscated JavaScript: remove the lock to reveal the flag.",
+   "files": [
+    "challenge16.zip"
+   ]
+  },
+  {
+   "num": 17,
+   "title": "Sheeeesh",
+   "topic": "Reverse Engineering",
+   "difficulty": "Easy-ish",
+   "value": 20,
+   "flag": "NZCSC{4T3_4ND_L3FT_N0_CRUMB5}",
+   "method": "Obfuscated Java that encodes a flag; decode it.",
+   "prompt": "I found this flag but it appears to have been encrypted by a gen-alpha coder."
+  },
+  {
+   "num": 18,
+   "title": "Server-Side PDF",
+   "topic": "Web Exploitation",
+   "difficulty": "Hard",
+   "value": 80,
+   "flag": "NZCSC{pdf-nday-and-localhost-redirect}",
+   "method": "PDF-image vulnerability; bypass networking with a domain that resolves and 302-redirects to a localhost URL."
+  },
+  {
+   "num": 19,
+   "title": "Magic Number",
+   "topic": "Steganography",
+   "difficulty": "Easy",
+   "value": 10,
+   "flag": "NZCSC{you_ve_G0t_th3_M4G1c}",
+   "method": "Fix/read the PNG magic bytes.",
+   "prompt": "There's magic in the air."
+  },
+  {
+   "num": 20,
+   "title": "Double Canary",
+   "topic": "Binary Exploitation",
+   "difficulty": "Hard",
+   "value": 100,
+   "flag": "NZCSC{nice-work-taking-careful-care-of-the-canaries}",
+   "method": "Defeat a double stack canary."
+  }
+ ]
+}

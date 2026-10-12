@@ -1,0 +1,167 @@
+{
+ "category": "NZCSC 2024 R2",
+ "year": "2024",
+ "note": "Reconstructed from the official NZCSC24 Round 2 writeup (Wayback). Names/categories/prompts verbatim from the writeup TOC+sections; each flag extracted from within its own challenge section.",
+ "challenges": [
+  {
+   "num": 1,
+   "title": "We Have Dark Mode at Home",
+   "topic": "Web",
+   "value": 0,
+   "flag": "NZCSC{c9zdYfyRuv3uqhb2lPR6}",
+   "desc": "Choose your favourite colour theme (unless your favourite colour is gold...)"
+  },
+  {
+   "num": 2,
+   "title": "HoneyDB",
+   "topic": "Web",
+   "value": 0,
+   "flag": "NZCSC{taGb1IUguzin5nfZowqx}",
+   "desc": "Try searching for a honey attribute."
+  },
+  {
+   "num": 3,
+   "title": "Eras",
+   "topic": "Steg",
+   "value": 0,
+   "flag": "NZCSC{un2Fyv66XTqSAKB}",
+   "desc": "What's that song that goes\u2026"
+  },
+  {
+   "num": 4,
+   "title": "Server Says",
+   "topic": "Web",
+   "value": 0,
+   "flag": "NZCSC{S3RV3R_H4S_L3FT_TH3_S3RV3R}",
+   "desc": "We believe that the flag is hidden behind this login panel. Remember to"
+  },
+  {
+   "num": 5,
+   "title": "AliExpreSSL",
+   "topic": "Web",
+   "value": 0,
+   "flag": "NZCSC{a1m0st_as_g00d_as_ss1}",
+   "desc": "We contracted someone on Fiver to add SSL to our website for cheap. They"
+  },
+  {
+   "num": 6,
+   "title": "Return Oriented Flag",
+   "topic": "Reverse Engineering",
+   "value": 0,
+   "flag": "NZCSC{H1D1NG_1N_TH3_FUNCT10N5}",
+   "desc": "Reverse the binary to find the flag."
+  },
+  {
+   "num": 7,
+   "title": "Commitment Issues",
+   "topic": "Forensics",
+   "value": 0,
+   "flag": "NZCSC{ch3ck_y0ur_d4ngl1ng_c0mm1ts}",
+   "desc": "Up git creek without a changelog. Investigate the repo."
+  },
+  {
+   "num": 8,
+   "title": "Pwn 10101",
+   "topic": "Binary Exploitation",
+   "value": 0,
+   "flag": "NZCSC{your_first_buffer_overflow_abcd1234}",
+   "desc": "So you've watched a LiveOverflow video, ayyyye....? Connect over TCP"
+  },
+  {
+   "num": 9,
+   "title": "What in TARnation",
+   "topic": "Forensics",
+   "value": 0,
+   "flag": "NZCSC{tar-append-is-sneaky}",
+   "desc": "Examine this tar archive to find the flag."
+  },
+  {
+   "num": 10,
+   "title": "UNIversal Backdoor",
+   "topic": "Web",
+   "value": 0,
+   "flag": "NZCSC{UN1C0DE_RC3_H1DD3N_1N_PLA1N_S1GHT}",
+   "desc": "For this challenge we are given a dropdown that appears to run commands on the server."
+  },
+  {
+   "num": 11,
+   "title": "Image Cipher Block",
+   "topic": "Crypto",
+   "value": 0,
+   "flag": "NZCSC{CBC_15_B3TTER}",
+   "desc": "This image has been encrypted, see if you can make sense of it."
+  },
+  {
+   "num": 12,
+   "title": "Hexfiltration",
+   "topic": "Forensics",
+   "value": 0,
+   "flag": "NZCSC{B00TL3G_DNS_B34C0N1NG}",
+   "desc": "We set up another honeypot, but the attackers managed to find an"
+  },
+  {
+   "num": 13,
+   "title": "Firm Handshake",
+   "topic": "Misc",
+   "value": 0,
+   "flag": "NZCSC{SH4K1NG_H4NDS_W1TH_TH3_R0CK}",
+   "desc": "We wouldn't use a password from rockyou for our corporate Wi-Fi...right?"
+  },
+  {
+   "num": 14,
+   "title": "AES",
+   "topic": "Steg",
+   "value": 0,
+   "flag": "NZCSC{5t3g0n0gr4ph1c_k3y_t0_CBC}",
+   "desc": "Advanced Encryption Stenography - this may be a tool-assisted speed run."
+  },
+  {
+   "num": 15,
+   "title": "Snea-key",
+   "topic": "Malware",
+   "value": 0,
+   "flag": "NZCSC{PGP_K3YS_T0_TH3_K1NGD0M}",
+   "desc": "We got an alert for a suspicious executable on one of our honeypots and"
+  },
+  {
+   "num": 16,
+   "title": "Social Distancing",
+   "topic": "Malware",
+   "value": 0,
+   "flag": "NZCSC{0v3rKiLL_0bFuSC4t10n}",
+   "desc": "This file got social distanced (quarantined) by Windows Defender, check it"
+  },
+  {
+   "num": 17,
+   "title": "Monoflag",
+   "topic": "Steg",
+   "value": 0,
+   "flag": "NZCSC{4_M0N0_FL4G_1N_4_5T3R30_W0RLD}",
+   "desc": "I think I can faintly hear the flag in one of my ears, good thing I have some"
+  },
+  {
+   "num": 18,
+   "title": "Primed",
+   "topic": "Crypto",
+   "value": 0,
+   "flag": "NZCSC{M0R3_PR1ME5_D0ES_N0T_M3AN_M0RE_S3CURE}",
+   "desc": "Connect over TCP using netcat or a similar program to solve"
+  },
+  {
+   "num": 19,
+   "title": "Tame the Green Dragon",
+   "topic": "Reverse Engineering",
+   "value": 0,
+   "flag": "NZCSC{ghWuxXDggRz82UndJtsUhZA5YsnCARbHsTWzWx7966}",
+   "desc": "How good are your Ghidra skills? Reverse the binary to find the flag."
+  },
+  {
+   "num": 20,
+   "title": "Cats and Dogs",
+   "topic": "Misc",
+   "value": 0,
+   "flag": "NZCSC{scanf-adds-a-null-terminator-that-can-be-deadly}",
+   "desc": "Remember Double Canary? How about moving up the animal food chain?"
+  }
+ ]
+}

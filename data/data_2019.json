@@ -1,0 +1,19 @@
+{
+  "category": "NZCSC 2019 R0",
+  "year": "2019",
+  "note": "From the owner's NZCSC2019-Flags.xlsx solve sheet. Flags use the flag:hex format. Titles reconstructed from the recorded method.",
+  "challenges": [
+    {"num":1,"title":"done.php","topic":"Web Exploitation","value":0,"flag":"flag:4a78327703d7",
+     "desc":"Reach the challenge's done.php page to reveal the flag (the page sets window.location = './done.php').","method":"Load /done.php directly."},
+    {"num":2,"title":"XOR Cipher","topic":"Cryptography","value":0,"flag":"flag:c376c32d26b4",
+     "desc":"A base64-encoded ciphertext must be decoded and XORed. Note: a bonus flag (ch2*) was hidden as an extra base64 blob in index.php but was never fully recovered.","method":"Decode the base64 to ASCII, recover the XOR key using known ASCII, then decode the ciphertext next to the flag."},
+    {"num":3,"title":"Cat The Flag","topic":"Web Exploitation","value":0,"flag":"flag:8adb200631cc",
+     "desc":"The flag lives in a directory named flag.","method":"cat .../flag"},
+    {"num":4,"title":"EXIF History","topic":"Forensics","value":0,"flag":"flag:85ad6ba312d9",
+     "desc":"An image carries the flag in its metadata. A bonus flag (ch4*) was hidden further inside the image but was never fully recovered.","method":"Read the image Exif data / edit history."},
+    {"num":5,"title":"SQL Injection","topic":"Web Exploitation","value":0,"flag":"flag:cc228b6984a9",
+     "desc":"A login form is vulnerable to SQL injection.","method":"xyz' OR 1 = 1 --"},
+    {"num":6,"title":"Backwards Validate","topic":"Reverse Engineering","value":0,"flag":"flag:51bd3c2fdb67",
+     "desc":"A VM contains a validation binary. A bonus flag (ch6*) required objdump-ing the validator and understanding its connect-out behaviour, but was never fully recovered.","method":"The flag is spelt backwards inside the validate file on the VM."}
+  ]
+}

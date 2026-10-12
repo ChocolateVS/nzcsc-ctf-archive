@@ -1,0 +1,42 @@
+{
+ "category": "NZCSC 2018 R0",
+ "year": "2018",
+ "note": "Catalog reconstructed from the official 2018 Round 0 writeup (Wayback). The 2018 writeups are image-based, so flags were not text-recoverable; each entry carries the official solution description. 2018 was the drone year.",
+ "challenges": [
+  {
+   "num": 1,
+   "title": "Challenge 1",
+   "value": 0,
+   "flag": null,
+   "method": "This is a simple challenge that can be solved using your browser\u2019s developer tools (right-click, inspect element). You will notice that the page is making a get request to flag.php Since the page is already making the get request, we can simply navigate to the \u2018Network\u2019 tab and see the response from the get request. You might be tempted to just navigate to /challenge1/flag.php. However, you will be presented with a \u2018Try harder\u2019 message. This is because the page has a HTTP referrer check and will only respond with a flag when the request is coming from within that page."
+  },
+  {
+   "num": 2,
+   "title": "Challenge 2",
+   "value": 0,
+   "flag": null,
+   "method": "This is a simulated buffer overflow attack. The \u2018140\u2019 character limit is a hint. Navigating to inspect element, alter the \u2018maxlength\u2019 property of the textarea to anything greater than the default 140. Input any text that is greater than a length of 141, submit and you will be presented with the flag."
+  },
+  {
+   "num": 3,
+   "title": "Challenge 3",
+   "value": 0,
+   "flag": null,
+   "method": "This is a simple challenge that tests your competency using the command line. A simple \u2018ls\u2019 command will present you with the list of files within the directory. The flag file is not actually what you\u2019re looking for. Using the \u2018-a\u2019 flag will include directory entries whose names begin with a dot. We see two additional files being exposed: .flag and .htaccess Doing \u2018cat .flag\u2019 gives you the flag."
+  },
+  {
+   "num": 4,
+   "title": "Challenge 4",
+   "value": 0,
+   "flag": null,
+   "method": "There are two approaches that you can take. Step 1: \u2022 (Easy) Wireshark \u2022 (Advanced) tcpdump Using tcpdump is less straightforward. We can use the command \u2018tcpdump -r secret.pcap -X\u2019. The flag -X is used: When parsing and printing, in addition to printing the headers of each packet, print the data of each packet (minus its link level header) in hex and ASCII. This is very handy for analysing new protocols. The pcap shows 7 packets. The first 3 is the 3-way handshake (SYN, SYN-ACK and ACK). The 4th and 5th packet is a HTTP request, followed by an ACK. The 6th packet is the response for the HTTP request, which is what we are interested in. *You will need to understand packet structure and packet headers. The packet data that we are interested lies within byte 317-353. Keep in mind that the HTTP response is gzip encoded. We can reconstruct the data into a gzip file like so: echo -n printf %X"
+  },
+  {
+   "num": 5,
+   "title": "Challenge 5",
+   "value": 0,
+   "flag": null,
+   "method": "This is a steganography challenge. The drone image has been changed to an uncompressed bitmap image. Inspect the image file using a hex editor. The header describes exactly where the pixel data begins and ends, so any data that occurs after the end will not be displayed in the image. By looking at the last 17 bytes, we find ASCII data that appears to be an enciphered flag; guessing that this is a Caesar cipher, we get the key used to be 17. Bonus Challenge The bonus challenge is within challenge 5 itself. The bitmap header defines the bytes at 10-14 to be the image offset value. This describes where the pixel data begins. Typically, this value is around the size of the bitmap header, but in this case is set to 222. Since the bitmap header is 122 bytes, this gives a \u201cgap\u201d of 100 bytes between the header and the pixel data. Looking at this gap we see the magic bytes \u201cBZ\u201d, indicating that t"
+  }
+ ]
+}

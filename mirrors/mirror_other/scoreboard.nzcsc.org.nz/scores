@@ -1,0 +1,5996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Scoreboard : NZCSC 2021 - New Zealand Cyber Security Challenge 2021</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="https://scoreboard.nzcsc.org.nz/favicon.ico" />
+
+    <!-- CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://scoreboard.nzcsc.org.nz/css/mellivora.css" rel="stylesheet"><script type="text/javascript">
+        var global_dict = {};
+        
+    </script>
+</head>
+
+<body>
+    <div class="modal fade" id="login-dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="login-dialog-form" method="post" class="form-signin" action="/actions/login">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Log in</h4>
+                    </div>
+                    <div class="modal-body">
+                            <input name="045471553ff59c97ef7fd9e41958979d" type="email" class="form-control" placeholder="Email address" id="login-email-input" required autofocus />
+                            <input name="c4a5b0e06ca83b6179f4b758b8975624" type="password" class="form-control" placeholder="Password" id="login-password-input" required />
+                            <input type="hidden" name="action" value="login" />
+                            <input type="hidden" name="redirect" value="/scores" />
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" name="remember_me" value="1" checked> Remember me
+                                </label>
+                            </div>
+                            <a href="reset_password">I've forgotten my password</a>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="login-button">Log in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+<div class="page">
+    <nav class="header" id="header">
+        <div id="header-inner">
+            <div id="header-logo">
+                <a href="https://scoreboard.nzcsc.org.nz/">
+                    <h3 id="site-logo-text">NZCSC 2021</h3>
+                    <div id="site-logo">
+                        <object data="https://scoreboard.nzcsc.org.nz/img/crow_gold.png" type="image/svg+xml"></object>
+                    </div>
+                </a>
+            </div>
+            <div id="header-menu">
+                <ul class="nav nav-pills pull-right" id="menu-main">
+                            <li><a href="https://scoreboard.nzcsc.org.nz/home">Home</a></li>
+                            <li><a href="https://scoreboard.nzcsc.org.nz/scores">Scoreboard</a></li>
+                            
+                            <li><a href="https://scoreboard.nzcsc.org.nz/register">Register</a></li>
+                            <li><a href="" data-toggle="modal" data-target="#login-dialog">Log in</a></li>
+                        
+                </ul>
+            </div>
+        </div>
+    </nav><!-- navbar -->
+
+    <div class="container" id="body-container">
+
+        <div id="content-container">
+        
+    <div class="row">
+        <div class="col-lg-6">
+    <div class="row">
+        <div class="col-lg-12">
+          <h2 class="page-header">Scoreboard <small><a href="https://scoreboard.nzcsc.org.nz/json?view=scoreboard">
+                <img src="https://scoreboard.nzcsc.org.nz/img/json.png" title="View json" alt="json" class="discreet-inline small-icon" />
+            </a></small></h2>
+        </div>
+    </div>
+    
+    <table class="team-table table table-striped table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Participant</th>
+          <th class="text-center">Country</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+     
+        <tr>
+          <td>1</td>
+          <td class="team-name">
+            <a href="user?id=19">
+              <span class="team_19">
+                Dast
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>1,000</td>
+        </tr>
+        
+        <tr>
+          <td>2</td>
+          <td class="team-name">
+            <a href="user?id=79">
+              <span class="team_79">
+                Munter
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>900</td>
+        </tr>
+        
+        <tr>
+          <td>3</td>
+          <td class="team-name">
+            <a href="user?id=67">
+              <span class="team_67">
+                Null Reference
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>4</td>
+          <td class="team-name">
+            <a href="user?id=40">
+              <span class="team_40">
+                Fromage
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=fr">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/fr.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="fr" title="France" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>5</td>
+          <td class="team-name">
+            <a href="user?id=68">
+              <span class="team_68">
+                Rav
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>6</td>
+          <td class="team-name">
+            <a href="user?id=226">
+              <span class="team_226">
+                aquinas_nz
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>7</td>
+          <td class="team-name">
+            <a href="user?id=237">
+              <span class="team_237">
+                l2k
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>8</td>
+          <td class="team-name">
+            <a href="user?id=186">
+              <span class="team_186">
+                cookiecat
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>9</td>
+          <td class="team-name">
+            <a href="user?id=249">
+              <span class="team_249">
+                Buffalo
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>10</td>
+          <td class="team-name">
+            <a href="user?id=171">
+              <span class="team_171">
+                h4sturr
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>11</td>
+          <td class="team-name">
+            <a href="user?id=129">
+              <span class="team_129">
+                Viskerel
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>12</td>
+          <td class="team-name">
+            <a href="user?id=31">
+              <span class="team_31">
+                Michael
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>13</td>
+          <td class="team-name">
+            <a href="user?id=301">
+              <span class="team_301">
+                CFord
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>14</td>
+          <td class="team-name">
+            <a href="user?id=242">
+              <span class="team_242">
+                Shahne
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>15</td>
+          <td class="team-name">
+            <a href="user?id=155">
+              <span class="team_155">
+                noobhacker69
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>800</td>
+        </tr>
+        
+        <tr>
+          <td>16</td>
+          <td class="team-name">
+            <a href="user?id=123">
+              <span class="team_123">
+                LaLiLuLeLo
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=us">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/us.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="us" title="United States" />
+    </a>
+          </td>
+          <td>750</td>
+        </tr>
+        
+        <tr>
+          <td>17</td>
+          <td class="team-name">
+            <a href="user?id=163">
+              <span class="team_163">
+                TachyonicClock
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>750</td>
+        </tr>
+        
+        <tr>
+          <td>18</td>
+          <td class="team-name">
+            <a href="user?id=280">
+              <span class="team_280">
+                Izaak_k
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>700</td>
+        </tr>
+        
+        <tr>
+          <td>19</td>
+          <td class="team-name">
+            <a href="user?id=104">
+              <span class="team_104">
+                Nick Lim
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>650</td>
+        </tr>
+        
+        <tr>
+          <td>20</td>
+          <td class="team-name">
+            <a href="user?id=80">
+              <span class="team_80">
+                Nobody | Killer
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>650</td>
+        </tr>
+        
+        <tr>
+          <td>21</td>
+          <td class="team-name">
+            <a href="user?id=295">
+              <span class="team_295">
+                Jamie McClymont
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>650</td>
+        </tr>
+        
+        <tr>
+          <td>22</td>
+          <td class="team-name">
+            <a href="user?id=69">
+              <span class="team_69">
+                0x90
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>23</td>
+          <td class="team-name">
+            <a href="user?id=167">
+              <span class="team_167">
+                frankielivada22
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>24</td>
+          <td class="team-name">
+            <a href="user?id=42">
+              <span class="team_42">
+                GFQ
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>25</td>
+          <td class="team-name">
+            <a href="user?id=94">
+              <span class="team_94">
+                &amp;reA
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>26</td>
+          <td class="team-name">
+            <a href="user?id=49">
+              <span class="team_49">
+                Logan Krippner
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>27</td>
+          <td class="team-name">
+            <a href="user?id=160">
+              <span class="team_160">
+                ttrss
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>28</td>
+          <td class="team-name">
+            <a href="user?id=50">
+              <span class="team_50">
+                ongo gablogian
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>29</td>
+          <td class="team-name">
+            <a href="user?id=28">
+              <span class="team_28">
+                Maxh
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>30</td>
+          <td class="team-name">
+            <a href="user?id=299">
+              <span class="team_299">
+                blackhawk
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>31</td>
+          <td class="team-name">
+            <a href="user?id=289">
+              <span class="team_289">
+                mm1352000
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>32</td>
+          <td class="team-name">
+            <a href="user?id=220">
+              <span class="team_220">
+                ins4n3
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>33</td>
+          <td class="team-name">
+            <a href="user?id=228">
+              <span class="team_228">
+                ShredderArmadillo
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>600</td>
+        </tr>
+        
+        <tr>
+          <td>34</td>
+          <td class="team-name">
+            <a href="user?id=122">
+              <span class="team_122">
+                Andrew Simmons
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>550</td>
+        </tr>
+        
+        <tr>
+          <td>35</td>
+          <td class="team-name">
+            <a href="user?id=95">
+              <span class="team_95">
+                STΛΠIΛ KLΞGR
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=aq">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/aq.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="aq" title="Antarctica" />
+    </a>
+          </td>
+          <td>550</td>
+        </tr>
+        
+        <tr>
+          <td>36</td>
+          <td class="team-name">
+            <a href="user?id=187">
+              <span class="team_187">
+                Skelmis
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>550</td>
+        </tr>
+        
+        <tr>
+          <td>37</td>
+          <td class="team-name">
+            <a href="user?id=240">
+              <span class="team_240">
+                krp
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>550</td>
+        </tr>
+        
+        <tr>
+          <td>38</td>
+          <td class="team-name">
+            <a href="user?id=35">
+              <span class="team_35">
+                SpamBot
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>550</td>
+        </tr>
+        
+        <tr>
+          <td>39</td>
+          <td class="team-name">
+            <a href="user?id=100">
+              <span class="team_100">
+                ≧▿≦ ウワ! .xX_jan☆lili_Xx. (ユリ)òwó
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>500</td>
+        </tr>
+        
+        <tr>
+          <td>40</td>
+          <td class="team-name">
+            <a href="user?id=57">
+              <span class="team_57">
+                ZerOne
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>500</td>
+        </tr>
+        
+        <tr>
+          <td>41</td>
+          <td class="team-name">
+            <a href="user?id=137">
+              <span class="team_137">
+                Darkflame72
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>500</td>
+        </tr>
+        
+        <tr>
+          <td>42</td>
+          <td class="team-name">
+            <a href="user?id=166">
+              <span class="team_166">
+                MontyPython
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>500</td>
+        </tr>
+        
+        <tr>
+          <td>43</td>
+          <td class="team-name">
+            <a href="user?id=60">
+              <span class="team_60">
+                Thomas
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>500</td>
+        </tr>
+        
+        <tr>
+          <td>44</td>
+          <td class="team-name">
+            <a href="user?id=263">
+              <span class="team_263">
+                flobeey1
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>500</td>
+        </tr>
+        
+        <tr>
+          <td>45</td>
+          <td class="team-name">
+            <a href="user?id=197">
+              <span class="team_197">
+                kiaora
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>500</td>
+        </tr>
+        
+        <tr>
+          <td>46</td>
+          <td class="team-name">
+            <a href="user?id=86">
+              <span class="team_86">
+                TheBigStonk
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=aq">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/aq.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="aq" title="Antarctica" />
+    </a>
+          </td>
+          <td>500</td>
+        </tr>
+        
+        <tr>
+          <td>47</td>
+          <td class="team-name">
+            <a href="user?id=82">
+              <span class="team_82">
+                Germie0
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>500</td>
+        </tr>
+        
+        <tr>
+          <td>48</td>
+          <td class="team-name">
+            <a href="user?id=199">
+              <span class="team_199">
+                Amelia
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=us">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/us.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="us" title="United States" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>49</td>
+          <td class="team-name">
+            <a href="user?id=76">
+              <span class="team_76">
+                BranMan
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=bd">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/bd.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="bd" title="Bangladesh" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>50</td>
+          <td class="team-name">
+            <a href="user?id=184">
+              <span class="team_184">
+                thirdmeow
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>51</td>
+          <td class="team-name">
+            <a href="user?id=126">
+              <span class="team_126">
+                Orion Edwards
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>52</td>
+          <td class="team-name">
+            <a href="user?id=223">
+              <span class="team_223">
+                Misha Pavlov 
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>53</td>
+          <td class="team-name">
+            <a href="user?id=269">
+              <span class="team_269">
+                3xThreatt
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>54</td>
+          <td class="team-name">
+            <a href="user?id=259">
+              <span class="team_259">
+                SantaSam
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>55</td>
+          <td class="team-name">
+            <a href="user?id=204">
+              <span class="team_204">
+                tinkerbelle
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>56</td>
+          <td class="team-name">
+            <a href="user?id=324">
+              <span class="team_324">
+                sundancer
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>57</td>
+          <td class="team-name">
+            <a href="user?id=293">
+              <span class="team_293">
+                keycrow
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>450</td>
+        </tr>
+        
+        <tr>
+          <td>58</td>
+          <td class="team-name">
+            <a href="user?id=88">
+              <span class="team_88">
+                Grady Hooker
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>400</td>
+        </tr>
+        
+        <tr>
+          <td>59</td>
+          <td class="team-name">
+            <a href="user?id=107">
+              <span class="team_107">
+                LucasBettsUoA
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>400</td>
+        </tr>
+        
+        <tr>
+          <td>60</td>
+          <td class="team-name">
+            <a href="user?id=32">
+              <span class="team_32">
+                Corbs
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>400</td>
+        </tr>
+        
+        <tr>
+          <td>61</td>
+          <td class="team-name">
+            <a href="user?id=140">
+              <span class="team_140">
+                Jeb
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>400</td>
+        </tr>
+        
+        <tr>
+          <td>62</td>
+          <td class="team-name">
+            <a href="user?id=37">
+              <span class="team_37">
+                p13rr|y|
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>400</td>
+        </tr>
+        
+        <tr>
+          <td>63</td>
+          <td class="team-name">
+            <a href="user?id=54">
+              <span class="team_54">
+                lobcat
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>400</td>
+        </tr>
+        
+        <tr>
+          <td>64</td>
+          <td class="team-name">
+            <a href="user?id=260">
+              <span class="team_260">
+                HelixOxford
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>400</td>
+        </tr>
+        
+        <tr>
+          <td>65</td>
+          <td class="team-name">
+            <a href="user?id=56">
+              <span class="team_56">
+                Firo
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>350</td>
+        </tr>
+        
+        <tr>
+          <td>66</td>
+          <td class="team-name">
+            <a href="user?id=292">
+              <span class="team_292">
+                hawkzenith
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>350</td>
+        </tr>
+        
+        <tr>
+          <td>67</td>
+          <td class="team-name">
+            <a href="user?id=156">
+              <span class="team_156">
+                wabbit
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>300</td>
+        </tr>
+        
+        <tr>
+          <td>68</td>
+          <td class="team-name">
+            <a href="user?id=161">
+              <span class="team_161">
+                Dudov
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>300</td>
+        </tr>
+        
+        <tr>
+          <td>69</td>
+          <td class="team-name">
+            <a href="user?id=203">
+              <span class="team_203">
+                Nabilraz
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>300</td>
+        </tr>
+        
+        <tr>
+          <td>70</td>
+          <td class="team-name">
+            <a href="user?id=109">
+              <span class="team_109">
+                TritonNet
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>300</td>
+        </tr>
+        
+        <tr>
+          <td>71</td>
+          <td class="team-name">
+            <a href="user?id=273">
+              <span class="team_273">
+                Zaphnath
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>300</td>
+        </tr>
+        
+        <tr>
+          <td>72</td>
+          <td class="team-name">
+            <a href="user?id=98">
+              <span class="team_98">
+                Result&lt;Key, dyn Error&gt;
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>250</td>
+        </tr>
+        
+        <tr>
+          <td>73</td>
+          <td class="team-name">
+            <a href="user?id=16">
+              <span class="team_16">
+                fzhshzh
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>250</td>
+        </tr>
+        
+        <tr>
+          <td>74</td>
+          <td class="team-name">
+            <a href="user?id=66">
+              <span class="team_66">
+                The Gnat
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>250</td>
+        </tr>
+        
+        <tr>
+          <td>75</td>
+          <td class="team-name">
+            <a href="user?id=33">
+              <span class="team_33">
+                2ukc.cray
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>250</td>
+        </tr>
+        
+        <tr>
+          <td>76</td>
+          <td class="team-name">
+            <a href="user?id=65">
+              <span class="team_65">
+                GodFather
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>250</td>
+        </tr>
+        
+        <tr>
+          <td>77</td>
+          <td class="team-name">
+            <a href="user?id=17">
+              <span class="team_17">
+                whitehatinc
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>250</td>
+        </tr>
+        
+        <tr>
+          <td>78</td>
+          <td class="team-name">
+            <a href="user?id=29">
+              <span class="team_29">
+                ghost
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>250</td>
+        </tr>
+        
+        <tr>
+          <td>79</td>
+          <td class="team-name">
+            <a href="user?id=164">
+              <span class="team_164">
+                pepperflash
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>80</td>
+          <td class="team-name">
+            <a href="user?id=97">
+              <span class="team_97">
+                CoolCracker
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>81</td>
+          <td class="team-name">
+            <a href="user?id=101">
+              <span class="team_101">
+                Awesome Wenis
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>82</td>
+          <td class="team-name">
+            <a href="user?id=64">
+              <span class="team_64">
+                DogeCoin2theMoonApes2getherStrong
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=aq">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/aq.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="aq" title="Antarctica" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>83</td>
+          <td class="team-name">
+            <a href="user?id=83">
+              <span class="team_83">
+                17101
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>84</td>
+          <td class="team-name">
+            <a href="user?id=202">
+              <span class="team_202">
+                Ysefwakil
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>85</td>
+          <td class="team-name">
+            <a href="user?id=208">
+              <span class="team_208">
+                Donket
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>86</td>
+          <td class="team-name">
+            <a href="user?id=55">
+              <span class="team_55">
+                WheeledCord
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>87</td>
+          <td class="team-name">
+            <a href="user?id=91">
+              <span class="team_91">
+                Andie Madd
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>88</td>
+          <td class="team-name">
+            <a href="user?id=206">
+              <span class="team_206">
+                andrei.msd
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>89</td>
+          <td class="team-name">
+            <a href="user?id=78">
+              <span class="team_78">
+                joe mama
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>90</td>
+          <td class="team-name">
+            <a href="user?id=271">
+              <span class="team_271">
+                matruane
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>91</td>
+          <td class="team-name">
+            <a href="user?id=190">
+              <span class="team_190">
+                Fire_Eagle
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=in">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/in.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="in" title="India" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>92</td>
+          <td class="team-name">
+            <a href="user?id=246">
+              <span class="team_246">
+                nausicalm
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>93</td>
+          <td class="team-name">
+            <a href="user?id=46">
+              <span class="team_46">
+                TheSaltGuardian
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>94</td>
+          <td class="team-name">
+            <a href="user?id=58">
+              <span class="team_58">
+                MincePie
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>95</td>
+          <td class="team-name">
+            <a href="user?id=229">
+              <span class="team_229">
+                the
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>200</td>
+        </tr>
+        
+        <tr>
+          <td>96</td>
+          <td class="team-name">
+            <a href="user?id=96">
+              <span class="team_96">
+                macdadebj
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>97</td>
+          <td class="team-name">
+            <a href="user?id=36">
+              <span class="team_36">
+                Nuggitz
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>98</td>
+          <td class="team-name">
+            <a href="user?id=23">
+              <span class="team_23">
+                Espi
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>99</td>
+          <td class="team-name">
+            <a href="user?id=134">
+              <span class="team_134">
+                unreal
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>100</td>
+          <td class="team-name">
+            <a href="user?id=117">
+              <span class="team_117">
+                jvoss383
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>101</td>
+          <td class="team-name">
+            <a href="user?id=24">
+              <span class="team_24">
+                theliamguy
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>102</td>
+          <td class="team-name">
+            <a href="user?id=99">
+              <span class="team_99">
+                Denver Keene
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>103</td>
+          <td class="team-name">
+            <a href="user?id=175">
+              <span class="team_175">
+                Jack
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>104</td>
+          <td class="team-name">
+            <a href="user?id=189">
+              <span class="team_189">
+                mee
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=in">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/in.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="in" title="India" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>105</td>
+          <td class="team-name">
+            <a href="user?id=191">
+              <span class="team_191">
+                Brae
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>106</td>
+          <td class="team-name">
+            <a href="user?id=218">
+              <span class="team_218">
+                Flobeey
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>107</td>
+          <td class="team-name">
+            <a href="user?id=93">
+              <span class="team_93">
+                Louis
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>108</td>
+          <td class="team-name">
+            <a href="user?id=59">
+              <span class="team_59">
+                bob_bob
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>109</td>
+          <td class="team-name">
+            <a href="user?id=232">
+              <span class="team_232">
+                KiwiObama
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>110</td>
+          <td class="team-name">
+            <a href="user?id=168">
+              <span class="team_168">
+                Knoxer
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>111</td>
+          <td class="team-name">
+            <a href="user?id=110">
+              <span class="team_110">
+                Schwilly
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>112</td>
+          <td class="team-name">
+            <a href="user?id=183">
+              <span class="team_183">
+                North
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>113</td>
+          <td class="team-name">
+            <a href="user?id=113">
+              <span class="team_113">
+                The Sand Prince
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>114</td>
+          <td class="team-name">
+            <a href="user?id=268">
+              <span class="team_268">
+                emberhavethnot
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>115</td>
+          <td class="team-name">
+            <a href="user?id=305">
+              <span class="team_305">
+                stoggi
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>116</td>
+          <td class="team-name">
+            <a href="user?id=281">
+              <span class="team_281">
+                combuskenisthebest
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>117</td>
+          <td class="team-name">
+            <a href="user?id=290">
+              <span class="team_290">
+                iBang
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>118</td>
+          <td class="team-name">
+            <a href="user?id=312">
+              <span class="team_312">
+                Azo
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>119</td>
+          <td class="team-name">
+            <a href="user?id=313">
+              <span class="team_313">
+                crashfile
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>120</td>
+          <td class="team-name">
+            <a href="user?id=264">
+              <span class="team_264">
+                Joveen
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=au">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/au.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="au" title="Australia" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>121</td>
+          <td class="team-name">
+            <a href="user?id=26">
+              <span class="team_26">
+                Marshall
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>122</td>
+          <td class="team-name">
+            <a href="user?id=133">
+              <span class="team_133">
+                Sypher
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>123</td>
+          <td class="team-name">
+            <a href="user?id=323">
+              <span class="team_323">
+                1000Dumplings
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>124</td>
+          <td class="team-name">
+            <a href="user?id=322">
+              <span class="team_322">
+                Xen0sa
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>125</td>
+          <td class="team-name">
+            <a href="user?id=325">
+              <span class="team_325">
+                ninjat
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>150</td>
+        </tr>
+        
+        <tr>
+          <td>126</td>
+          <td class="team-name">
+            <a href="user?id=34">
+              <span class="team_34">
+                Jojo Lee
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>127</td>
+          <td class="team-name">
+            <a href="user?id=105">
+              <span class="team_105">
+                SykoticNZ
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>128</td>
+          <td class="team-name">
+            <a href="user?id=111">
+              <span class="team_111">
+                The pi guy
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>129</td>
+          <td class="team-name">
+            <a href="user?id=44">
+              <span class="team_44">
+                Jay
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>130</td>
+          <td class="team-name">
+            <a href="user?id=139">
+              <span class="team_139">
+                QwertyHpp
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>131</td>
+          <td class="team-name">
+            <a href="user?id=90">
+              <span class="team_90">
+                MistaP
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>132</td>
+          <td class="team-name">
+            <a href="user?id=150">
+              <span class="team_150">
+                NicoS
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>133</td>
+          <td class="team-name">
+            <a href="user?id=154">
+              <span class="team_154">
+                iStrqfing
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>134</td>
+          <td class="team-name">
+            <a href="user?id=152">
+              <span class="team_152">
+                Sean
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>135</td>
+          <td class="team-name">
+            <a href="user?id=128">
+              <span class="team_128">
+                GreenPiza
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>136</td>
+          <td class="team-name">
+            <a href="user?id=141">
+              <span class="team_141">
+                nope
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>137</td>
+          <td class="team-name">
+            <a href="user?id=162">
+              <span class="team_162">
+                rttgod
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>138</td>
+          <td class="team-name">
+            <a href="user?id=53">
+              <span class="team_53">
+                twinkle twinkle
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>139</td>
+          <td class="team-name">
+            <a href="user?id=174">
+              <span class="team_174">
+                untitled
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>140</td>
+          <td class="team-name">
+            <a href="user?id=170">
+              <span class="team_170">
+                Emanuel
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>141</td>
+          <td class="team-name">
+            <a href="user?id=61">
+              <span class="team_61">
+                moreplex
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>142</td>
+          <td class="team-name">
+            <a href="user?id=51">
+              <span class="team_51">
+                anon
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>143</td>
+          <td class="team-name">
+            <a href="user?id=181">
+              <span class="team_181">
+                pro123
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=aq">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/aq.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="aq" title="Antarctica" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>144</td>
+          <td class="team-name">
+            <a href="user?id=22">
+              <span class="team_22">
+                scorpio
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>145</td>
+          <td class="team-name">
+            <a href="user?id=173">
+              <span class="team_173">
+                Shar
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>146</td>
+          <td class="team-name">
+            <a href="user?id=158">
+              <span class="team_158">
+                Falcon
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>147</td>
+          <td class="team-name">
+            <a href="user?id=182">
+              <span class="team_182">
+                Doritos
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>148</td>
+          <td class="team-name">
+            <a href="user?id=74">
+              <span class="team_74">
+                Elena Emmert
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=no">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/no.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="no" title="Norway" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>149</td>
+          <td class="team-name">
+            <a href="user?id=138">
+              <span class="team_138">
+                Hades595
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>150</td>
+          <td class="team-name">
+            <a href="user?id=198">
+              <span class="team_198">
+                neo
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>151</td>
+          <td class="team-name">
+            <a href="user?id=194">
+              <span class="team_194">
+                StarLord
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>152</td>
+          <td class="team-name">
+            <a href="user?id=201">
+              <span class="team_201">
+                sp4c3b4r
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>153</td>
+          <td class="team-name">
+            <a href="user?id=211">
+              <span class="team_211">
+                8176135
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>154</td>
+          <td class="team-name">
+            <a href="user?id=216">
+              <span class="team_216">
+                Tadada
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=ch">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/ch.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="ch" title="Switzerland" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>155</td>
+          <td class="team-name">
+            <a href="user?id=209">
+              <span class="team_209">
+                Bigman
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>156</td>
+          <td class="team-name">
+            <a href="user?id=221">
+              <span class="team_221">
+                doougal
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>157</td>
+          <td class="team-name">
+            <a href="user?id=222">
+              <span class="team_222">
+                ollytheninja
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>158</td>
+          <td class="team-name">
+            <a href="user?id=20">
+              <span class="team_20">
+                gatty
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>159</td>
+          <td class="team-name">
+            <a href="user?id=233">
+              <span class="team_233">
+                m44
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>160</td>
+          <td class="team-name">
+            <a href="user?id=225">
+              <span class="team_225">
+                Asdfghjkl
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>161</td>
+          <td class="team-name">
+            <a href="user?id=224">
+              <span class="team_224">
+                Quinlamin
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>162</td>
+          <td class="team-name">
+            <a href="user?id=234">
+              <span class="team_234">
+                GodmeerGamer
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>163</td>
+          <td class="team-name">
+            <a href="user?id=103">
+              <span class="team_103">
+                Bedroll
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=aq">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/aq.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="aq" title="Antarctica" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>164</td>
+          <td class="team-name">
+            <a href="user?id=239">
+              <span class="team_239">
+                Gambit
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>165</td>
+          <td class="team-name">
+            <a href="user?id=251">
+              <span class="team_251">
+                UberBudderCow
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>166</td>
+          <td class="team-name">
+            <a href="user?id=250">
+              <span class="team_250">
+                parkero2
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>167</td>
+          <td class="team-name">
+            <a href="user?id=257">
+              <span class="team_257">
+                Timbob
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>168</td>
+          <td class="team-name">
+            <a href="user?id=261">
+              <span class="team_261">
+                NightHunter
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>169</td>
+          <td class="team-name">
+            <a href="user?id=258">
+              <span class="team_258">
+                ForgotMyName
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>170</td>
+          <td class="team-name">
+            <a href="user?id=236">
+              <span class="team_236">
+                Saksham
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>171</td>
+          <td class="team-name">
+            <a href="user?id=70">
+              <span class="team_70">
+                EspressoIntenso
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>172</td>
+          <td class="team-name">
+            <a href="user?id=267">
+              <span class="team_267">
+                aetherfreak
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>173</td>
+          <td class="team-name">
+            <a href="user?id=275">
+              <span class="team_275">
+                Jamie
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>174</td>
+          <td class="team-name">
+            <a href="user?id=253">
+              <span class="team_253">
+                Atla5_82
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>175</td>
+          <td class="team-name">
+            <a href="user?id=277">
+              <span class="team_277">
+                DNbox
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>176</td>
+          <td class="team-name">
+            <a href="user?id=283">
+              <span class="team_283">
+                Sil
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>177</td>
+          <td class="team-name">
+            <a href="user?id=92">
+              <span class="team_92">
+                jc1
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>178</td>
+          <td class="team-name">
+            <a href="user?id=39">
+              <span class="team_39">
+                Sayani
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>179</td>
+          <td class="team-name">
+            <a href="user?id=256">
+              <span class="team_256">
+                Lucas
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>180</td>
+          <td class="team-name">
+            <a href="user?id=118">
+              <span class="team_118">
+                TheFruityKiwi
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>181</td>
+          <td class="team-name">
+            <a href="user?id=307">
+              <span class="team_307">
+                hackit
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>182</td>
+          <td class="team-name">
+            <a href="user?id=309">
+              <span class="team_309">
+                andrewqqiu
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>183</td>
+          <td class="team-name">
+            <a href="user?id=291">
+              <span class="team_291">
+                :|&gt;~&lt;|:
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>184</td>
+          <td class="team-name">
+            <a href="user?id=255">
+              <span class="team_255">
+                Physip
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>185</td>
+          <td class="team-name">
+            <a href="user?id=311">
+              <span class="team_311">
+                rhyven
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>186</td>
+          <td class="team-name">
+            <a href="user?id=314">
+              <span class="team_314">
+                a;lgkhghewhgf
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>187</td>
+          <td class="team-name">
+            <a href="user?id=85">
+              <span class="team_85">
+                Karl
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>188</td>
+          <td class="team-name">
+            <a href="user?id=176">
+              <span class="team_176">
+                Dave Kerry
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>189</td>
+          <td class="team-name">
+            <a href="user?id=248">
+              <span class="team_248">
+                Max Wallaxe
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>190</td>
+          <td class="team-name">
+            <a href="user?id=318">
+              <span class="team_318">
+                Connor Kerrigan 27/4a Roberton Road
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>191</td>
+          <td class="team-name">
+            <a href="user?id=317">
+              <span class="team_317">
+                Poultry_Lad
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>192</td>
+          <td class="team-name">
+            <a href="user?id=244">
+              <span class="team_244">
+                ForTheWinAlways
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>193</td>
+          <td class="team-name">
+            <a href="user?id=298">
+              <span class="team_298">
+                thesmartbadger
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>100</td>
+        </tr>
+        
+        <tr>
+          <td>194</td>
+          <td class="team-name">
+            <a href="user?id=77">
+              <span class="team_77">
+                Phoenex
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>195</td>
+          <td class="team-name">
+            <a href="user?id=119">
+              <span class="team_119">
+                KiwiCC
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>196</td>
+          <td class="team-name">
+            <a href="user?id=120">
+              <span class="team_120">
+                Zack
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>197</td>
+          <td class="team-name">
+            <a href="user?id=21">
+              <span class="team_21">
+                DarkMatterMatt
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>198</td>
+          <td class="team-name">
+            <a href="user?id=73">
+              <span class="team_73">
+                Anaru
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>199</td>
+          <td class="team-name">
+            <a href="user?id=115">
+              <span class="team_115">
+                Ownwn
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>200</td>
+          <td class="team-name">
+            <a href="user?id=146">
+              <span class="team_146">
+                Reuben
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>201</td>
+          <td class="team-name">
+            <a href="user?id=149">
+              <span class="team_149">
+                Saph Collis
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>202</td>
+          <td class="team-name">
+            <a href="user?id=147">
+              <span class="team_147">
+                Nick Sheetz
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>203</td>
+          <td class="team-name">
+            <a href="user?id=142">
+              <span class="team_142">
+                wasdmasterlive
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>204</td>
+          <td class="team-name">
+            <a href="user?id=151">
+              <span class="team_151">
+                BD7620
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>205</td>
+          <td class="team-name">
+            <a href="user?id=157">
+              <span class="team_157">
+                Jamaise
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>206</td>
+          <td class="team-name">
+            <a href="user?id=130">
+              <span class="team_130">
+                andrewthegreat
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>207</td>
+          <td class="team-name">
+            <a href="user?id=124">
+              <span class="team_124">
+                ChrisCook526
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>208</td>
+          <td class="team-name">
+            <a href="user?id=172">
+              <span class="team_172">
+                Nigel Murphy
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>209</td>
+          <td class="team-name">
+            <a href="user?id=180">
+              <span class="team_180">
+                CanIPutEmojisInHere
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>210</td>
+          <td class="team-name">
+            <a href="user?id=207">
+              <span class="team_207">
+                Deezhyper
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>211</td>
+          <td class="team-name">
+            <a href="user?id=219">
+              <span class="team_219">
+                zxc
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>212</td>
+          <td class="team-name">
+            <a href="user?id=210">
+              <span class="team_210">
+                RocketCat
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>213</td>
+          <td class="team-name">
+            <a href="user?id=230">
+              <span class="team_230">
+                isacc
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>214</td>
+          <td class="team-name">
+            <a href="user?id=231">
+              <span class="team_231">
+                thesmartbager
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>215</td>
+          <td class="team-name">
+            <a href="user?id=48">
+              <span class="team_48">
+                Exer
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>216</td>
+          <td class="team-name">
+            <a href="user?id=241">
+              <span class="team_241">
+                DSD
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=au">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/au.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="au" title="Australia" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>217</td>
+          <td class="team-name">
+            <a href="user?id=243">
+              <span class="team_243">
+                Andre
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>218</td>
+          <td class="team-name">
+            <a href="user?id=252">
+              <span class="team_252">
+                KabirAcharya
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=au">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/au.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="au" title="Australia" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>219</td>
+          <td class="team-name">
+            <a href="user?id=148">
+              <span class="team_148">
+                Redboy
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>220</td>
+          <td class="team-name">
+            <a href="user?id=254">
+              <span class="team_254">
+                bradleyGroverq
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>221</td>
+          <td class="team-name">
+            <a href="user?id=262">
+              <span class="team_262">
+                ThaiChickenPizza
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>222</td>
+          <td class="team-name">
+            <a href="user?id=200">
+              <span class="team_200">
+                catan
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>223</td>
+          <td class="team-name">
+            <a href="user?id=278">
+              <span class="team_278">
+                Ben
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>224</td>
+          <td class="team-name">
+            <a href="user?id=43">
+              <span class="team_43">
+                Kenan
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>225</td>
+          <td class="team-name">
+            <a href="user?id=279">
+              <span class="team_279">
+                Weam
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>226</td>
+          <td class="team-name">
+            <a href="user?id=284">
+              <span class="team_284">
+                D3fc0n1
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>227</td>
+          <td class="team-name">
+            <a href="user?id=144">
+              <span class="team_144">
+                Henry246
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>228</td>
+          <td class="team-name">
+            <a href="user?id=294">
+              <span class="team_294">
+                ShortCircuit
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>229</td>
+          <td class="team-name">
+            <a href="user?id=302">
+              <span class="team_302">
+                NeuroWinter
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>230</td>
+          <td class="team-name">
+            <a href="user?id=315">
+              <span class="team_315">
+                Josh Wiegman
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>231</td>
+          <td class="team-name">
+            <a href="user?id=316">
+              <span class="team_316">
+                Ash Das
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>232</td>
+          <td class="team-name">
+            <a href="user?id=185">
+              <span class="team_185">
+                Muxford
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>233</td>
+          <td class="team-name">
+            <a href="user?id=319">
+              <span class="team_319">
+                lukenick
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>234</td>
+          <td class="team-name">
+            <a href="user?id=327">
+              <span class="team_327">
+                cxnmxa
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>50</td>
+        </tr>
+        
+        <tr>
+          <td>235</td>
+          <td class="team-name">
+            <a href="user?id=14">
+              <span class="team_14">
+                Daffy Duck
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>236</td>
+          <td class="team-name">
+            <a href="user?id=15">
+              <span class="team_15">
+                Vic
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>237</td>
+          <td class="team-name">
+            <a href="user?id=18">
+              <span class="team_18">
+                Lobster
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>238</td>
+          <td class="team-name">
+            <a href="user?id=25">
+              <span class="team_25">
+                geeknz
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>239</td>
+          <td class="team-name">
+            <a href="user?id=27">
+              <span class="team_27">
+                Benjymack
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>240</td>
+          <td class="team-name">
+            <a href="user?id=30">
+              <span class="team_30">
+                slobbs
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>241</td>
+          <td class="team-name">
+            <a href="user?id=38">
+              <span class="team_38">
+                urch1n
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>242</td>
+          <td class="team-name">
+            <a href="user?id=41">
+              <span class="team_41">
+                elocnoj
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>243</td>
+          <td class="team-name">
+            <a href="user?id=45">
+              <span class="team_45">
+                dwnz
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>244</td>
+          <td class="team-name">
+            <a href="user?id=47">
+              <span class="team_47">
+                Exee
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>245</td>
+          <td class="team-name">
+            <a href="user?id=52">
+              <span class="team_52">
+                cyberjoker
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>246</td>
+          <td class="team-name">
+            <a href="user?id=62">
+              <span class="team_62">
+                Tim
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>247</td>
+          <td class="team-name">
+            <a href="user?id=63">
+              <span class="team_63">
+                Parseltongue
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>248</td>
+          <td class="team-name">
+            <a href="user?id=71">
+              <span class="team_71">
+                8l1nky
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>249</td>
+          <td class="team-name">
+            <a href="user?id=72">
+              <span class="team_72">
+                Goldlizard2
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>250</td>
+          <td class="team-name">
+            <a href="user?id=75">
+              <span class="team_75">
+                bgc
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>251</td>
+          <td class="team-name">
+            <a href="user?id=81">
+              <span class="team_81">
+                Patrick D'Souza
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>252</td>
+          <td class="team-name">
+            <a href="user?id=84">
+              <span class="team_84">
+                RomanAvery
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>253</td>
+          <td class="team-name">
+            <a href="user?id=87">
+              <span class="team_87">
+                The_Krish
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=us">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/us.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="us" title="United States" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>254</td>
+          <td class="team-name">
+            <a href="user?id=89">
+              <span class="team_89">
+                i_stay_noid
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>255</td>
+          <td class="team-name">
+            <a href="user?id=102">
+              <span class="team_102">
+                Nuka
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>256</td>
+          <td class="team-name">
+            <a href="user?id=106">
+              <span class="team_106">
+                abs_man
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>257</td>
+          <td class="team-name">
+            <a href="user?id=108">
+              <span class="team_108">
+                CYAV_4
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>258</td>
+          <td class="team-name">
+            <a href="user?id=112">
+              <span class="team_112">
+                SK
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>259</td>
+          <td class="team-name">
+            <a href="user?id=114">
+              <span class="team_114">
+                hackme69
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>260</td>
+          <td class="team-name">
+            <a href="user?id=116">
+              <span class="team_116">
+                Jez03
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>261</td>
+          <td class="team-name">
+            <a href="user?id=121">
+              <span class="team_121">
+                Butter 
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>262</td>
+          <td class="team-name">
+            <a href="user?id=125">
+              <span class="team_125">
+                wyattb
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>263</td>
+          <td class="team-name">
+            <a href="user?id=127">
+              <span class="team_127">
+                Liam Labuschagne
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>264</td>
+          <td class="team-name">
+            <a href="user?id=131">
+              <span class="team_131">
+                nopeqk
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>265</td>
+          <td class="team-name">
+            <a href="user?id=132">
+              <span class="team_132">
+                Jasmine Yip
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>266</td>
+          <td class="team-name">
+            <a href="user?id=135">
+              <span class="team_135">
+                Nahid Mahmud
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>267</td>
+          <td class="team-name">
+            <a href="user?id=136">
+              <span class="team_136">
+                Alfredoo
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>268</td>
+          <td class="team-name">
+            <a href="user?id=143">
+              <span class="team_143">
+                Udderly Amoozing
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>269</td>
+          <td class="team-name">
+            <a href="user?id=145">
+              <span class="team_145">
+                Philip Dolbel
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>270</td>
+          <td class="team-name">
+            <a href="user?id=153">
+              <span class="team_153">
+                Aryan Shah
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>271</td>
+          <td class="team-name">
+            <a href="user?id=159">
+              <span class="team_159">
+                Shiv
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>272</td>
+          <td class="team-name">
+            <a href="user?id=165">
+              <span class="team_165">
+                matchlesmage0
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>273</td>
+          <td class="team-name">
+            <a href="user?id=169">
+              <span class="team_169">
+                Ma
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>274</td>
+          <td class="team-name">
+            <a href="user?id=177">
+              <span class="team_177">
+                linz
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>275</td>
+          <td class="team-name">
+            <a href="user?id=178">
+              <span class="team_178">
+                Weaam
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>276</td>
+          <td class="team-name">
+            <a href="user?id=179">
+              <span class="team_179">
+                Rayha Samin
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>277</td>
+          <td class="team-name">
+            <a href="user?id=188">
+              <span class="team_188">
+                Mike Cui
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>278</td>
+          <td class="team-name">
+            <a href="user?id=192">
+              <span class="team_192">
+                dbn
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>279</td>
+          <td class="team-name">
+            <a href="user?id=193">
+              <span class="team_193">
+                Roasted Potato
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>280</td>
+          <td class="team-name">
+            <a href="user?id=195">
+              <span class="team_195">
+                ฅ/ᐠ. ̫.ᐟ\ฅﾉ
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>281</td>
+          <td class="team-name">
+            <a href="user?id=196">
+              <span class="team_196">
+                Kel Sucharitchan
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>282</td>
+          <td class="team-name">
+            <a href="user?id=205">
+              <span class="team_205">
+                MacDonald
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>283</td>
+          <td class="team-name">
+            <a href="user?id=212">
+              <span class="team_212">
+                GeekStories
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>284</td>
+          <td class="team-name">
+            <a href="user?id=213">
+              <span class="team_213">
+                hellraiser
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=in">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/in.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="in" title="India" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>285</td>
+          <td class="team-name">
+            <a href="user?id=214">
+              <span class="team_214">
+                Gh0s711
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>286</td>
+          <td class="team-name">
+            <a href="user?id=215">
+              <span class="team_215">
+                Identity
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>287</td>
+          <td class="team-name">
+            <a href="user?id=217">
+              <span class="team_217">
+                Rhys
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>288</td>
+          <td class="team-name">
+            <a href="user?id=227">
+              <span class="team_227">
+                neonninja
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>289</td>
+          <td class="team-name">
+            <a href="user?id=235">
+              <span class="team_235">
+                BoreLogs
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>290</td>
+          <td class="team-name">
+            <a href="user?id=238">
+              <span class="team_238">
+                ThunderBird 
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>291</td>
+          <td class="team-name">
+            <a href="user?id=245">
+              <span class="team_245">
+                Anfisdaman
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>292</td>
+          <td class="team-name">
+            <a href="user?id=247">
+              <span class="team_247">
+                Kien Aik Lau
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>293</td>
+          <td class="team-name">
+            <a href="user?id=265">
+              <span class="team_265">
+                cyiyu
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>294</td>
+          <td class="team-name">
+            <a href="user?id=266">
+              <span class="team_266">
+                katsukaree
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>295</td>
+          <td class="team-name">
+            <a href="user?id=270">
+              <span class="team_270">
+                Petra
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>296</td>
+          <td class="team-name">
+            <a href="user?id=272">
+              <span class="team_272">
+                doiexist
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>297</td>
+          <td class="team-name">
+            <a href="user?id=274">
+              <span class="team_274">
+                hansy
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=au">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/au.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="au" title="Australia" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>298</td>
+          <td class="team-name">
+            <a href="user?id=276">
+              <span class="team_276">
+                shaboti
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>299</td>
+          <td class="team-name">
+            <a href="user?id=282">
+              <span class="team_282">
+                PersistentLearner
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>300</td>
+          <td class="team-name">
+            <a href="user?id=285">
+              <span class="team_285">
+                Donut the 1st
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>301</td>
+          <td class="team-name">
+            <a href="user?id=286">
+              <span class="team_286">
+                blue
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>302</td>
+          <td class="team-name">
+            <a href="user?id=287">
+              <span class="team_287">
+                bitVector
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>303</td>
+          <td class="team-name">
+            <a href="user?id=288">
+              <span class="team_288">
+                calvinay
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>304</td>
+          <td class="team-name">
+            <a href="user?id=296">
+              <span class="team_296">
+                nhbond
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>305</td>
+          <td class="team-name">
+            <a href="user?id=297">
+              <span class="team_297">
+                Kane
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>306</td>
+          <td class="team-name">
+            <a href="user?id=300">
+              <span class="team_300">
+                Cinu
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>307</td>
+          <td class="team-name">
+            <a href="user?id=303">
+              <span class="team_303">
+                countolaf
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>308</td>
+          <td class="team-name">
+            <a href="user?id=304">
+              <span class="team_304">
+                lalaland
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>309</td>
+          <td class="team-name">
+            <a href="user?id=306">
+              <span class="team_306">
+                CheshireCat
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>310</td>
+          <td class="team-name">
+            <a href="user?id=308">
+              <span class="team_308">
+                cathy
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>311</td>
+          <td class="team-name">
+            <a href="user?id=310">
+              <span class="team_310">
+                Rajat
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>312</td>
+          <td class="team-name">
+            <a href="user?id=320">
+              <span class="team_320">
+                cam8001
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>313</td>
+          <td class="team-name">
+            <a href="user?id=321">
+              <span class="team_321">
+                CFar
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>314</td>
+          <td class="team-name">
+            <a href="user?id=326">
+              <span class="team_326">
+                GlasgowFelix
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>315</td>
+          <td class="team-name">
+            <a href="user?id=328">
+              <span class="team_328">
+                PandaBear
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>316</td>
+          <td class="team-name">
+            <a href="user?id=329">
+              <span class="team_329">
+                |IlIlIlIlIlIlIlIl|
+              </span>
+            </a>
+          </td>
+          <td class="text-center">
+            
+    <a href="country?code=nz">
+        <img src="https://scoreboard.nzcsc.org.nz/img/flags/nz.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" alt="nz" title="New Zealand" />
+    </a>
+          </td>
+          <td>0</td>
+        </tr>
+        
+      </tbody>
+    </table>
+    
+        </div>  <!-- / span6 -->
+
+        <div class="col-lg-6">
+        
+    <div class="row">
+        <div class="col-lg-12">
+          <h2 class="page-header">Challenges </h2>
+        </div>
+    </div>
+    
+        <table class="team-table table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>Round 0</th>
+              <th class="center">Points</th>
+              <th class="center"><span class="has-tooltip" data-toggle="tooltip" data-placement="top" title="% of actively participating users">Solved by</span></th>
+              <th>First solvers</th>
+            </tr>
+          </thead>
+          <tbody>
+         
+            <tr>
+                <td>
+                    <a href="challenge?id=2">Round 0 - Challenge 02</a>
+                </td>
+
+                <td class="center">
+                    50
+                </td>
+
+                <td class="center">
+                    80%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=88">Grady Hooker</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_silver_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Second to solve this challenge!" alt="Second to solve this challenge!" /><a href="user?id=95">STΛΠIΛ KLΞGR</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_bronze_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Third to solve this challenge!" alt="Third to solve this challenge!" /><a href="user?id=34">Jojo Lee</a><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="challenge?id=3">Round 0 - Challenge 03</a>
+                </td>
+
+                <td class="center">
+                    50
+                </td>
+
+                <td class="center">
+                    95%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=95">STΛΠIΛ KLΞGR</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_silver_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Second to solve this challenge!" alt="Second to solve this challenge!" /><a href="user?id=88">Grady Hooker</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_bronze_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Third to solve this challenge!" alt="Third to solve this challenge!" /><a href="user?id=56">Firo</a><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="challenge?id=4">Round 0 - Challenge 04</a>
+                </td>
+
+                <td class="center">
+                    50
+                </td>
+
+                <td class="center">
+                    25%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=40">Fromage</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_silver_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Second to solve this challenge!" alt="Second to solve this challenge!" /><a href="user?id=19">Dast</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_bronze_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Third to solve this challenge!" alt="Third to solve this challenge!" /><a href="user?id=88">Grady Hooker</a><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="challenge?id=19">Round 0 - Challenge 10</a>
+                </td>
+
+                <td class="center">
+                    50
+                </td>
+
+                <td class="center">
+                    46%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=32">Corbs</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_silver_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Second to solve this challenge!" alt="Second to solve this challenge!" /><a href="user?id=31">Michael</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_bronze_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Third to solve this challenge!" alt="Third to solve this challenge!" /><a href="user?id=28">Maxh</a><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="challenge?id=1">Round 0 - Challenge 01</a>
+                </td>
+
+                <td class="center">
+                    100
+                </td>
+
+                <td class="center">
+                    3%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=293">keycrow</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_silver_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Second to solve this challenge!" alt="Second to solve this challenge!" /><a href="user?id=269">3xThreatt</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_bronze_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Third to solve this challenge!" alt="Third to solve this challenge!" /><a href="user?id=259">SantaSam</a><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="challenge?id=7">Round 0 - Challenge 07</a>
+                </td>
+
+                <td class="center">
+                    100
+                </td>
+
+                <td class="center">
+                    29%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=67">Null Reference</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_silver_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Second to solve this challenge!" alt="Second to solve this challenge!" /><a href="user?id=88">Grady Hooker</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_bronze_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Third to solve this challenge!" alt="Third to solve this challenge!" /><a href="user?id=32">Corbs</a><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="challenge?id=20">Round 0 - Challenge 06</a>
+                </td>
+
+                <td class="center">
+                    100
+                </td>
+
+                <td class="center">
+                    27%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=67">Null Reference</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_silver_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Second to solve this challenge!" alt="Second to solve this challenge!" /><a href="user?id=88">Grady Hooker</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_bronze_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Third to solve this challenge!" alt="Third to solve this challenge!" /><a href="user?id=98">Result&lt;Key, dyn Error&gt;</a><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="challenge?id=5">Round 0 - Challenge 05</a>
+                </td>
+
+                <td class="center">
+                    200
+                </td>
+
+                <td class="center">
+                    20%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=40">Fromage</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_silver_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Second to solve this challenge!" alt="Second to solve this challenge!" /><a href="user?id=155">noobhacker69</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_bronze_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Third to solve this challenge!" alt="Third to solve this challenge!" /><a href="user?id=67">Null Reference</a><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="challenge?id=17">Round 0 - Challenge 08</a>
+                </td>
+
+                <td class="center">
+                    200
+                </td>
+
+                <td class="center">
+                    13%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=40">Fromage</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_silver_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Second to solve this challenge!" alt="Second to solve this challenge!" /><a href="user?id=67">Null Reference</a><br /><img src="https://scoreboard.nzcsc.org.nz/img/award_star_bronze_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="Third to solve this challenge!" alt="Third to solve this challenge!" /><a href="user?id=104">Nick Lim</a><br />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="challenge?id=18">Round 0 - Challenge 09</a>
+                </td>
+
+                <td class="center">
+                    200
+                </td>
+
+                <td class="center">
+                    0%
+                </td>
+
+                <td class="team-name"><img src="https://scoreboard.nzcsc.org.nz/img/award_star_gold_3.png" class="has-tooltip" data-toggle="tooltip" data-placement="right" title="First to solve this challenge!" alt="First to solve this challenge!" /><a href="user?id=19">Dast</a><br />
+                </td>
+            </tr>
+        </tbody>
+        </table>
+        </div> <!-- / span6 -->
+    </div> <!-- / row -->
+    
+
+    </div> <!-- / content container -->
+
+</div> <!-- /container -->
+
+<div id="footer">
+    <div class="fade">
+        <div id="footer-logo"/>
+            <object data="https://scoreboard.nzcsc.org.nz/img/mellivora.svg" type="image/svg+xml"></object>
+        </div>
+        <p>Powered by <a href="https://github.com/Nakiami/mellivora">Mellivora</a></p>
+    </div>
+</div>
+
+</div> <!-- /page -->
+
+<!-- JS -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://scoreboard.nzcsc.org.nz/js/mellivora.js"></script>
+
+</body>
+</html>

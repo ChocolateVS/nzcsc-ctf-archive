@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="Cyber, Security, Challenge, New Zealand, Waikato, University, STRATUS, CROW">
+		<meta name="description" content="New Zealand's first national cyber security challenge, hosted by The University of Waikato.">
+		<meta http-equiv="Cache-Control" content="max-age=200" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<script>
+			(function(i, s, o, g, r, a, m) {
+				i['GoogleAnalyticsObject'] = r;
+				i[r] = i[r] ||
+				function() {
+					(i[r].q = i[r].q || []).push(arguments)
+				}, i[r].l = 1 * new Date();
+				a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+				a.async = 1;
+				a.src = g;
+				m.parentNode.insertBefore(a, m)
+			})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+			ga('create', 'UA-64637318-2', 'auto');
+			ga('send', 'pageview');
+		</script>
+
+		<script src="js/jquery-1.11.3.min.js"></script>
+		<script src="js/jquery.slides.min.js"></script>
+		<script src="js/modernizr.min.js"></script>
+
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/menu.styles.css">
+		<link rel="stylesheet" type="text/css" href="css/TEMPLATE.style.css">
+
+		<title>New Zealand Cyber Security Challenge - Competition</title>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				var $logo = $('#back-to-top');
+				$(document).scroll(function() {
+					$logo.css({
+						display : $(this).scrollTop() > 100 ? "block" : "none"
+					});
+				});
+			});
+		</script>
+		<link href="./images/02.png" rel="icon" type="image/x-icon" />
+	</head>
+
+	<body>
+		<a id="top"></a>
+		<div id=content>
+			<div id="top">
+				<div id="top-menu">
+					<div id="top-menu-list">
+						<img src="images/CSCLogo.png" alt="menu bar" id="top-menu-csclogo">
+						<img src="images/NavigationBar02.png" alt="sept_15" id="top-menu-right-image">
+
+						<script>
+							$(document).ready(function() {
+								$(".has-sub ul").hide();
+								$(".has-sub").hover(function() {
+									$("ul", this).stop(true, true).slideToggle();
+								});
+
+								$("#mobile-ul").hide();
+								$("#mobile-menu-toggle").click(function() {
+									$("#mobile-ul").stop(true, true).slideToggle();
+								});
+								$("li ul").hide();
+								$(".sumbmenu-toggle-button").click(function() {
+									$(this).next().stop(true, true).slideToggle();
+								});
+							});
+						</script>
+
+						<div id='desktop-menu'>
+							<ul id="desktop-ul">
+								<li class="first">
+									<a href='./index.html'><span>Home</span></a>
+								</li>
+								<li>
+									<a href='http://goo.gl/forms/twFTRWZXYc' target="_blank"><span>Register</span></a>
+								</li>
+								<li class="has-sub">
+									<a href='#'><span>Programme</span></a>
+									<ul class="border-bottom-right">
+										<li>
+											<a href='./training.html'><span>Training</span></a>
+										</li>
+										<li>
+											<a href='./jobfair.html'><span>Industry/Job Fair</span></a>
+										</li>
+										<li class='has-sub'>
+											<a href='competition.html'><span>Competition</span></a>
+										</li>
+										<li>
+											<a href="./tshirt_design.html"><span>T-shirt Design</span></a>
+										</li>
+										<li class="border-bottom-right">
+											<a href='index.html#sponsors_section' class="border-bottom-right"><span>Sponsors</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="has-sub">
+									<a href='#'><span>Location</span></a>
+									<ul class="border-bottom-right">
+										<li>
+											<a href='./venue.html'><span>Venue</span></a>
+										</li>
+										<li>
+											<a href='./accommodation.html'><span>Accommodation</span></a>
+										</li>
+										<li class="border-bottom-right">
+											<a href='./attractions.html' class="border-bottom-right"><span>Local Attractions</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href='./schedule.html'><span>Schedule</span></a>
+								</li>
+								<li class="has-sub">
+									<a href='./aboutus.html'><span>About Us</span></a>
+									<ul class="border-bottom-right">
+										<li class="border-bottom-right">
+											<a href='./contactus.html' class="border-bottom-right"><span>Contact Us</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="last">
+									<a href='./faq.html'><span>FAQ</span></a>
+								</li>
+							</ul>
+						</div>
+						<div id='mobile-menu'>
+							<img src="images/mobile-menu-toggle.png" id="mobile-menu-toggle" alt="Mobile Menu Toggle">
+							<ul id="mobile-ul">
+								<li>
+									<a href='./index.html'><span>Home</span></a>
+								</li>
+								<li>
+									<a href='http://goo.gl/forms/twFTRWZXYc'><span>Register</span></a>
+								</li>
+								<li class="has-sub-mobile">
+									<span>Programme</span>
+									<ul class="sub-mobile">
+										<li>
+											<a href='./training.html'><span>Training</span></a>
+										</li>
+										<li>
+											<a href='./jobfair.html'><span>Job/Internship Fair</span></a>
+										</li>
+										<li>
+											<a href='./competition.html'><span>Competition</span></a>
+										</li>
+										<li>
+											<a href='index.html#sponsors_section'><span>Sponsors</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="has-sub-mobile">
+									<span>Location</span>
+									<ul class="sub-mobile">
+										<li>
+											<a href='./venue.html'><span>Venue</span></a>
+										</li>
+										<li>
+											<a href='./accommodation.html'><span>Accommodation</span></a>
+										</li>
+										<li>
+											<a href='./attractions.html'><span>Local Attractions</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href='./schedule.html'><span>Schedule</span></a>
+								</li>
+								<li class="has-sub-mobile">
+									<span>About Us</span>
+									<ul class="sub-mobile">
+										<li>
+											<a href='./contactus'><span>Contact Us</span></a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href='./faq.html'><span>FAQ</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<a href="#top"><img src="./images/back_to_top.png" id="back-to-top"></a>
+
+				<div id="centre-details">
+					<h1>Competition</h1>
+
+					<div id="centre-section">
+
+						<h2>Categories and Teams</h2>
+						<p>
+							To ensure a reasonably level playing field, we have decided to group participants into 3 categories:
+						</p>
+						<ul>
+							<li>
+								<p>Secondary</p>
+							</li>
+							<li>
+								<p>Tertiary</p>
+							</li>
+							<li>
+								<p>Industry/Open</p>
+							</li>
+						</ul>
+						
+						<p>
+							Participants can also enter the competition as a team of 2-3 members, or enter as a solo competitior. You can either compete with a group of
+							friends, or indicate your interest to join a team on the <a href="http://goo.gl/forms/twFTRWZXYc">registration form</a> and we'll assign
+							you to a team.
+						</p>
+
+						<br />
+						<h2>Competition</h2>
+						<p>
+							This year, the competition will consist of 2 rounds:
+						</p>
+						<ul>
+							<li>
+								<h4>Round 1 - Capture the Token </h4>
+								<br />
+								<h5 class="indented_p">Duration: 3hrs</h5>
+								<p class="indented_p">
+									The first round of the competition will consist of a series of challenges that must be solved to acquire tokens.
+									This round is open to all participants, and the difficulty of the challenges will range from easy to rather complex. There will also
+									be a challenge reserved for participants in the "Secondary" category. The first round will be an elimination challenge - the
+									top 5 teams across all categories will then move on to Round 2!
+								</p>
+
+								<p class="indented_p">
+									<i>Prizes for Round 1 will be awarded to the winning and runner-up teams of each category.</i>
+								</p>
+							</li>
+							<br />
+							<li>
+								<h4>Round 2 - Red Team vs. Blue Team</h4>
+								<br />
+								<h5 class="indented_p">Duration: 2hrs</h5>
+								<p class="indented_p">
+
+									Each team of competitors in Round 2 (the 5 Blue teams) will be provided with a network which will need to be
+									defended from the attacks of the opponent team (the Red team). Attacks will range from network attacks to application-level attacks. Each team will also start
+									out with a score which will be deducted accordingly for each successful attack from the Red team.
+									<br />
+									The winners for this round will be the team with the highest score at the end of the round, i.e. the team that has
+									successfully defended their network against the most number of attacks.
+								</p>
+
+								<p class="indented_p">
+									<i>Prizes for Round 2 will be awarded to the winning team.</i>
+								</p>
+							</li>
+						</ul>
+
+						<br />
+						<h2>Prizes</h2>
+						<p>
+							TBA!
+						</p>
+
+					</div>
+
+				</div>
+
+				<div id="bottom">
+					<div id="bottom-info">
+						<a id="contact_us"></a>
+						<div class="section group footer">
+							<div class="col span_1_of_3">
+								<p>
+									Cyber Security Lab
+								</p>
+								<p>
+									The University of Waikato
+								</p>
+								<p>
+									2nd Floor, FG-Link
+								</p>
+								<p>
+									Gate 8 Hillcrest Road
+								</p>
+								<p>
+									Hamilton 3240
+								</p>
+
+							</div>
+
+							<div class="col span_1_of_3">
+								<p>
+									Need help?
+								</p>
+								<p>
+									Email: <img src="./images/contact_email.png" alt="contact_email" id="contact_email">
+								</p>
+								<p>
+									You can also contact us by calling 07 837 9404
+								</p>
+							</div>
+							<div class="col span_1_of_3">
+								<p>
+									Have an opinion on this page? <a href="http://goo.gl/forms/sC6iqHo4Rl" target="_blank">Let's hear it.</a>
+								</p>
+							</div>
+						</div>
+
+						<div class="section group copyright">
+							<div class="col span_3_of_3">
+								<p>
+									&#9400; Copyright 2015 cybersecuritychallenge.org.nz. All Rights Reserved.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+	</body>
+</html>

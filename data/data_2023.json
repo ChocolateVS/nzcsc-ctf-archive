@@ -1,0 +1,135 @@
+{
+ "category": "NZCSC 2023 R0",
+ "year": "2023",
+ "note": "From the owner's Cyber Sec 2023.xlsx (points+method). Flags for ch1-8 & ch16 recovered verbatim from the official NCSCS2023 writeup (Wayback RAR); ch9-15 flags were image-only and not recovered.",
+ "challenges": [
+  {
+   "num": 1,
+   "title": "Lorem Ipsum",
+   "topic": "Web Exploitation",
+   "value": 30,
+   "flag": "flag{zdkLMnFvwgNBRKb}",
+   "method": "Inspect element reveals the flag in the page."
+  },
+  {
+   "num": 2,
+   "title": "Magic Bytes",
+   "topic": "Forensics",
+   "value": 30,
+   "flag": "flag{kbntrpcbdjsiqkm}",
+   "method": "Fix/identify the file's magic bytes."
+  },
+  {
+   "num": 3,
+   "title": "Cookie Monster",
+   "topic": "Web Exploitation",
+   "value": 50,
+   "flag": "flag{iDNTCfrNZaEavEx}",
+   "method": "A form stores user details in cookies; tamper with them."
+  },
+  {
+   "num": 4,
+   "title": "Number Cipher",
+   "topic": "Cryptography",
+   "value": 100,
+   "flag": "FLAG{DUWKYBGKZUJBU}",
+   "method": "base64 then a numbers-to-letters cipher."
+  },
+  {
+   "num": 5,
+   "title": "Spectrogram",
+   "topic": "Steganography",
+   "value": 50,
+   "flag": "flag{BsuDBpNhJJcPixb}",
+   "method": "Zip of images > EXIF gives a key to unlock a WAV > read the spectrogram."
+  },
+  {
+   "num": 6,
+   "title": "Emojis",
+   "topic": "Cryptography",
+   "value": 100,
+   "flag": "flag{eeevlqOJCeGEEcK}",
+   "method": "An emoji-based encoding."
+  },
+  {
+   "num": 7,
+   "title": "Ghidra Input",
+   "topic": "Reverse Engineering",
+   "value": 100,
+   "flag": "flag{ghtbbsudneyaexfa}",
+   "method": "Reverse the binary in Ghidra to find the required string input."
+  },
+  {
+   "num": 8,
+   "title": "Pikachu",
+   "topic": "Miscellaneous",
+   "value": 50,
+   "flag": "flag{adjoptgytfnnorhq}",
+   "method": "A Pikachu-themed puzzle."
+  },
+  {
+   "num": 9,
+   "title": "MAC",
+   "topic": "Cryptography",
+   "value": 200,
+   "flag": null,
+   "method": "A MAC / message-authentication puzzle."
+  },
+  {
+   "num": 10,
+   "title": "Robots",
+   "topic": "Web Exploitation",
+   "value": 50,
+   "flag": null,
+   "method": "robots.txt > .htaccess > file_list.php; an image carries the flag in its LSB."
+  },
+  {
+   "num": 11,
+   "title": "SQL Injection",
+   "topic": "Web Exploitation",
+   "value": 50,
+   "flag": null,
+   "method": "Classic SQL injection."
+  },
+  {
+   "num": 12,
+   "title": "ELF in PCAP",
+   "topic": "Forensics",
+   "value": 200,
+   "flag": null,
+   "method": "Carve an ELF file out of a packet capture."
+  },
+  {
+   "num": 13,
+   "title": "SMB Objects",
+   "topic": "Forensics",
+   "value": 100,
+   "flag": null,
+   "method": "PCAP > export SMB objects > base64 decode."
+  },
+  {
+   "num": 14,
+   "title": "DTMF",
+   "topic": "Steganography",
+   "value": 100,
+   "flag": null,
+   "method": "A conspicuous JPEG hides a WAV > DTMF tones > ASCII codes."
+  },
+  {
+   "num": 15,
+   "title": "Word Doc",
+   "topic": "Forensics",
+   "value": 100,
+   "flag": null,
+   "method": "Rename the Word doc to .zip to extract an image and follow it (awkward characters)."
+  },
+  {
+   "num": 16,
+   "title": "Git Dates",
+   "topic": "Miscellaneous",
+   "value": 200,
+   "flag": "flag{dzWyVvFSqZgafzJ}",
+   "method": "Use git commit dates to build a graph/picture."
+  }
+ ]
+}

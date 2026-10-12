@@ -1,0 +1,157 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cyber Security Challenge 2024</title>
+  <meta charset="UTF-8">
+  <meta property='og:title' content="NZ Cyber Security C"/>
+  <meta name="keywords" content="Cyber, Security, C, Waikato, Competition, University, Server, Crow, Encryption, SQL, Injection, IT, Server, Side, Protection, Attack, Defend">
+
+  <meta property='og:url' "https://r0.nzcsc.org.nz/" />
+  
+  <link rel="stylesheet" href="files/css/web.css" />
+  <link rel="stylesheet" href="files/css/bootstrap.min.css">
+	<link rel="stylesheet" href="files/css/jquery-ui.min.css">
+  
+  <script src="files/js/jquery-3.1.1.min.js"></script>
+  <script src="files/js/bootstrap.min.js"></script>
+	<script src="files/js/jquery-ui.js"></script>
+  <script src="files/js/javaScript.js"></script>
+  <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 2px solid #FFD700;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+        h1 {
+            text-align: center;
+        }
+        pre {
+            font-family: 'RobotoMono';
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 18px;
+            text-align: center;
+        }
+
+    </style>
+
+</head>
+
+<body>
+  <div id="container" class="container-fluid">
+    <nav class="navbar sticky-top navbar-toggleable-md">
+      <button class="navbar-toggler navbar-toggler-right nav-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="/home/"><img src="files/img/csc_logo_wht.png" id="menu-img"></a>
+
+      <div class="collapse flex-column navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge1/">C-1</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge2/">C-2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge3/">C-3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge4/">C-4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge5/">C-5</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge6/">C-6</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge7/">C-7</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge8/">C-8</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge9/">C-9</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge10/">C-10</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge11/">C-11</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge12/">C-12</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge13/">C-13</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge14/">C-14</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge15/">C-15</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge16/">C-16</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge17/">C-17</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge18/">C-18</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge19/">C-19</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link title-font not-ready" href="/challenge20/">C-20</a>
+          </li>
+          </ul>
+      </div>
+    </nav>
+
+    <div class="row">
+      <div class="col-lg-4 col-md-12" style="text-align: center;">
+        <div class="Drone affix">
+          <img src="files/img/NZCSCLogoBig.png" alt="NZCSC_Logo">
+        </div> 
+      </div>
+      <div class="col-lg-8 col-md-12">
+        <div id="tabs-home" style="display: flex;">
+            <div class="Title">
+              <div class="HomeContent">
+                <div class="PAD">  
+                  <h2><b>Challenge 3</b></h2>
+                  
+                  <div class="container" style="margin-top: 10%;padding-bottom:5px">
+
+<pre>NZCSC{A_TRULY_TR34CH3R0US_TR4V3RS4L}</pre>
+
+</div>
+
+
+                </div>
+              </div>
+            </div>  
+          </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,62 @@
+name: deploy
+
+# Push to main (or run manually) to publish the archive:
+#   * deploy-challenges — upserts data/*.json (+ files/) into CTFd over its API
+#   * sync-live         — syncs live/ to the CloudFront S3 bucket
+# Both jobs are idempotent and safe to re-run. They soft-skip until their
+# config (secrets / variables) is present, so an unconfigured repo still goes
+# green. See README.md for the required secrets and variables.
+
+on:
+  push:
+    branches: [main]
+    # heads-up: path filters are workflow-wide, not per-job, so both jobs run on
+    # any push to main. They're idempotent, so that's fine.
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write   # OIDC for the sync-live job
+
+concurrency:
+  group: deploy-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  deploy-challenges:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r tools/requirements.txt
+      - name: Deploy challenges to CTFd
+        env:
+          CTFD_URL: ${{ secrets.CTFD_URL }}
+          CTFD_TOKEN: ${{ secrets.CTFD_TOKEN }}
+        run: |
+          if [ -z "$CTFD_TOKEN" ] || [ -z "$CTFD_URL" ]; then
+            echo "::warning::CTFD_URL / CTFD_TOKEN secrets not set — skipping challenge deploy."
+            exit 0
+          fi
+          python tools/deploy_challenges.py
+
+  sync-live:
+    runs-on: ubuntu-latest
+    # skip until the OIDC role variable is configured
+    if: ${{ vars.AWS_LIVE_DEPLOY_ROLE_ARN != '' }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configure AWS credentials (OIDC, keyless)
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_LIVE_DEPLOY_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - name: Sync live/ to S3
+        run: aws s3 sync live/ "s3://${{ vars.LIVE_BUCKET }}/" --delete
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id "${{ vars.LIVE_CF_DIST_ID }}" \
+            --paths '/*'

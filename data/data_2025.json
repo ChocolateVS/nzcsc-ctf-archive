@@ -1,0 +1,147 @@
+{
+ "category": "NZCSC 2025 R0",
+ "year": "2025",
+ "note": "Titles from the official NZCSC25 writeup. Flags: ch1/6/8/9/10 verbatim from the writeup, ch2 decoded from the live challenge source (Wayback), the rest from the owner's 2025 solve sheet. 2025 flags are 16-char tokens.",
+ "challenges": [
+  {
+   "num": 1,
+   "title": "Basic Hide and Seek",
+   "topic": "Steganography",
+   "value": 0,
+   "flag": "FAFEDCABCCDEFDRF",
+   "method": "A zip archive is appended to / hidden inside an image."
+  },
+  {
+   "num": 2,
+   "title": "Fun Facts",
+   "topic": "Web Exploitation",
+   "value": 0,
+   "flag": "7EACD59F234B8D6F",
+   "method": "The flag is in the page source code.",
+   "files": [
+    "2025-c2-fun-facts.zip"
+   ],
+   "connection_info": "https://ctf.nzcsc.xyz/live/2025/challenge2/home.html"
+  },
+  {
+   "num": 3,
+   "title": "Mysterious Browser Identity",
+   "topic": "Forensics",
+   "value": 0,
+   "flag": "FAFEDCABCDEFABCF",
+   "method": "A PCAP: the flag is in a crafted User-Agent header."
+  },
+  {
+   "num": 4,
+   "title": "Note API",
+   "topic": "Web Exploitation",
+   "value": 0,
+   "flag": "ABBBB77F699E23DD",
+   "method": "Abuse a notes API."
+  },
+  {
+   "num": 5,
+   "title": "The Insider's Footprint",
+   "topic": "Cryptography",
+   "value": 0,
+   "flag": "433H2447B4869790",
+   "method": "A .docx file; decode Base45."
+  },
+  {
+   "num": 6,
+   "title": "Reversal Protocol",
+   "topic": "Reverse Engineering",
+   "value": 0,
+   "flag": "94C7F8D2BAE5637C",
+   "method": "Reverse-engineer an ELF binary."
+  },
+  {
+   "num": 7,
+   "title": "ChronoCorp Secure Archive Portal",
+   "topic": "Web Exploitation",
+   "value": 0,
+   "flag": null,
+   "method": "Path traversal on a web endpoint."
+  },
+  {
+   "num": 8,
+   "title": "Signal from Sector 91",
+   "topic": "Cryptography",
+   "value": 0,
+   "flag": "EB639CF274AD85FA",
+   "method": "Decode a multi-layer encoded payload."
+  },
+  {
+   "num": 9,
+   "title": "Super AI Trader",
+   "topic": "Binary Exploitation",
+   "value": 0,
+   "flag": "4EL260683A86MC7E",
+   "method": "Format-string injection vulnerability."
+  },
+  {
+   "num": 10,
+   "title": "SecureVault",
+   "topic": "Binary Exploitation",
+   "value": 0,
+   "flag": "23C26B6Z3A99MC5E",
+   "method": "Buffer overflow."
+  },
+  {
+   "num": 11,
+   "title": "Oracle of Odds and Evens",
+   "topic": "Cryptography",
+   "value": 0,
+   "flag": "FE927CB38D65A47E",
+   "method": "RSA/LSB oracle attack."
+  },
+  {
+   "num": 12,
+   "title": "Operation Ghost Beacon",
+   "topic": "Forensics",
+   "value": 0,
+   "flag": null,
+   "method": "Analyse a packet capture."
+  },
+  {
+   "num": 13,
+   "title": "Headerless Truth",
+   "topic": "Steganography",
+   "value": 0,
+   "flag": null,
+   "method": "Repair / read the PNG headers."
+  },
+  {
+   "num": 14,
+   "title": "Log Analysis",
+   "topic": "Forensics",
+   "value": 0,
+   "flag": null,
+   "method": "Analyse logs to find the flag."
+  },
+  {
+   "num": 15,
+   "title": "Secure Login",
+   "topic": "Web Exploitation",
+   "value": 0,
+   "flag": null,
+   "method": "Bypass a client-side JavaScript login page.",
+   "files": [
+    "2025-c15-secure-login.html"
+   ],
+   "connection_info": "https://ctf.nzcsc.xyz/live/2025/challenge15/securelogin.php"
+  },
+  {
+   "num": 16,
+   "title": "Cyber Space",
+   "topic": "Web Exploitation",
+   "value": 0,
+   "flag": null,
+   "method": "robots.txt points to things to investigate.",
+   "files": [
+    "2025-c16-cyber-space.zip"
+   ],
+   "connection_info": "https://ctf.nzcsc.xyz/live/2025/challenge16/"
+  }
+ ]
+}
