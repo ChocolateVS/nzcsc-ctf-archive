@@ -1,0 +1,4 @@
+# secrets: real flags never in git
+comps/*/flags.env
+__pycache__/
+*.pyc

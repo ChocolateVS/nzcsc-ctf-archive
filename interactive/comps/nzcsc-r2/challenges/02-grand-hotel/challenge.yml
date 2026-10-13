@@ -1,0 +1,7 @@
+id: 2
+slug: grand-hotel
+name: 2 - Grand Hotel
+type: http
+port: 5000
+subdomain: chall02
+mem_limit: 256m

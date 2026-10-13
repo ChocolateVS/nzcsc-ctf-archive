@@ -1,0 +1,9 @@
+id: 1
+slug: unconfirmed-packet
+name: 1 - Unconfirmed Packet
+type: http
+port: 5000
+subdomain: chall01
+local_only: true
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 1 or unconfirmed-packet).

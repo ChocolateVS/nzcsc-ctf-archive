@@ -1,0 +1,7 @@
+id: 25
+slug: square-pad
+name: 25 - square pad
+type: tcp
+port: 1337
+tcp_port: 11025
+mem_limit: 256m

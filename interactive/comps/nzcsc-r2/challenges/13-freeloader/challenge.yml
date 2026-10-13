@@ -1,0 +1,8 @@
+id: 13
+slug: freeloader
+name: 13 - Freeloader
+type: tcp
+port: 1337
+tcp_port: 11013
+privileged: true
+mem_limit: 512m

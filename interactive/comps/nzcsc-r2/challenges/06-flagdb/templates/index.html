@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flag Search</title>
+<style>
+    body {
+        text-align: center;
+    }
+    h1, p, form, .debug-box, table {
+        margin: 0 0 20px 0;
+    }
+    form {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .debug-box {
+        display: inline-block;
+        border: 1px solid #999;
+        background: #f4f4f4;
+        padding: 10px 14px;
+        text-align: left;
+        font-family: monospace;
+        font-size: 13px;
+    }
+    table {
+        margin-left: auto;
+        margin-right: auto;
+    }
+</style>
+</head>
+<body>
+    <h1>Flag Search</h1>
+    <p>Enter a country to see its flag.</p>
+
+    <form method="get" action="/">
+        <input type="text" name="country" value="{{ country }}">
+        <button type="submit">Search</button>
+        <label>
+            <input type="checkbox" name="debug" value="1" {% if debug %}checked{% endif %}>
+            Debug
+        </label>
+    </form>
+
+    {% if debug and query %}
+    <br>
+    <div class="debug-box">{{ query }}</div>
+    {% endif %}
+
+    {% if results %}
+        <table border="1" cellpadding="6">
+            <tr><th>Country</th><th>Flag</th></tr>
+            {% for row in results %}
+            <tr>
+                <td>{{ row[1] }}</td>
+                <td style="font-size:16px">{{ row[2] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+</body>
+</html>

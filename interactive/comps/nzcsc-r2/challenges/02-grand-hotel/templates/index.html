@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Grand Hotel{% if not user %} — Check In{% endif %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <main class="card">
+{%- if user %}
+    <div class="badge">{% if user.is_admin %}MANAGEMENT{% else %}GUEST{% endif %}</div>
+    <h1>Welcome, {{ user.username }}</h1>
+    <p class="muted">You're checked in at The Grand Hotel.</p>
+
+    {% if user.is_admin %}
+      <section class="admin">
+        <h2>Management safe</h2>
+        <p>The safe is open.</p>
+        <code>{{ flag }}</code>
+      </section>
+    {% else %}
+      <section class="notice">
+        <h2>Guest information</h2>
+        <p>Your room is ready. Management areas are staff only.</p>
+        <p class="fine-print">In-room cookies are complimentary. Anything from the minibar will be charged to your room.</p>
+      </section>
+    {% endif %}
+
+    <form action="/logout" method="post">
+      <button class="secondary" type="submit">Check out</button>
+    </form>
+{%- else %}
+    <div class="badge">FRONT DESK</div>
+    <h1>The Grand Hotel</h1>
+    <p class="muted">Checking in? Leave your name at the front desk.</p>
+
+    {% if error %}
+      <p class="error">We couldn&#39;t read your room key. Please check in again.</p>
+    {% endif %}
+
+    <form action="/login" method="post">
+      <label for="username">Guest name</label>
+      <input id="username" name="username" maxlength="64" autocomplete="off" required autofocus>
+      <button type="submit">Check in</button>
+    </form>
+{%- endif %}
+  </main>
+</body>
+</html>

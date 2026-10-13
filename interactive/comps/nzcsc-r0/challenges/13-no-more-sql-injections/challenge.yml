@@ -1,0 +1,9 @@
+id: 13
+slug: no-more-sql-injections
+name: 13 - No More SQL Injections
+type: http
+port: 5000
+subdomain: chall13
+local_only: true
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 13 or no-more-sql-injections).

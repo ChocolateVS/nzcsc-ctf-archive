@@ -1,0 +1,7 @@
+id: 12
+slug: drm
+name: 12 - DRM
+type: http
+port: 5000
+subdomain: chall12
+mem_limit: 256m

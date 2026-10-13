@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DRM</title>
+
+<style>
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #14151c; color: #eee; min-height: 100vh;
+    display: flex; flex-direction: column;
+  }
+
+  main.deck {
+    flex: 1; display: flex; align-items: center; justify-content: center;
+    gap: 60px; padding: 40px 24px; flex-wrap: wrap;
+  }
+
+  .vinyl {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 10px solid;
+    border-color: var(--track-color);
+    background: transparent;
+    box-shadow: 0 10px 28px rgba(0,0,0,.45);
+    animation: spin 6s linear infinite paused;
+    --track-color: #2980b9;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .vinyl::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 6px;
+    height: 10px;
+    background: #14151c;
+    transform: translateX(-50%);
+  }
+
+  .vinyl::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--track-color);
+    transform: translate(-50%, -50%);
+  }
+
+  .turntable.playing .vinyl {
+    animation-play-state: running;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .turntable.playing .vinyl { animation-play-state: running; }
+  @keyframes spin { from { transform: rotate(0deg);} to { transform: rotate(360deg);} }
+
+  .track-info {
+    margin-top: 14px;
+    text-align: center;
+  }
+
+  .track-info .t {
+    font-size: 15px;
+    font-weight: 600;
+  }
+
+  .track-info .s {
+    font-size: 12px;
+    color: #8b8fb0;
+    margin-top: 2px;
+  }
+
+  .deck-controls {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  select {
+    background: #1e2030;
+    color: #eee;
+    border: 1px solid #2c2f45;
+    border-radius: 6px;
+    padding: 7px 8px;
+    font-size: 12px;
+  }
+
+  .transport-btn {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: #333333;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .transport-btn:hover {
+    background: #555555;
+  }
+
+  .crossfader-wrap {
+    text-align: center;
+    width: 160px;
+  }
+
+  #crossfader {
+    width: 100%;
+  }
+
+  .fader-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #666;
+    margin-top: 4px;
+  }
+
+  #status {
+    text-align: center;
+    font-size: 12px;
+    color: #e97575;
+    min-height: 16px;
+    padding-bottom: 16px;
+  }
+
+  input[type="range"] {
+    accent-color: #e7e7e7;
+  }
+
+
+</style>
+</head>
+<body>
+
+  <main class="deck">
+    <section class="turntable" id="deckA">
+      <div class="vinyl" id="coverA" style="--track-color: #5f94b7;"></div>
+      <div class="track-info">
+        <div class="t" id="titleA">Electric Silence</div>
+        <div class="s" id="subA">Elija K</div>
+      </div>
+      <div class="deck-controls">
+        <button class="transport-btn" id="playBtnA">▶</button>
+        <select id="selectA">
+          {% for t in tracks %}
+          <option value="{{ t.file }}" data-color="{{ t.color }}" data-title="{{ t.title }}" data-sub="{{ t.artist }}" {{ 'selected' if loop.index == 1 else '' }}>{{ t.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <audio id="audioA"></audio>
+    </section>
+
+    <div class="crossfader-wrap">
+      <input type="range" id="crossfader" min="0" max="100" value="50">
+      <div class="fader-labels"><span>A</span><span>B</span></div>
+    </div>
+
+    <section class="turntable" id="deckB">
+      <div class="vinyl" id="coverB" style="--track-color: #cb7033;"></div>
+      <div class="track-info">
+        <div class="t" id="titleB">Drive Into Summer</div>
+        <div class="s" id="subB">Pumpupthemind</div>
+      </div>
+      <div class="deck-controls">
+        <button class="transport-btn" id="playBtnB">▶</button>
+        <select id="selectB">
+          {% for t in tracks %}
+          <option value="{{ t.file }}" data-color="{{ t.color }}" data-title="{{ t.title }}" data-sub="{{ t.artist }}" {{ 'selected' if loop.index == 2 else '' }}>{{ t.title }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <audio id="audioB"></audio>
+    </section>
+  </main>
+
+  <div id="status"></div>
+
+<script src="static/drm.js"></script>
+<script src="static/playback.js"></script>
+
+</body>
+</html>

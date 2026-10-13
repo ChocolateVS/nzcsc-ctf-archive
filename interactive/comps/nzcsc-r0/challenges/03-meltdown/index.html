@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Core Log</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="console-header">
+  <div class="header-row">
+    <div class="header-meta">
+      <span>CORE-TEMP-LOG</span>
+      <span>RECORDS: 1000</span>
+    </div>
+  </div>
+</header>
+
+<nav class="tabstrip" id="tabstrip">
+  
+  <div class="tab active" data-field="pressure" role="button" tabindex="0">
+    <span class="tab-label">Pressure</span>
+    <span class="tab-unit">kPa</span>
+  </div>
+  
+  <div class="tab " data-field="flow" role="button" tabindex="0">
+    <span class="tab-label">Coolant Flow</span>
+    <span class="tab-unit">LPM</span>
+  </div>
+  
+  <div class="tab " data-field="temp" role="button" tabindex="0">
+    <span class="tab-label">Core Temp</span>
+    <span class="tab-unit">°F/°C</span>
+  </div>
+  
+  <div class="tab " data-field="pump" role="button" tabindex="0">
+    <span class="tab-label">Pump Speed</span>
+    <span class="tab-unit">RPM</span>
+  </div>
+  
+</nav>
+
+<main class="panel">
+  <div class="panel-toolbar">
+    <span class="row-count" id="rowCount">0 / 1000 rows</span>
+  </div>
+
+  <table class="log-table">
+    <thead>
+      <tr>
+        <th class="col-ts">TIMESTAMP</th>
+        <th class="col-tag">TAG</th>
+        <th class="col-val" id="valueHeader" title="F/C">VALUE</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+    </tbody>
+  </table>
+
+  <div class="load-more-row">
+    <button id="loadMoreBtn" class="load-more-btn">LOAD NEXT 100</button>
+    <span id="doneMsg" class="done-msg" hidden> - CORE OVERHEAT: LOGGING OFFLINE - </span>
+  </div>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>

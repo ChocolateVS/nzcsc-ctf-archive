@@ -1,0 +1,8 @@
+id: 12
+slug: print2win
+name: 12 - Print2Win
+type: tcp
+port: 1337
+tcp_port: 10012
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 12 or print2win).

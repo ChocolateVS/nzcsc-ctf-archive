@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Private JWT Resolver</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="card">
+        <h1>Token Claim Resolver</h1>
+        <p class="subtitle">Generate, decode, and resolve pJWTs.</p>
+
+        <div class="tabs-wrap">
+            <input type="radio" name="tabswitch" id="tab-generate" class="tab-radio" {% if active == 'generate' %}checked{% endif %}>
+            <input type="radio" name="tabswitch" id="tab-decode" class="tab-radio" {% if active == 'decode' %}checked{% endif %}>
+            <input type="radio" name="tabswitch" id="tab-resolve" class="tab-radio" {% if active == 'resolve' %}checked{% endif %}>
+
+            <div class="tab-buttons">
+                <label for="tab-generate">Generate JWT</label>
+                <label for="tab-decode">Decode JWT</label>
+                <label for="tab-resolve">Resolve Claims</label>
+            </div>
+
+            <div class="tab-panels">
+
+                <section class="panel" id="panel-generate">
+                    <h3>Generate a JWT</h3>
+                    <p class="hint">Generate a JWT signed by the server. Claims marked as private will be converted to variables that can only be rendered by the server. </p>
+
+                    
+                    
+                    
+
+                    <form method="POST" action="/" id="generate-form">
+                        <input type="hidden" name="action" value="generate">
+                        <label>Username</label>
+                        <input name="username" placeholder="e.g. admin" value="{{ username }}">
+
+                        <label>Claims</label>
+                        <div id="claim-rows">
+                            {% for c in claims %}
+                            <div class="claim-row">
+                                <input type="hidden" name="claim_row_id" value="{{ c.id }}">
+                                <input name="claim_name" class="claim-name" placeholder="claim name" value="{{ c.name }}">
+                                <input name="claim_value" class="claim-value" placeholder="claim value" value="{{ c.value }}">
+                                <label class="private-toggle">
+                                    <input type="checkbox" name="claim_private" value="{{ c.id }}" {% if c.private %}checked{% endif %}>
+                                    Private
+                                </label>
+                                <button type="button" class="remove-row" onclick="removeClaimRow(this)">&times;</button>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <button type="button" id="add-claim-row" class="secondary">+ Add claim</button>
+                        <button type="submit">Generate</button>
+                    </form>
+
+                    {% if gen_error %}<div class="error">{{ gen_error }}</div>{% endif %}
+
+                    {% if gen_token %}
+                        
+                        <label>Token</label>
+                        <textarea readonly rows="6" class="output">{{ gen_token }}</textarea>
+                    {% endif %}
+                </section>
+
+                <script>
+                    (function () {
+                        var container = document.getElementById('claim-rows');
+                        var addBtn = document.getElementById('add-claim-row');
+                        if (!container || !addBtn) return;
+                        var counter = container.querySelectorAll('.claim-row').length;
+
+                        addBtn.addEventListener('click', function () {
+                            counter += 1;
+                            var rowId = 'new-' + counter;
+                            var row = document.createElement('div');
+                            row.className = 'claim-row';
+                            row.innerHTML =
+                                '<input type="hidden" name="claim_row_id" value="' + rowId + '">' +
+                                '<input name="claim_name" class="claim-name" placeholder="claim name">' +
+                                '<input name="claim_value" class="claim-value" placeholder="claim value">' +
+                                '<label class="private-toggle"><input type="checkbox" name="claim_private" value="' + rowId + '"> Private</label>' +
+                                '<button type="button" class="remove-row" onclick="removeClaimRow(this)">&times;</button>';
+                            container.appendChild(row);
+                        });
+                    })();
+
+                    function removeClaimRow(btn) {
+                        var row = btn.closest('.claim-row');
+                        if (row) row.remove();
+                    }
+                </script>
+
+                <section class="panel" id="panel-decode">
+                    <h3>Decode a JWT</h3>
+                    <p class="hint">Paste any token to inspect its header and payload. Signature is not verified.</p>
+                    <form method="POST" action="/">
+                        <input type="hidden" name="action" value="decode">
+                        <label>Token</label>
+                        <textarea name="token" rows="5" placeholder="eyJhbGciOi...">{{ decode_token }}</textarea>
+                        <button type="submit">Decode</button>
+                    </form>
+
+                    {% if decode_error %}
+                        <div class="error">{{ decode_error }}</div>
+                    {% endif %}
+
+                    {% if decode_result %}
+                        
+                        <label>Header</label>
+                        <textarea readonly rows="6" class="output">{{ decode_header }}</textarea>
+                        <label>Payload</label>
+                        <textarea readonly rows="6" class="output">{{ decode_payload }}</textarea>
+                    {% endif %}
+                </section>
+
+                <section class="panel" id="panel-resolve">
+                    <h3>Resolve Claims</h3>
+                    <p class="hint">Paste a token to resolve its claims. A valid signature is required to resolve private claims.</p>
+                    <form method="POST" action="/">
+                        <input type="hidden" name="action" value="resolve">
+                        <label>Token</label>
+                        <textarea name="token" rows="5" placeholder="eyJhbGciOi...">{{ resolve_token }}</textarea>
+                        <button type="submit">Resolve</button>
+                    </form>
+
+                    {% if resolve_error %}
+                        <div class="error">{{ resolve_error }}</div>
+                    {% endif %}
+
+                    {% if resolve_rows %}
+                        
+
+                        <label>Resolved claims</label>
+                        <table class="claim-table">
+                            <thead><tr><th>Claim</th><th>Value</th><th></th></tr></thead>
+                            <tbody>
+                            {% for r in resolve_rows %}
+                                <tr>
+                                    <td>{{ r.name }}</td>
+                                    <td class="mono">{{ r.value }}</td>
+                                    <td>{% if r.private %}<span class="badge">private</span>{% endif %}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    {% endif %}
+                </section>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

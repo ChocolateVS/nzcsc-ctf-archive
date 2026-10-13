@@ -1,0 +1,11 @@
+id: 0                 # <-- set to the CTFd challenge id
+slug: example-api
+name: Example API
+type: http            # http | static | tcp | files
+port: 5000            # the port app.py listens on
+# subdomain: chall00  # default is chall<zero-padded id> -> chall00.ctf.int.rowansserver.com
+local_only: true      # only reachable from the LAN (LOCAL_CIDRS in config.env)
+# flag: NZCSC{...}    # prefer putting the flag in comps/<comp>/flags.env instead
+# env: { DIFFICULTY: hard }
+# read_only: true
+# mem_limit: 256m

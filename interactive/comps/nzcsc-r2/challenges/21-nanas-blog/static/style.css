@@ -1,0 +1,93 @@
+:root {
+    --bg: #ffffff;
+    --fg: #1e1e1e;
+    --accent: #3858e9;
+    --muted: #646970;
+    --border: #e0e0e0;
+}
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: Manrope, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: var(--fg);
+    background: var(--bg);
+    line-height: 1.6;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.skip-link { position: absolute; left: -9999px; }
+
+.site-header, .site-footer {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.site-header { border-bottom: 1px solid var(--border); }
+.site-footer { border-top: 1px solid var(--border); margin-top: 4rem; color: var(--muted); }
+.wp-block-site-title { font-size: 1.4rem; font-weight: 700; margin: 0; }
+.wp-block-site-title a { color: var(--fg); }
+
+.wp-block-navigation__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.wp-block-navigation-item a { color: var(--fg); }
+
+main.site-main {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+}
+.hero h1 { font-size: 2.6rem; margin: 0 0 .5rem; }
+.hero-tagline { font-size: 1.2rem; color: var(--muted); }
+.posts-list { margin-top: 3rem; }
+.no-posts { color: var(--muted); font-style: italic; }
+.blog-sidebar {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+input[type=search], input[type=text], input[type=password] {
+    padding: .5rem .75rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font: inherit;
+}
+button, .submit input {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background: var(--accent);
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+/* wp-login */
+body.login { background: #f0f0f1; }
+#login { width: 320px; margin: 8% auto 0; }
+#login .login-logo { text-align: center; }
+#login form {
+    background: #fff;
+    border: 1px solid #c3c4c7;
+    padding: 26px 24px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+#login label { display: block; margin-bottom: .4rem; }
+#login input[type=text], #login input[type=password] { width: 100%; margin-bottom: 1rem; }
+#login p { margin: 0 0 1rem; }
+
+.error-404 h1 { font-size: 2.2rem; }

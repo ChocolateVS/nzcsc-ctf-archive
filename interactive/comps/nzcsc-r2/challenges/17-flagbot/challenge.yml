@@ -1,0 +1,10 @@
+id: 17
+slug: flagbot
+name: 17 - FlagBot
+type: http
+port: 5000
+subdomain: chall17
+mem_limit: 256m
+# Flag is read from $FLAG, else flag.txt, by app.py and embedded in the bot's
+# hidden system prompt. Edit challenges/17-flagbot/flag.txt to set the real
+# flag; placeholder for now.

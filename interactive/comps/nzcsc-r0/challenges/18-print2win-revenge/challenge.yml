@@ -1,0 +1,8 @@
+id: 18
+slug: print2win-revenge
+name: 18 - Print2Win Revenge
+type: tcp
+port: 1337
+tcp_port: 10018
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 18 or print2win-revenge).

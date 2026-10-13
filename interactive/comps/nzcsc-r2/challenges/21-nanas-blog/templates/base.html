@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="WordPress {{ wp_version }}">
+    <title>{% block title %}{{ site_title }}{% endblock %}</title>
+    <link rel="alternate" type="application/rss+xml" title="{{ site_title }} &raquo; Feed" href="{{ site_url }}/?feed=rss2">
+    <link rel="alternate" type="application/rss+xml" title="{{ site_title }} &raquo; Comments Feed" href="{{ site_url }}/?feed=comments-rss2">
+    <link rel="https://api.w.org/" href="{{ site_url }}/index.php?rest_route=/">
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{ site_url }}/xmlrpc.php?rsd">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="wp-singular blog wp-theme-twentytwentyfive">
+    <a class="skip-link screen-reader-text" href="#main">Skip to content</a>
+    <header class="wp-block-template-part site-header">
+        <div class="site-branding">
+            <p class="wp-block-site-title"><a href="{{ site_url }}">{{ site_title }}</a></p>
+        </div>
+        <nav class="wp-block-navigation" aria-label="Primary">
+            <ul class="wp-block-navigation__container">
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=2">Blog</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=3">About</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=4">FAQs</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?author=1">Authors</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=5">Events</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=6">Shop</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=7">Patterns</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=8">Themes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main" class="wp-block-group site-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="wp-block-template-part site-footer">
+        <p class="wp-block-site-title"><a href="{{ site_url }}">{{ site_title }}</a></p>
+        <nav class="wp-block-navigation" aria-label="Footer">
+            <ul class="wp-block-navigation__container">
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=2">Blog</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=3">About</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?page_id=4">FAQs</a></li>
+                <li class="wp-block-navigation-item"><a href="{{ site_url }}/?author=1">Authors</a></li>
+            </ul>
+        </nav>
+        <p class="theme-credit">Designed with <a href="https://wordpress.org">WordPress</a></p>
+    </footer>
+</body>
+</html>

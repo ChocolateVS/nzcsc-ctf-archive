@@ -1,0 +1,7 @@
+id: 1
+slug: nzcsc-connections
+name: 1 - NZCSC Connections
+type: http
+port: 5000
+subdomain: chall01
+mem_limit: 256m

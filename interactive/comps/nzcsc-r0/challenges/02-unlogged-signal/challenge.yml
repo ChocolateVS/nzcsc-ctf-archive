@@ -1,0 +1,9 @@
+id: 2
+slug: unlogged-signal
+name: 2 - Unlogged Signal
+type: http
+port: 5000
+subdomain: chall02
+local_only: true
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 2 or unlogged-signal).

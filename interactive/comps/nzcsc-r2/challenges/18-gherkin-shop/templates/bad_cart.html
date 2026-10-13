@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Damaged Cart — Gherkin Shop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🥒 Cart Damaged in Transit</h1>
+  <div class="error">
+    <p>The shopkeeper inspects your cart and frowns.</p>
+    <p><em>"This cart is beyond repair."</em></p>
+    <pre>{{ error }}</pre>
+  </div>
+  <p><a href="{{ url_for('index') }}">Start a fresh cart</a></p>
+</body>
+</html>

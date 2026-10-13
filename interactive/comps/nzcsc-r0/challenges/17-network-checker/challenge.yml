@@ -1,0 +1,9 @@
+id: 17
+slug: network-checker
+name: 17 - Network Checker
+type: http
+port: 5000
+subdomain: chall17
+local_only: true
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 17 or network-checker).

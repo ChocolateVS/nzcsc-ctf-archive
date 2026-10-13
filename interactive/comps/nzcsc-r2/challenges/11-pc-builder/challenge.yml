@@ -1,0 +1,12 @@
+id: 11
+slug: pc-builder
+name: 11 - PC Builder
+type: http
+port: 5000
+subdomain: chall11
+mem_limit: 512m
+env:
+  SECRET_KEY: r2_pcbuilder_secret
+  ADMIN_PASSWORD: r2_admin_pw_change_me
+  BOT_TOKEN: r2_bot_token
+  FLAG: NZCSC{REPLACE_ME_pc-builder}

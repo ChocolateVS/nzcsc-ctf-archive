@@ -1,0 +1,9 @@
+id: 4
+slug: internal-api
+name: 4 - Internal API
+type: http
+port: 5000
+subdomain: chall04
+local_only: true
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 4 or internal-api).

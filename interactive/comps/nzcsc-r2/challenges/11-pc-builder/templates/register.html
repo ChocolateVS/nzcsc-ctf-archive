@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Register{% endblock %}
+{% block content %}
+  <h1>Create an account</h1>
+  <form method="POST" class="card form" action="{{ url_for('register') }}">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    <label>Username
+      <input type="text" name="username" pattern="[A-Za-z0-9_]{3,20}" required autofocus>
+    </label>
+    <label>Password
+      <input type="password" name="password" minlength="8" required>
+    </label>
+    <button type="submit">Register</button>
+  </form>
+  <p>We're offering a $1,500 joining bonus, it should be enough to get you started.</p>
+{% endblock %}

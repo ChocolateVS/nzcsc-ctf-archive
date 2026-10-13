@@ -1,0 +1,7 @@
+id: 0
+slug: example-nc
+name: Example nc Service
+type: tcp
+port: 1337            # port service.py listens on inside the container
+tcp_port: 10000       # host port players connect to:  nc <server-ip> 10000  (default 10000+id)
+# flag: NZCSC{...}    # prefer flags.env

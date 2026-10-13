@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Your Cart — Gherkin Shop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🥒 Your Cart</h1>
+  {% if load_error %}
+  <div class="error">
+    <strong>⚠ Your cart was damaged in transit!</strong>
+    <p>The shopkeeper squints at it: <em>"{{ load_error }}"</em></p>
+    <p class="hint">Maybe the cart references something this shop doesn't stock...</p>
+  </div>
+  {% endif %}
+  {% if lines %}
+  <table>
+    <tr><th>Item</th><th>Price</th><th>Qty</th><th>Subtotal</th></tr>
+    {% for name, price, qty, subtotal in lines %}
+    <tr>
+      <td>{{ name }}</td>
+      <td>${{ "%.2f"|format(price) }}</td>
+      <td>{{ qty }}</td>
+      <td>${{ "%.2f"|format(subtotal) }}</td>
+    </tr>
+    {% endfor %}
+    <tr><td colspan="3"><strong>Total</strong></td><td><strong>${{ "%.2f"|format(total) }}</strong></td></tr>
+  </table>
+  {% else %}
+  <p>Your cart is empty.</p>
+  {% endif %}
+  <p>
+    <a href="{{ url_for('index') }}">Keep shopping</a>
+  </p>
+</body>
+</html>

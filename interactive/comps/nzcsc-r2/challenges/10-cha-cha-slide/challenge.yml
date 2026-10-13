@@ -1,0 +1,7 @@
+id: 10
+slug: cha-cha-slide
+name: 10 - cha cha slide
+type: tcp
+port: 1337
+tcp_port: 11010
+mem_limit: 256m

@@ -1,0 +1,8 @@
+id: 8
+slug: tuitoc
+name: 8 - Tuitoc
+type: tcp
+port: 1337
+tcp_port: 10008
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 8 or tuitoc).

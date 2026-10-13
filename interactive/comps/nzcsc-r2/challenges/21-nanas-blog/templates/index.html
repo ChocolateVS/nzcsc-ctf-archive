@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+    <section class="wp-block-group hero">
+        <h1 class="wp-block-heading">Welcome to {{ site_title }}</h1>
+        <p class="hero-tagline">Slow and steady stories from the pond. A cosy little blog run by the family.</p>
+    </section>
+
+    <section class="wp-block-query posts-list">
+        <h2 class="wp-block-heading">Latest posts</h2>
+        <p class="no-posts">There are no public posts yet. Check back soon &mdash; Nana is still writing.</p>
+    </section>
+
+    <aside class="wp-block-group blog-sidebar">
+        <div class="wp-block-search">
+            <form role="search" method="get" action="{{ site_url }}/">
+                <label>Search</label>
+                <input type="search" name="s" placeholder="Search&hellip;">
+                <button type="submit">Search</button>
+            </form>
+        </div>
+        <div class="wp-block-categories">
+            <h3 class="wp-block-heading">Categories</h3>
+            <ul><li><a href="{{ site_url }}/?cat=1">Uncategorized</a> (1)</li></ul>
+        </div>
+    </aside>
+{% endblock %}

@@ -1,0 +1,8 @@
+id: 15
+slug: pycraft
+name: 15 - PyCraft
+type: tcp
+port: 1337
+tcp_port: 10015
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 15 or pycraft).

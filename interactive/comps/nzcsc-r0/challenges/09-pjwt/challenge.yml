@@ -1,0 +1,9 @@
+id: 9
+slug: pjwt
+name: 9 - pJWT
+type: http
+port: 5000
+subdomain: chall09
+local_only: true
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 9 or pjwt).

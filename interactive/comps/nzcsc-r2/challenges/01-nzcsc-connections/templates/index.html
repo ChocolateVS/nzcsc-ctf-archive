@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NZCSC Connections</title>
+<style>
+  body{
+    font-family:system-ui,sans-serif;
+    background:#fafafa;
+    color:#222;
+    max-width:560px;
+    margin:0 auto;
+    padding:16px;
+    text-align:center;
+  }
+
+  h1{
+    margin:8px 0;
+  }
+
+  #status{
+    min-height:1.5em;
+    margin:8px 0;
+    font-weight:600;
+  }
+
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:8px;
+  }
+
+  .tile,.row{
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    min-height:64px;
+    padding:4px;
+    font-weight:700;
+    font-size:.85rem;
+    text-transform:uppercase;
+    word-break:break-word;
+  }
+
+  .tile{
+    background:#e8e6dc;
+    border:2px solid transparent;
+    cursor:pointer;
+    user-select:none;
+  }
+
+  .tile.sel{
+    background:#444;
+    color:#fff;
+  }
+
+  .row{
+    grid-column:1/-1;
+    flex-direction:column;
+    color:#222;
+    text-transform:none;
+  }
+
+  .row small{
+    font-weight:400;
+  }
+
+  .c0{
+    background:#f9df6d;
+  }
+  .c1{
+    background:#a0c35a;
+  }
+  .c2{
+  background:#b0c4ef;
+    }
+  .c3{
+    background:#ba81c5;
+  }
+
+  button{
+    font-size:1rem;
+    padding:8px 16px;
+    margin:12px 4px;
+    border:1px solid #333;
+    border-radius:20px;
+    background:#fff;
+    cursor:pointer;
+  }
+
+  button:disabled{
+    opacity:.4;
+    cursor:default;
+  }
+
+  .flag{
+    font-family:monospace;
+    font-size:1.2rem;
+    background:#343434;
+    color:#fff;
+    padding:12px;
+    border-radius:6px;
+    margin:12px 0;
+  }
+
+</style>
+</head><body>
+<h1>NZCSC Connections</h1>
+<div id="progress"></div>
+<div id="status"></div>
+<div class="grid" id="grid"></div>
+<div id="controls">
+  <button id="shuffle">Shuffle</button>
+  <button id="clear">Deselect</button>
+  <button id="submit" disabled>Submit</button>
+</div>
+<div id="end"></div>
+<script>
+  let state, sel = new Set(), locked = false, order = 0;
+  const $ = id => document.getElementById(id);
+  const api = (url, method = 'GET', body) => fetch(url, { method, headers: { 'Content-Type': 'application/json' }, body: body && JSON.stringify(body) }).then(r => r.json());
+  const row = (g, i) => `<div class="row c${i}"><b>${g.name}</b><small>${g.words.join(', ')}</small></div>`;
+
+  function render() {
+    $('progress').textContent = `Game ${state.game} of ${state.total}`;
+    $('grid').innerHTML = state.solved.map(row).join('') + state.words.map(w => `<div class="tile ${sel.has(w) ? 'sel' : ''}" data-w="${w.replace(/"/g, '&quot;')}">${w}</div>`).join('');
+    document.querySelectorAll('.tile').forEach(t => t.onclick = () => {
+      if (locked) return;
+      const w = t.dataset.w;
+      sel.has(w) ? sel.delete(w) : sel.size < 4 && sel.add(w);
+      render();
+    });
+
+    $('submit').disabled = sel.size !== 4 || locked;
+  }
+
+  function showEnd(msg, label, onClick) {
+    locked = true; $('controls').style.display = 'none';
+    $('end').innerHTML = `${msg}<br><button id="again">${label}</button>`;
+    $('again').onclick = async () => {
+      $('end').innerHTML = ''; $('controls').style.display = ''; $('status').textContent = '';
+      sel.clear(); locked = false;
+      state = await onClick();
+      render();
+    };
+  }
+  const showRestart = msg => showEnd(msg, 'Start New Run', () => api('/api/new', 'POST'));
+  const showNext = () => showEnd('', 'Next Game', () => api('/api/next', 'POST'));
+
+  $('shuffle').onclick = () => { state.words.sort(() => Math.random() - .5); render(); };
+  $('clear').onclick = () => { sel.clear(); render(); };
+
+  $('submit').onclick = async () => {
+    const r = await api('/api/guess', 'POST', { words: [...sel] });
+
+    if (r.error) { 
+      $('status').textContent = r.error; return; 
+    }
+
+    if (r.status === 'correct') { 
+      $('status').textContent = 'Correct!'; state = r.state; sel.clear(); render(); 
+    }
+
+    else if (r.status === 'game_complete') {
+      sel.clear();
+      state.solved = r.solved; state.words = [];
+      render();
+      $('status').textContent = 'Nice one! You won this one.';
+      showNext();
+    }
+    
+    else if (r.status === 'failed') {
+      $('status').textContent = 'Uh oh, that wasn\'t it, back to square one.';
+      showRestart('');
+    } 
+    
+    else if (r.status === 'won') {
+      $('grid').innerHTML = r.solved.map(row).join('');
+      $('status').textContent = 'Congrats you won three in a row!';
+      showRestart(`<div class="flag">${r.flag}</div>`);
+    }
+  };
+
+    api('/api/game').then(s => {state = s; render(); if (state.words.length === 0) showNext();});
+  
+</script></body></html>

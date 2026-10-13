@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gherkin Shop</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🥒 Gherkin Shop</h1>
+  <p class="tagline">Finest pickles this side of the brine. Your cart is kept safe with us — take it with you wherever you go!</p>
+  <table>
+    <tr><th>Product</th><th>Price</th><th></th></tr>
+    {% for name, price in products %}
+    <tr>
+      <td>{{ name }}</td>
+      <td>${{ "%.2f"|format(price) }}</td>
+      <td>
+        <form method="post" action="{{ url_for('add') }}">
+          <input type="hidden" name="name" value="{{ name }}">
+          <input type="number" name="qty" value="1" min="1" max="99">
+          <button type="submit">Add</button>
+        </form>
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  <p><a href="{{ url_for('view_cart') }}">View cart</a></p>
+</body>
+</html>

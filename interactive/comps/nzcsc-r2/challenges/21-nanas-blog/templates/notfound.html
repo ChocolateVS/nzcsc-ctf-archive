@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Page not found &#8211; {{ site_title }}{% endblock %}
+{% block content %}
+    <section class="wp-block-group error-404">
+        <h1 class="wp-block-heading">Page not found</h1>
+        <p>The page you are looking for doesn&#039;t exist, or it has been moved. Please try searching using the form below.</p>
+        <form role="search" method="get" action="{{ site_url }}/">
+            <input type="search" name="s" placeholder="Search&hellip;">
+            <button type="submit">Search</button>
+        </form>
+    </section>
+{% endblock %}

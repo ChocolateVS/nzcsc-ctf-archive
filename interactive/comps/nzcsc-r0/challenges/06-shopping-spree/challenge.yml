@@ -1,0 +1,9 @@
+id: 6
+slug: shopping-spree
+name: 6 - Shopping Spree
+type: http
+port: 5000
+subdomain: chall06
+local_only: true
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 6 or shopping-spree).

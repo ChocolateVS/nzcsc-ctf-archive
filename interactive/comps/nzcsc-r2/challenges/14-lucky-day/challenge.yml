@@ -1,0 +1,7 @@
+id: 14
+slug: lucky-day
+name: 14 - lucky day
+type: tcp
+port: 1337
+tcp_port: 11014
+mem_limit: 256m

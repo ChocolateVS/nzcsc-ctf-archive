@@ -1,0 +1,279 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #595959;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    margin: 0;
+    padding: 4vh 1rem;
+}
+
+.card {
+    background: #0000006b;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.153);
+    width: 100%;
+    max-width: 760px;
+    color: #fffce8;
+}
+
+h1, h3 {
+    margin-top: 0;
+    text-align: center;
+    color: #fffce8;
+}
+
+.subtitle {
+    text-align: center;
+    margin-top: -0.5rem;
+    margin-bottom: 1.5rem;
+    color: #d8d5bd;
+    font-size: 0.9rem;
+}
+
+.hint {
+    color: #d8d5bd;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+.hint code {
+    background: #00000055;
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin: 10px 0 4px;
+    color: #d8d5bd;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 0 0 4px;
+    border-radius: 6px;
+    border: none;
+    background: #fffce8;
+    color: #2f2f2f;
+    font-family: inherit;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+textarea.output, .output {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.85rem;
+    background: #b6b4b4;
+    color: #1a1a1a;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0 4px;
+    border: none;
+    border-radius: 6px;
+    background: #fffce8;
+    color: #1a1a1a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+button:hover {
+    background: #d8d5bd;
+}
+
+.claim-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 4px;
+}
+
+.claim-row .claim-name {
+    flex: 0 0 30%;
+    margin: 0;
+}
+
+.claim-row .claim-value {
+    flex: 1 1 auto;
+    margin: 0;
+}
+
+.private-toggle {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    flex: 0 0 auto;
+    white-space: nowrap;
+    font-size: 0.75rem;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: normal;
+    color: #d8d5bd;
+    margin: 0;
+}
+
+.private-toggle input {
+    width: auto;
+    margin: 0;
+}
+
+.remove-row {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    border-radius: 6px;
+    background: #ffffff22;
+    color: #fffce8;
+}
+
+.remove-row:hover {
+    background: #f8d7da;
+    color: #842029;
+}
+
+button.secondary {
+    background: transparent;
+    border: 1px dashed #ffffff55;
+    color: #d8d5bd;
+    margin-top: 4px;
+    margin-bottom: 14px;
+}
+
+button.secondary:hover {
+    background: #ffffff14;
+    color: #fffce8;
+}
+
+.claim-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0 4px;
+    font-size: 0.85rem;
+}
+
+.claim-table th, .claim-table td {
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1px solid #ffffff22;
+    color: #fffce8;
+}
+
+.claim-table th {
+    color: #d8d5bd;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.03em;
+}
+
+.claim-table td.mono {
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    word-break: break-all;
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: #f8d7da;
+    color: #842029;
+    font-size: 0.7rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.error {
+    background: #f8d7da;
+    color: #842029;
+    border: 1px solid #f5c2c7;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+    text-align: center;
+}
+
+
+.tabs-wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-radio {
+    display: none;
+}
+
+.tab-buttons {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px solid #ffffff33;
+}
+
+.tab-buttons label {
+    flex: 1;
+    text-align: center;
+    padding: 10px 8px;
+    margin: 0;
+    text-transform: none;
+    letter-spacing: normal;
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #d8d5bd;
+    background: transparent;
+    border-radius: 8px 8px 0 0;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-bottom: none;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.tab-buttons label:hover {
+    background: #ffffff14;
+    color: #fffce8;
+}
+
+.tab-panels {
+    position: relative;
+}
+
+.panel {
+    display: none;
+    animation: fade-in 0.15s ease;
+}
+
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#tab-generate:checked ~ .tab-buttons label[for="tab-generate"],
+#tab-decode:checked ~ .tab-buttons label[for="tab-decode"],
+#tab-resolve:checked ~ .tab-buttons label[for="tab-resolve"] {
+    background: #fffce8;
+    color: #1a1a1a;
+}
+
+#tab-generate:checked ~ .tab-panels #panel-generate,
+#tab-decode:checked ~ .tab-panels #panel-decode,
+#tab-resolve:checked ~ .tab-panels #panel-resolve {
+    display: block;
+}

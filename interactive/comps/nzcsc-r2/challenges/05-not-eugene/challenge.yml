@@ -1,0 +1,7 @@
+id: 5
+slug: not-eugene
+name: 5 - Not Eugene
+type: http
+port: 5000
+subdomain: chall05
+mem_limit: 256m

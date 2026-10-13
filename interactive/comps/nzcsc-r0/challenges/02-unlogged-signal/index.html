@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UNLOGGED SIGNAL :: CARTERTON INTERCEPT</title>
+<style>
+  :root{
+    --bg: #ffffff;
+    --panel: #ffffff;
+    --panel-edge: #ffffff;
+    --red: #0e0d0d;
+    --red-dark: #7a0000;
+    --gold: #B9750C;
+    --gold-dim: #8a6013;
+    --grey: #6a6a6a;
+    --text: #141414;
+  }
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    min-height: 100vh;
+    padding: 30px 16px 90px;
+    display:flex; flex-direction:column; align-items:center;
+  }
+
+  .wrap{ width:100%; max-width: 760px; }
+
+  header{ margin-bottom: 22px; border-bottom: 3px solid var(--red); padding-bottom: 16px; }
+  .tag{ font-size: 11px; letter-spacing: 2px; color: var(--grey); display:flex; justify-content:space-between; margin-bottom:10px; }
+  .tag .live{ color: var(--red); }
+  h1{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    font-size: clamp(22px, 5vw, 34px); letter-spacing: 0.5px; margin: 0 0 8px;
+    text-transform: uppercase; font-weight: 900;
+    color: var(--text);
+  }
+  h1 .accent{ color: var(--gold); }
+  .sub{ color: var(--grey); font-size: 13px; line-height:1.7; word-spacing: 1px;}
+  .sub p{ margin: 0;}
+  .sub {
+  text-align: justify;
+  hyphens: auto;
+}
+  .sub b{ color: var(--text); }
+
+  .panel{
+    background: var(--panel); border: 1px  solid #d8d8d8;; border-radius: 0;
+    padding: 18px; margin-bottom: 18px; position: relative;
+  }
+  .panel::before{
+    content: attr(data-label); position:absolute; top:-10px; left:14px;
+    background: var(--bg); padding: 0 8px; font-size: 10px; letter-spacing: 1px; color: var(--gold);
+    font-weight:700;
+  }
+
+  .briefing{ font-size: 12.5px; line-height: 1.8; color: var(--grey); word-spacing: 1px; letter-spacing: 0.5px; }
+  .briefing p{ margin: 0;}
+  .briefing b{ color: var(--red); }
+
+  .log{ display:flex; flex-direction:column; gap: 14px; }
+  .msg{ padding: 10px 12px; border-left: 3px solid var(--panel-edge); background: #fafafa; border-radius: 0; }
+  .msg.a{ border-left-color: var(--red); }
+  .msg.b{ border-left-color: var(--gold); }
+  .meta{ font-size: 10.5px; color: var(--grey); letter-spacing:1px; display:flex; justify-content:space-between; margin-bottom:4px; }
+  .msg.a .who{ color: var(--red); font-weight:700; }
+  .msg.b .who{ color: var(--gold); font-weight:700; }
+  .glyphline{ font-size: 22px; letter-spacing: 3px; color: var(--text); line-height: 1.9; word-break: break-word; }
+  .decodedline{
+    font-size: 13.5px; letter-spacing: 1.5px; color: var(--grey); line-height: 1.8;
+    margin-top: 4px; word-break: break-word; min-height: 1.6em;
+  }
+  .decodedline .flagword{ font-weight:700; }
+
+  .rosetta-intro{ font-size: 12px; color: var(--grey); margin-bottom: 14px; line-height:1.6; }
+  .rosetta-grid{ display:grid; grid-template-columns: repeat(auto-fill, minmax(58px, 1fr)); gap: 8px; }
+  .tile{
+    display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:5px;
+  justify-content:center;
+  background:#fafafa;
+  border:1px solid #d8d8d8;
+  border-radius:0;
+  padding:8px 4px;
+
+  }
+  .tile.locked{ border-color: var(--gold);  }
+  .tile .g{ font-size: 21px; color: var(--text); }
+  .tile input{
+    width: 34px; text-align:center; background: #ffffff; border: 1px solid var(--panel-edge); border-color: #0e0d0d;
+    color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    text-transform: uppercase;
+  }
+  .tile input:disabled{ color: var(--gold); border-color: var(--gold); }
+  .tile input:focus{ outline:none; border-color: var(--red); }
+
+  .footer{ margin-top: 20px; font-size: 10px; color: var(--panel-edge); text-align:center; letter-spacing:0.5px; line-height:1.6; }
+
+  @media (max-width: 420px){
+    .glyphline{ font-size: 19px; letter-spacing: 2px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="tag"><span class="live"></span><span>REGIONAL SIGNAL LOG // WAIRARAPA DISTRICT</span></div>
+    <h1>UNLOGGED <span class="accent">SIGNAL</span></h1>
+    <div class="sub">
+      <p>
+      On a recent Monday evening, Carterton's mayor was out walking his dogs around 8.30pm when he
+      spotted five or six oddly-behaved lights off toward South Wairarapa, roughly in the direction of
+      Featherston and the Western Lake. By his account they moved up and down, side to side, and on the
+      diagonal, fading in and out, hard to count, and clearly not an aircraft. His wife and daughter saw
+      them too. He posted about it on the local community noticeboard, and the thread took off 
+      well over a hundred comments ranging from alien-invasion theories to comets and drones. A local
+      astronomer offered the mundane read: Starlink satellites, low on the horizon, catching the last of
+      the sunset before slipping into Earth's shadow. A similar light spotted a few days earlier turned
+      out to be a rocket exhaust plume; a similar case the year before turned out to be a NASA research
+      balloon launched from W&#257;naka. None of it was ever formally confirmed either way. In the middle
+      of that same window, this exchange was picked up on an open frequency. It doesn't match any known
+      transmission format. Two voices, handles only. Make of it what you will.
+      </p>
+    </div>
+  </header>
+
+  <div class="panel" data-label="FIELD NOTE">
+    <div class="briefing">
+      <p><b>Log entry</b> : Capture begins in the same evening window as the sighting reports, while
+      the local noticeboard thread was still filling up with theories. A few people floated the idea that
+      it was the same kind of NASA balloon project that had passed through the region the year before, but
+      nobody with an actual answer weighed in either way. Whoever these two are, they were on air and
+      active while most of the district had its eyes on the sky. Below is the raw capture exactly as
+      recorded.
+      </p>
+    </div>
+  </div>
+
+  <div class="panel" data-label="SIGNAL CAPTURE">
+    <div class="log" id="chatLog"></div>
+  </div>
+
+  <div class="panel" data-label="WORKBENCH">
+    <div class="rosetta-intro">Each tile below is one symbol pulled from the capture. Assign a Latin letter to each and the decoded log above will update live. A few are already confirmed from pattern analysis.</div>
+    <div class="rosetta-grid" id="rosettaGrid"></div>
+  </div>
+
+
+</div>
+
+<script>
+  
+
+  const encodedLines = [
+    { who: "UNIT_7",  side: "a", t: "22:41", glyphs: "⟒⎐⟒⍀⊬⍜⋏⟒ ⍜⋏ ⏁⊑⟒ ⊑⟟⌰⌰ ⟟⌇ ⍙⏃⏁☊⊑⟟⋏☌ ⏁⊑⟒ ⌇☍⊬. ☌⍜⍜⎅ ⏁⟟⋔⟒ ⏁⍜ ⋔⍜⎐⟒." },
+    { who: "RELAY_K", side: "b", t: "22:43", glyphs: "☊⍜⌿⊬. ⋏⍜⏚⍜⎅⊬ ⟟⌇ ⌰⍜⍜☍⟟⋏☌ ⏃⏁ ⏁⊑⟒ ⋏⟒⏁⍙⍜⍀☍ ⏁⍜⋏⟟☌⊑⏁." },
+    { who: "UNIT_7",  side: "a", t: "22:47", glyphs: "⏁⊑⟒ ⌰⟟☌⊑⏁⌇ ⍙⟒⍀⟒ ⋏⟒⎐⟒⍀ ⍜⎍⍀⌇ ⏚⊬ ⏁⊑⟒ ⍙⏃⊬. ⍙⟒ ⟊⎍⌇⏁ ☌⍜⏁ ⌰⎍☊☍⊬ ⍙⟟⏁⊑ ⏁⊑⟒ ⏁⟟⋔⟟⋏☌." },
+    { who: "RELAY_K", side: "b", t: "22:49", glyphs: "⌰⎍☊☍⊬ ⍜⍀ ⋏⍜⏁ ⟟⏁ ⍙⍜⍀☍⟒⎅. ⌰⟒⏁ ⏁⊑⟒ ⍜⎎⎎⟟☊⟟⏃⌰⌇ ⏃⍀☌⎍⟒ ⏃⏚⍜⎍⏁ ⏚⏃⌰⌰⍜⍜⋏⌇ ⏃⋏⎅ ⍀⍜☊☍⟒⏁⌇." },
+    { who: "UNIT_7",  side: "a", t: "22:53", glyphs: "⏃☌⍀⟒⟒⎅. ☍⟒⟒⌿ ⏁⊑⟒ ☊⊑⏃⏁⏁⟒⍀ ⌇⊑⍜⍀⏁ ⏃⋏⎅ ⌇⏁⏃⊬ ⍜⎎⎎ ⏁⊑⟒ ☊⍜⋔⋔⍜⋏ ☊⊑⏃⋏⋏⟒⌰⌇." },
+    { who: "RELAY_K", side: "b", t: "22:58", glyphs: "⌇⊑⍜⍀⏁ ⍙⍜⍀⎅⌇ ⎎⟟⍀⌇⏁ ⍙⊑⟒⋏ ⊬⍜⎍ ⎅⟒☊⍜⎅⟒ ⏁⊑⟟⌇. ⎐⍜⍙⟒⌰⌇ ☌⟟⎐⟒ ⟟⏁ ⏃⍙⏃⊬ ⎎⏃⌇⏁." },
+    { who: "RELAY_K", side: "b", t: "23:04", glyphs: "⎅⍀⍜⌿ ⟟⌇ ☊⍜⋏⎎⟟⍀⋔⟒⎅. ⏁⍜⋏⟟☌⊑⏁'⌇ ☊⍜⎅⟒ ⟟⌇ ⋏⋉☊⌇☊{⋏0⏁-0⎎_⏁⊑⟟⌇-⍙0⍀⌰⎅}" },
+    { who: "UNIT_7",  side: "a", t: "23:07", glyphs: "☊⌰⟒⏃⋏. ☊⌰⍜⌇⟒ ⏁⊑⟒ ⌰⟟⋏☍ ⏃⋏⎅ ⌰⟒⏁ ⏁⊑⟒⋔ ☍⟒⟒⌿ ⍙⏃⏁☊⊑⟟⋏☌ ⏁⊑⟒ ⌇☍⊬." }
+  ];
+
+  
+  const LINE_TARGET_HASHES = [
+    "8c5fa967face0a6194c4d32ab49ac8581da30163a1211cb5dd3526fd79ab1584",
+    "e9cf890df1b509421253bf9e30087d7915222f8e177297393de69ec59587b4a8",
+    "04d62643843eee3bdacd3ace1424a0660f9412f1eb84d476ef58a98e738fe2af",
+    "6fab5870025ee3e1fdd17e9ba3f43c731e121cfaf59274534d896f3a8510382c",
+    "c5c1e570c502872221e9b5a398005822c2b4b71ab16c3d16f10016d44ed3d40f",
+    "1f5502648b7bcc42c36b8b41cb6f15b1604e4e8cecae36dff106c5efbeaad738",
+    "1b4d442e423980b67cc9f4551f1eb026838e7108968343c5eb2c49899082509c",
+    "d79e14f5380283c0351b0e71b5918967ce59667d6c7e19f843ddc567e85da2d2"
+  ];
+
+  // Four deliberate hints from "pattern analysis" — pre-filled and locked.
+  const HINTS = [
+    { glyph: "⏃", letter: "A" },
+    { glyph: "⍜", letter: "O" }
+  ];
+
+  const DISPLAY_GLYPHS = ["⏃","⍀","⌖","⋏","⌇","⎐","⌿","⎅","⍙","⟊","⏚","⍜","⌰","☍","⍾","⊬","⟟","☊","⟒","⎍","⊑","⎎","⏁","☌","⋉","⋔"];
+  const LETTER_GLYPH_SET = new Set(DISPLAY_GLYPHS);
+
+  function isLetterGlyph(ch){
+    return LETTER_GLYPH_SET.has(ch);
+  }
+
+  const guesses = {}; // literal glyph char -> letter the solver typed
+  HINTS.forEach(h => { guesses[h.glyph] = h.letter; });
+
+  // --- Build workbench grid ---------------------------------------------
+  const rosettaGrid = document.getElementById('rosettaGrid');
+  const hintGlyphs = new Set(HINTS.map(h => h.glyph));
+
+  DISPLAY_GLYPHS.forEach(g => {
+    const isLocked = hintGlyphs.has(g);
+    const tile = document.createElement('div');
+    tile.className = 'tile' + (isLocked ? ' locked' : '');
+
+    const glyphSpan = document.createElement('div');
+    glyphSpan.className = 'g';
+    glyphSpan.textContent = g;
+
+    const input = document.createElement('input');
+    input.maxLength = 1;
+    input.value = guesses[g] || '';
+    if (isLocked) input.disabled = true;
+
+    input.addEventListener('input', e => {
+      const v = e.target.value.toUpperCase().replace(/[^A-Z]/g, '');
+      e.target.value = v;
+      if (v) guesses[g] = v; else delete guesses[g];
+      renderLog();
+    });
+
+    tile.appendChild(glyphSpan);
+    tile.appendChild(input);
+    rosettaGrid.appendChild(tile);
+  });
+
+  // --- SHA-256 helper -----------------------------------------------------
+  async function sha256Hex(str){
+    const enc = new TextEncoder().encode(str);
+    const buf = await crypto.subtle.digest('SHA-256', enc);
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  // --- Render decoded log ---------------------------------------------
+  const logEl = document.getElementById('chatLog');
+
+  async function renderLog(){
+    logEl.innerHTML = '';
+    for (let i = 0; i < encodedLines.length; i++){
+      const l = encodedLines[i];
+      const msg = document.createElement('div');
+      msg.className = 'msg ' + l.side;
+
+      const meta = document.createElement('div');
+      meta.className = 'meta';
+      meta.innerHTML = `<span class="who">${l.who}</span><span>${l.t}</span>`;
+
+      const glyphline = document.createElement('div');
+      glyphline.className = 'glyphline';
+      glyphline.textContent = l.glyphs;
+
+      const decodedline = document.createElement('div');
+      decodedline.className = 'decodedline';
+
+      let html = '';
+      let assembled = '';
+      let complete = true;
+      for (const ch of l.glyphs) {
+        if (isLetterGlyph(ch)) {
+          const guess = guesses[ch];
+          if (guess) {
+            html += guess;
+            assembled += guess;
+          } else {
+            html += '_';
+            assembled += '_';
+            complete = false;
+          }
+        } else {
+          html += ch;
+          assembled += ch;
+        }
+      }
+
+      if (complete) {
+        const hash = await sha256Hex(assembled);
+        if (hash === LINE_TARGET_HASHES[i]) {
+          const flagMatch = assembled.match(/NZCSC\{[^}]*\}/);
+          if (flagMatch) {
+            html = html.replace(flagMatch[0], `<span class="flagword">${flagMatch[0]}</span>`);
+          }
+        }
+      }
+
+      decodedline.innerHTML = html;
+      msg.appendChild(meta);
+      msg.appendChild(glyphline);
+      msg.appendChild(decodedline);
+      logEl.appendChild(msg);
+    }
+  }
+
+  renderLog();
+</script>
+</body>
+</html>

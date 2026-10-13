@@ -1,0 +1,7 @@
+id: 24
+slug: quick-mafs
+name: 24 - Quick Mafs
+type: tcp
+port: 1337
+tcp_port: 11024
+mem_limit: 256m

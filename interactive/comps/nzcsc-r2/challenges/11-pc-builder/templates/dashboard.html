@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+  <h1>Welcome, {{ current_user.username }}</h1>
+
+  <div class="card">
+    <h2>Balance: ${{ "{:,}".format(current_user.balance) }}</h2>
+  </div>
+
+  {% if flag %}
+    <div class="card highlight">
+      <h2>Complimentary flag</h2>
+      <p class="flag">{{ flag }}</p>
+    </div>
+  {% elif current_user.has_build %}
+    <div class="card highlight">
+      <h2>You already completed a build.</h2>
+    </div>
+  {% endif %}
+
+  <div class="card">
+    <h2>Your price match requests</h2>
+    {% if my_requests %}
+      <table>
+        <thead>
+          <tr><th>#</th><th>Component</th><th>Claimed price</th><th>Proof URL</th><th>Status</th></tr>
+        </thead>
+        <tbody>
+          {% for r in my_requests %}
+            <tr>
+              <td>{{ r.id }}</td>
+              <td>{{ components.get(r.component, {}).get('label', r.component) }}</td>
+              <td>${{ "{:,}".format(r.claimed_price) }}</td>
+              <td class="truncate">{{ r.proof_url }}</td>
+              <td>{{ r.status }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p>You haven't submitted any price match requests yet.</p>
+    {% endif %}
+  </div>
+{% endblock %}

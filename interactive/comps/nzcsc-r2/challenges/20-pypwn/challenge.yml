@@ -1,0 +1,8 @@
+id: 20
+slug: pypwn
+name: 20 - PyPwn
+type: tcp
+port: 1337
+tcp_port: 11020
+privileged: true
+mem_limit: 512m

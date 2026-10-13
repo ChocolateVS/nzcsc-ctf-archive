@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>
+            World Clock
+        </title>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                document.getElementById('clock').src = `/clock?tz=${timezone}`
+            })
+        </script>
+    </head>
+
+    <body>
+        <iframe id="clock"></iframe>
+    </body>
+</html>

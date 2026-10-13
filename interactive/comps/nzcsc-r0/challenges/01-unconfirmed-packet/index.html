@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>NZCSC</title>
+<style>
+  :root{
+    --amber-1:#F2A93B;
+    --amber-2:#E9A331;
+    --navy:#1B1F3B;
+    --ink:#20233F;
+    --paper:#FFFFFF;
+    --accent:#8a6013;
+    --muted:#8B8FA3;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+  }
+  main{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(242,169,59,0.08), transparent 40%),
+      radial-gradient(circle at 80% 80%, rgba(27,31,59,0.05), transparent 40%);
+  }
+  .content{
+    width:100%;
+    max-width:760px;
+    padding:20px 32px 60px;
+  }
+  .eyebrow{
+    font-size:12px;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--accent);
+    margin-bottom:10px;
+  }
+  .content h1{
+    font-size:34px;
+    margin:0 0 14px;
+    color:var(--navy);
+    line-height:1.2;
+  }
+  .content p.lead{
+    font-size:16px;
+    line-height:1.6;
+    color:#43465F;
+    margin:0 0 30px;
+    max-width:90ch;
+    letter-spacing: 0.5px;
+    text-align:justify;      
+    text-justify:inter-word; 
+                
+  }
+  .stats{
+    display:flex;
+    gap:18px;
+    margin-bottom:34px;
+    flex-wrap:wrap;
+  }
+  .stat{
+    flex:1;
+    min-width:140px;
+    background:#FBF7EF;
+    border:1px solid #ECE2CC;
+    border-radius:8px;
+    padding:16px 18px;
+  }
+  .stat .num{
+    font-size:26px;
+    font-weight:800;
+    color:var(--navy);
+  }
+  .stat .label{
+    font-size:12px;
+    color:var(--muted);
+    text-transform:uppercase;
+    letter-spacing:0.5px;
+    margin-top:2px;
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+  .info-card{
+    border:1px solid #ECE7DE;
+    border-radius:8px;
+    padding:20px;
+    background:var(--paper);
+    
+  }
+  .info-card h2{
+    font-size:18px;
+    margin:0 0 8px;
+    color:var(--navy);
+  }
+  .info-card p{
+    font-size:16px;
+    color:var(--muted);
+    line-height:1.55;
+    margin:0;
+  }
+  @media (max-width:600px){
+    .cards{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<main>
+  <div class="content">
+    <div class="eyebrow">BENEATH THE PACIFIC</SOURCE></SOURCE></div>
+    <h1>Everything this country sends to the world runs through a cable.</h1>
+    <p class="lead">
+      Somewhere off the coast near Whenuapai, a fibre-optic cable comes up out of the sea and disappears into a small, unremarkable building. That cable is the Southern Cross Cable, one of the main lines carrying New Zealand's internet traffic to Australia, Fiji, Hawaii, and the US mainland. Every email, every video call, every website loaded from offshore travels down a strand of glass thinner than a hair, laid across thousands of kilometres of seabed.
+    </p>
+
+    <div class="stats">
+      <div class="stat">
+        <div class="num">30,500</div>
+        <div class="label">Km, Southern Cross Cable</div>
+      </div>
+      <div class="stat">
+        <div class="num">2000</div>
+        <div class="label">Year the original went live</div>
+      </div>
+      <div class="stat">
+        <div class="num">1</div>
+        <div class="label">Landing station, Whenuapai</div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="info-card">
+        <h2>The landing station</h2>
+        <p>The point where an ocean of cable becomes a building full of racks, easy to drive past without knowing what it does.</p>
+      </div>
+      <div class="info-card">
+        <h2>Repeaters</h2>
+        <p>Devices spaced along the cable's length that boost the signal so it survives thousands of kilometres of open ocean.</p>
+      </div>
+      <div class="info-card">
+        <h2>Southern Cross NEXT</h2>
+        <p>A newer line laid alongside the original, redundancy built in on purpose, so no single break can take the country offline.</p>
+      </div>
+      <div class="info-card">
+        <h2>The unconfirmed packet</h2>
+        <p>The original 1989 uplink logs show one transmission marked sent, with no matching record of it ever being received on the Hawaii end. It was never explained. It was never resent either.</p>
+      </div>
+    </div>
+
+    <div class="info-card" style="margin-top:16px;">
+      <h2>A note from the archivist</h2>
+      <p>Whatever that packet was, the log claims it left Waikato and simply never showed up anywhere official. Nobody closed the ticket. If it went anywhere, it would have to be somewhere this page never got around to showing, filed away rather than deleted. Worth a proper look, if you're the type who checks under things.</p>
+    </div>
+  </div>
+</main>
+
+<!--
+┌────────────────────────────────────────────┐
+│      UPLINK LOG - WAIKATO, APRIL 1989      │
+├────────────────────────────────────────────┤
+│  status: analogue link established         │
+│  route: waikato -> hawaii -> paccom (nasa) │
+│  outbound: 1 packet, sent, unconfirmed     │
+│  disposition: never resent, never deleted  │
+│  filed here instead                        │
+└────────────────────────────────────────────┘
+-->
+<pre style="display:none" id="internal-tree">
+nzcsc/
+├── ttl_b2a8e/
+│   ├── hdr_81367c/
+│   │   ├── byte_7af59/
+│   │   ├── pkt_1e655b/
+│   │   ├── route_cca09b/
+│   │   ├── retx_00e5f0/
+│   │   │   └── flag.txt
+│   │   └── syn_13988/
+│   ├── ack_78728/
+│   ├── frag_80ea2/
+│   ├── win_06430/
+│   └── win_a6d9841/
+├── flow_e3781/
+├── frame_d01fd/
+├── rtt_cc6ebb4/
+└── ttl_f8d053/
+</pre>
+
+</body>
+</html>

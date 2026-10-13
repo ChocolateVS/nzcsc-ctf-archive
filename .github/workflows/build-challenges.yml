@@ -1,0 +1,66 @@
+name: build-challenges
+
+# Builds every interactive challenge as a linux/amd64 image and pushes it to ECR,
+# so the on-demand challenge instance only ever PULLS (never builds) — keeping the
+# tiny instance fast and never OOMing on a build. Driven by interactive/aws/catalog.json.
+#
+# Required repo config (Settings -> Secrets and variables -> Actions -> Variables):
+#   AWS_CHAL_BUILD_ROLE_ARN   OIDC role with ecr push (tofu output chal_build_role_arn)
+#   AWS_REGION                ap-southeast-6
+#   ECR_REGISTRY              <acct>.dkr.ecr.ap-southeast-6.amazonaws.com
+#   ECR_REPO                  nzcsc-ctf-chal
+# Skips (goes green) until those are set.
+
+on:
+  push:
+    branches: [main]
+    paths: ["interactive/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  catalog:
+    runs-on: ubuntu-latest
+    if: ${{ vars.AWS_CHAL_BUILD_ROLE_ARN != '' }}
+    outputs:
+      matrix: ${{ steps.gen.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - id: gen
+        run: |
+          python3 interactive/aws/build_catalog.py > interactive/aws/catalog.json
+          # compact matrix: [{tag, context}]
+          M=$(python3 -c "import json;c=json.load(open('interactive/aws/catalog.json'));print(json.dumps({'include':[{'tag':e['image_tag'],'context':e['context']} for e in c]}))")
+          echo "matrix=$M" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: catalog
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix: ${{ fromJson(needs.catalog.outputs.matrix) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_CHAL_BUILD_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+      - uses: aws-actions/amazon-ecr-login@v2
+      - uses: docker/setup-buildx-action@v3
+      - name: Build & push ${{ matrix.tag }}
+        uses: docker/build-push-action@v6
+        with:
+          context: interactive/${{ matrix.context }}
+          platforms: linux/amd64
+          push: true
+          tags: ${{ vars.ECR_REGISTRY }}/${{ vars.ECR_REPO }}:${{ matrix.tag }}
+          cache-from: type=registry,ref=${{ vars.ECR_REGISTRY }}/${{ vars.ECR_REPO }}:${{ matrix.tag }}-cache
+          cache-to: type=registry,ref=${{ vars.ECR_REGISTRY }}/${{ vars.ECR_REPO }}:${{ matrix.tag }}-cache,mode=max

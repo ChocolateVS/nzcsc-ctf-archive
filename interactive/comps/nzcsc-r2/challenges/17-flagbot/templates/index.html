@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flagbot</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<h2>flagbot</h2>
+<div id="chat"></div>
+<div id="row">
+  <input id="msg" type="text" placeholder="Type a message..." disabled>
+  <button id="send" disabled>Send</button>
+  <button id="reset">Reset</button>
+</div>
+
+<script>
+const chat = document.getElementById('chat');
+const msg = document.getElementById('msg');
+const send = document.getElementById('send');
+const status = document.getElementById('status');
+
+function addMsg(role, text) {
+  const el = document.createElement('div');
+  el.className = 'msg ' + role;
+  el.textContent = text;
+  chat.appendChild(el);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+async function poll() {
+  const res = await fetch('/api/status');
+  const s = await res.json();
+  if (s.ready) {
+    msg.disabled = false;
+    send.disabled = false;
+    msg.focus();
+    return;
+  }
+  setTimeout(poll, 2000);
+}
+
+async function sendMsg() {
+  const text = msg.value.trim();
+  if (!text) return;
+  msg.value = '';
+  addMsg('user', text);
+  send.disabled = true;
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({message: text})
+    });
+    const data = await res.json();
+    addMsg('bot', data.error ? ('Error: ' + data.error) : data.reply);
+  } catch (e) {
+    addMsg('bot', 'Network error.');
+  }
+  send.disabled = false;
+  msg.focus();
+}
+
+send.addEventListener('click', sendMsg);
+msg.addEventListener('keydown', e => { if (e.key === 'Enter') sendMsg(); });
+document.getElementById('reset').addEventListener('click', async () => {
+  await fetch('/api/reset', {method: 'POST'});
+  chat.innerHTML = '';
+});
+
+poll();
+</script>
+
+</body>
+</html>

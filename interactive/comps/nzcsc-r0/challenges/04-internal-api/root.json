@@ -1,0 +1,113 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "NZCSC API",
+    "version": "1.0.0",
+    "description": "NZCSC-API is an internal report fetching service that retrieves remote resources on behalf of authenticated users. Use username=nzcsdev, password=ctf2026 for testing.",
+    "servers": [
+      {
+        "url": "http://example.com"
+      }
+    ]
+  },
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "Log in with username and password",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string",
+                    "example": "nzcscdev"
+                  },
+                  "password": {
+                    "type": "string",
+                    "example": "ctf2026"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns a Bearer token \u2014 use it in all further requests"
+          },
+          "401": {
+            "description": "Invalid credentials"
+          }
+        }
+      }
+    },
+    "/challenge": {
+      "get": {
+        "summary": "Read the challenge briefing and objective",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns challenge title, description, objective, hint and points"
+          },
+          "401": {
+            "description": "Missing or invalid token"
+          }
+        }
+      }
+    },
+    "/fetch": {
+      "post": {
+        "summary": "Fetch a remote resource by URL",
+        "description": "Accepts a URL and retrieves its content server-side. Intended for fetching external reports and resources.",
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "example": "https://example.com"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Returns status code, content type, and body of the fetched resource"
+          },
+          "401": {
+            "description": "Missing or invalid token"
+          },
+          "502": {
+            "description": "Failed to fetch the given URL"
+          }
+        }
+      }
+    },
+    "components": {
+      "securitySchemes": {
+        "BearerAuth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    }
+  }
+}

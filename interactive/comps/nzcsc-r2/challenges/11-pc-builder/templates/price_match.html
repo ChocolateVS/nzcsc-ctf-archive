@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Price Match{% endblock %}
+{% block content %}
+  <h1>Price Match Request</h1>
+  <div class="card">
+    <p>
+      Found a part cheaper somewhere else? Submit a link to the listing as
+      proof, and a member of our team will personally check it out and
+      credit the difference to your account.
+    </p>
+    <form method="POST" action="{{ url_for('price_match') }}" class="form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+      <label>Component
+        <input type="text" name="component" id="component" list="components">
+        <datalist id="components">
+          {% for key, comp in components.items() %}
+            <option value="{{ comp.label }}">{{ comp.label }}</option>
+          {% endfor %}
+        </datalist>
+      </label>
+
+      <label>Claimed price (USD)
+        <input type="number" name="claimed_price" min="1" required>
+      </label>
+
+      <label>Proof URL
+        <input type="url" name="proof_url" placeholder="https://example.com/listing" required>
+      </label>
+
+      <button type="submit">Submit for review</button>
+    </form>
+  </div>
+{% endblock %}

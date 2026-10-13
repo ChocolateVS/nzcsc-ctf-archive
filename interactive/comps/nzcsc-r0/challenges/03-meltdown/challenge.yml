@@ -1,0 +1,9 @@
+id: 3
+slug: meltdown
+name: Meltdown
+type: http
+port: 5000
+subdomain: chall03    # -> chall03.r0.2026.ctf.int.rowansserver.com (matches the original challNN host)
+local_only: true
+mem_limit: 256m
+# Real flag lives in comps/nzcsc-r0/flags.env (key "3" or "meltdown").

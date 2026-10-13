@@ -1,0 +1,13 @@
+id: 21
+slug: nanas-blog
+name: 21 - Nana's Blog
+type: http
+port: 5000
+subdomain: chall21
+mem_limit: 256m
+# Flag is read from $FLAG, else flag.txt. Edit challenges/21-nanas-blog/flag.txt
+# to set the real flag; placeholder for now.
+# Intended vuln: enumerate post IDs over the REST API (IDOR) to find the one
+# hidden, password-protected post (id 7); brute-force its password via the
+# unauthenticated REST ?password= oracle (no rate limit / cookie); the flag is
+# in the post content. The reproduction password is a common wordlist entry.

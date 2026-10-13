@@ -1,0 +1,8 @@
+id: 8
+slug: overgrown
+name: 8 - Overgrown
+type: tcp
+port: 1337
+tcp_port: 11008
+privileged: true
+mem_limit: 512m

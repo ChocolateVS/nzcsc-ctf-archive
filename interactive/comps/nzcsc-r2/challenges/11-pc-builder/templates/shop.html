@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %}Build a PC{% endblock %}
+{% block content %}
+  <h1>Build a PC</h1>
+  <div class="card">
+    <form method="POST" action="{{ url_for('build') }}" class="form">
+      <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+      <div class="component-rows">
+        {% for key, comp in components.items() %}
+          <div class="component-row" data-price="{{ comp.price }}">
+            <div class="component-info">
+              <span class="component-label">{{ comp.label }}</span>
+              <span class="component-price">${{ "{:,}".format(comp.price) }}</span>
+            </div>
+            <label class="toggle">
+              <input type="checkbox" name="{{ key }}">
+              <span class="slider"></span>
+            </label>
+          </div>
+        {% endfor %}
+      </div>
+      
+      <p class="muted">
+        Seen a chepaer price?
+        <a href="{{ url_for('price_match') }}">Send us a link</a> and we'll review it to see if we can price match it.
+      </p>
+
+      <div class="build-total">
+        <span>Total</span>
+        <span id="runningTotal">$0</span>
+      </div>
+
+      <p>Your balance: ${{ "{:,}".format(current_user.balance) }}</p>
+
+      <button type="submit">Build</button>
+    </form>
+
+
+  </div>
+
+  <script>
+    const rows = document.querySelectorAll('.component-row');
+    const totalEl = document.getElementById('runningTotal');
+    function recalc() {
+      let total = 0;
+      rows.forEach(row => {
+        const checkbox = row.querySelector('input[type=checkbox]');
+        if (checkbox.checked) total += parseInt(row.dataset.price, 10);
+      });
+      totalEl.textContent = '$' + total.toLocaleString();
+    }
+    rows.forEach(row => row.querySelector('input').addEventListener('change', recalc));
+    recalc();
+  </script>
+{% endblock %}

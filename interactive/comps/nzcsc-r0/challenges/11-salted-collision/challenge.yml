@@ -1,0 +1,9 @@
+id: 11
+slug: salted-collision
+name: 11 - Salted Collision
+type: http
+port: 80
+subdomain: chall11
+local_only: true
+mem_limit: 256m
+# Real flag goes in comps/nzcsc-r0/flags.env (key 11 or salted-collision).
