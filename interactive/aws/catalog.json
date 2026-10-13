@@ -15,7 +15,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": "NZCSC{unc0nf1rm3d_p4ck3t_1989}"
+    "flag": "NZCSC{unc0nf1rm3d_p4ck3t_1989}",
+    "host_port": 20001
   },
   {
     "comp": "nzcsc-r0",
@@ -33,7 +34,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": "NZCSC{N0T-0F_THIS-W0RLD}"
+    "flag": "NZCSC{N0T-0F_THIS-W0RLD}",
+    "host_port": 20002
   },
   {
     "comp": "nzcsc-r0",
@@ -51,7 +53,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": "NZCSC{B4S3LIN3_D3V1AT10N}"
+    "flag": "NZCSC{B4S3LIN3_D3V1AT10N}",
+    "host_port": 20003
   },
   {
     "comp": "nzcsc-r0",
@@ -69,7 +72,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": "NZCSC{ssrf_1nt3rn4l_s3rv1c3_l34k}"
+    "flag": "NZCSC{ssrf_1nt3rn4l_s3rv1c3_l34k}",
+    "host_port": 20004
   },
   {
     "comp": "nzcsc-r0",
@@ -87,7 +91,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": "NZCSC{sh0p1ng_spr33_f0r_flags}"
+    "flag": "NZCSC{sh0p1ng_spr33_f0r_flags}",
+    "host_port": 20006
   },
   {
     "comp": "nzcsc-r0",
@@ -106,6 +111,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{time-of-check-time-of-use-matters-for-bird-songs-too-6e62455f}",
+    "host_port": 10008,
     "tcp_port": 10008
   },
   {
@@ -124,7 +130,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": "NZCSC{D0UBL3_BUG_D0UBL3_FUN}"
+    "flag": "NZCSC{D0UBL3_BUG_D0UBL3_FUN}",
+    "host_port": 20009
   },
   {
     "comp": "nzcsc-r0",
@@ -142,7 +149,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": "NZCSC{s41t3d_c0ll1s1on_type_jugg1ing_and_h4sh_extens1on}"
+    "flag": "NZCSC{s41t3d_c0ll1s1on_type_jugg1ing_and_h4sh_extens1on}",
+    "host_port": 20011
   },
   {
     "comp": "nzcsc-r0",
@@ -161,6 +169,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{flag3-more-controlled-overwrite-4c22c715}",
+    "host_port": 10012,
     "tcp_port": 10012
   },
   {
@@ -179,7 +188,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": "NZCSC{n0sq1_1nj3cti0n5_t0_s33_here}"
+    "flag": "NZCSC{n0sq1_1nj3cti0n5_t0_s33_here}",
+    "host_port": 20013
   },
   {
     "comp": "nzcsc-r0",
@@ -198,6 +208,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{W3LC0ME_T0_TH3_TW1ST3R}",
+    "host_port": 10015,
     "tcp_port": 10015
   },
   {
@@ -216,7 +227,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": "NZCSC{d1d_y0u_d0_1t_b1ind_0r_f1nd_4_l34k}"
+    "flag": "NZCSC{d1d_y0u_d0_1t_b1ind_0r_f1nd_4_l34k}",
+    "host_port": 20017
   },
   {
     "comp": "nzcsc-r0",
@@ -235,6 +247,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{you-are-a-printf-expert-now-cc29e7dc}",
+    "host_port": 10018,
     "tcp_port": 10018
   },
   {
@@ -253,7 +266,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": null
+    "flag": null,
+    "host_port": 21001
   },
   {
     "comp": "nzcsc-r2",
@@ -271,7 +285,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": null
+    "flag": null,
+    "host_port": 21002
   },
   {
     "comp": "nzcsc-r2",
@@ -289,7 +304,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": null
+    "flag": null,
+    "host_port": 21005
   },
   {
     "comp": "nzcsc-r2",
@@ -307,7 +323,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": null
+    "flag": null,
+    "host_port": 21006
   },
   {
     "comp": "nzcsc-r2",
@@ -326,6 +343,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "host_port": 11007,
     "tcp_port": 11007
   },
   {
@@ -345,6 +363,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "host_port": 11008,
     "tcp_port": 11008
   },
   {
@@ -363,7 +382,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": null
+    "flag": null,
+    "host_port": 21009
   },
   {
     "comp": "nzcsc-r2",
@@ -382,6 +402,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "host_port": 11010,
     "tcp_port": 11010
   },
   {
@@ -405,7 +426,8 @@
       "BOT_TOKEN": "r2_bot_token",
       "FLAG": "NZCSC{REPLACE_ME_pc-builder}"
     },
-    "flag": null
+    "flag": null,
+    "host_port": 21011
   },
   {
     "comp": "nzcsc-r2",
@@ -423,7 +445,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": null
+    "flag": null,
+    "host_port": 21012
   },
   {
     "comp": "nzcsc-r2",
@@ -442,6 +465,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "host_port": 11013,
     "tcp_port": 11013
   },
   {
@@ -461,6 +485,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "host_port": 11014,
     "tcp_port": 11014
   },
   {
@@ -479,7 +504,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": null
+    "flag": null,
+    "host_port": 21017
   },
   {
     "comp": "nzcsc-r2",
@@ -497,7 +523,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": null
+    "flag": null,
+    "host_port": 21018
   },
   {
     "comp": "nzcsc-r2",
@@ -516,6 +543,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "host_port": 11020,
     "tcp_port": 11020
   },
   {
@@ -534,7 +562,8 @@
     "read_only": false,
     "cap_add": [],
     "env": {},
-    "flag": null
+    "flag": null,
+    "host_port": 21021
   },
   {
     "comp": "nzcsc-r2",
@@ -553,6 +582,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "host_port": 11023,
     "tcp_port": 11023
   },
   {
@@ -572,6 +602,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "host_port": 11024,
     "tcp_port": 11024
   },
   {
@@ -591,6 +622,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "host_port": 11025,
     "tcp_port": 11025
   }
 ]

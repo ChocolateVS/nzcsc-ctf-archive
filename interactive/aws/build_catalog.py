@@ -34,6 +34,8 @@ PARENT_DOMAIN = {
 }
 # default raw-TCP host-port base per comp (overridable per challenge via tcp_port)
 TCP_BASE = {"nzcsc-r0": 10000, "nzcsc-r2": 11000}
+# host-port base for web challenges (caddy reverse-proxies the subdomain here)
+WEB_BASE = {"nzcsc-r0": 20000, "nzcsc-r2": 21000}
 
 
 def read_env(path):
@@ -93,8 +95,13 @@ def main():
                 "env": m.get("env", {}) or {},
                 "flag": flag,
             }
+            idnum = int(cid) if str(cid).isdigit() else 0
             if ctype == "tcp":
-                entry["tcp_port"] = int(m.get("tcp_port", tcp_base + (int(cid) if str(cid).isdigit() else 0)))
+                # host_port == the published nc port (what the player connects to)
+                entry["host_port"] = entry["tcp_port"] = int(m.get("tcp_port", tcp_base + idnum))
+            else:
+                # web: caddy proxies <host> -> 127.0.0.1:host_port
+                entry["host_port"] = WEB_BASE.get(comp, 20000) + idnum
             catalog.append(entry)
     json.dump(catalog, sys.stdout, indent=2, ensure_ascii=False)
     sys.stdout.write("\n")
