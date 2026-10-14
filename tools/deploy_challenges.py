@@ -33,9 +33,36 @@ def esc(s):
     return html.escape(s or "")
 
 
+ABOUT_URL = "/about"
+
+
+def is_incomplete(ch):
+    """A notes-only stub: nothing a solver can actually attempt — no prompt, no
+    description, no files, no connection info. All we recovered is the solve
+    method. These are shown as "under construction" rather than dressing the
+    solve notes up as the challenge."""
+    return not (
+        (ch.get("prompt") or "").strip()
+        or (ch.get("desc") or "").strip()
+        or ch.get("files")
+        or (ch.get("connection_info") or "").strip()
+    )
+
+
 def build_desc(year, ch):
-    """Mirror of the original in-container importer's description builder so the
-    API-deployed challenges read identically to the imported ones."""
+    """The CTFd description = the *playable* part only. The recovered solve
+    `method` is no longer embedded here; it is stored as the challenge's writeup
+    (see set_meta) and rendered by the theme as its own section. Notes-only
+    stubs get an "under construction" placeholder instead."""
+    if is_incomplete(ch):
+        return (
+            "<p><i class='fas fa-person-digging'></i> <strong>Under construction.</strong> "
+            "We don't have enough information to recreate this challenge yet — "
+            "only notes from the solve archive, which you'll find in the writeup "
+            "below.</p>"
+            "<p style='opacity:.85'>Know this one? See the "
+            "<a href='%s'>About page</a> for how to help fill it in.</p>" % ABOUT_URL
+        )
     topic = ch.get("topic") or ""
     diff = ch.get("difficulty") or ""
     val = ch.get("value") or 0
@@ -51,10 +78,6 @@ def build_desc(year, ch):
         d += ch["prompt"]  # trusted HTML prompt (recovered original)
     elif ch.get("desc"):
         d += "<p>" + esc(ch["desc"]) + "</p>"
-    if ch.get("method"):
-        d += ("<details style='margin-top:1rem;opacity:.9'>"
-              "<summary style='cursor:pointer'>Solve approach (from the NZCSC %s solve archive)</summary>"
-              "<p style='margin-top:.6rem'>%s</p></details>" % (esc(year), esc(ch["method"])))
     if not ch.get("flag"):
         d += ("<p style='opacity:.6;font-size:.85em;margin-top:1rem'>"
               "<em>Flag not recovered — archived for reference.</em></p>")
@@ -108,6 +131,16 @@ class CTFd:
             "challenge_id": cid, "challenge": cid,
             "content": content, "type": "static", "data": ""})
 
+    def set_meta(self, cid, incomplete, writeup):
+        # best-effort: the nzcsc_feedback plugin owns this route. If it isn't
+        # deployed yet (older box), don't fail the whole import.
+        try:
+            r = self.s.post(self.url + "/plugins/feedback/meta/%d" % cid, timeout=60,
+                            json={"incomplete": bool(incomplete), "writeup": writeup or ""})
+            return r.status_code < 400
+        except Exception:
+            return False
+
     def add_tag(self, cid, value):
         return self._write("post", "/api/v1/tags", json={
             "challenge_id": cid, "challenge": cid, "value": value})
@@ -156,7 +189,7 @@ def main():
         existing[(c.get("category"), lead)] = c
     print("connected to %s — %d challenges already present\n" % (args.url, len(existing)))
 
-    tot = dict(created=0, updated=0, flags=0, tags=0, files=0, missing=0)
+    tot = dict(created=0, updated=0, flags=0, tags=0, files=0, missing=0, meta=0)
     for df in data_files:
         data = json.load(open(df))
         year, category = str(data["year"]), data["category"]
@@ -187,6 +220,12 @@ def main():
                 print("  ~ updated %s" % name)
 
             cid = row["id"]
+
+            # archive metadata: under-construction flag + recovered writeup
+            # (rendered by the theme as its own section, not in the description)
+            if not args.dry_run:
+                if api.set_meta(cid, is_incomplete(ch), ch.get("method")):
+                    tot["meta"] += 1
 
             # tag (topic) — add if absent
             topic = ch.get("topic")
