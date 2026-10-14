@@ -1,1 +1,1 @@
-NZCSC{REPLACE_ME_gherkin_shop}
+NZCSC{gherkins_are_just_angry_cucumbers}

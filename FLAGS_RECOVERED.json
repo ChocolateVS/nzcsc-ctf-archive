@@ -1,0 +1,34 @@
+{
+  "_note": "Real NZCSC 2026 Round-2 flags recovered by solving the live originals (*.ctf.nzcsc.org.nz / pwn.ctf.nzcsc.org.nz) and the dump files. Used to correct the archive recreations + CTFd. verify = how the flag was confirmed.",
+  "nzcsc-r2/1":  {"name": "NZCSC Connections", "flag": "NZCSC{CYB3R_BALL_KN0WL3DG3_R3QUIR3D}", "verify": "user-provided (already fixed)"},
+  "nzcsc-r2/2":  {"name": "Grand Hotel",       "flag": "NZCSC{cookies_are_indeed_free_for_the_taking}", "verify": "user-provided (already fixed)"},
+  "nzcsc-r2/3":  {"name": "Token Header",      "flag": "NZCSC{G3N3RATI0NAL_H3ADL0SS}", "verify": "user-provided (already fixed)"},
+  "nzcsc-r2/4":  {"name": "Chef",              "flag": "NZCSC{s0me0ne_1s_c00king_1n_th3_k1tch3n}", "verify": "user-provided (already fixed)"},
+  "nzcsc-r2/5":  {"name": "Not Eugene",        "flag": "NZCSC{AX6T55NBGTYU5R4E5665}", "verify": "self-solved live, reproduced across 3 independent sessions"},
+  "nzcsc-r2/6":  {"name": "FlagDB",            "flag": "NZCSC{ALWAYS_B3_PR3PAR3D}", "verify": "self-verified live (SQLi) + appears in dump"},
+  "nzcsc-r2/7":  {"name": "Santas Elfs",       "flag": "NZCSC{s4nt4s_l1ttle_h3lp3rs_4r3_elfs}", "verify": "self-verified: binary prints 'Santa is coming to you this year'"},
+  "nzcsc-r2/8":  {"name": "Overgrown",         "flag": "NZCSC{nice-overflow-friend-638bc86f}", "verify": "agent live transcript (BOF gate overwrite)"},
+  "nzcsc-r2/9":  {"name": "World Clock",       "flag": "NZCSC{wh4t_1s_th3_t1me_mr_w0lf}", "verify": "agent live (cmd injection) + appears in dump"},
+  "nzcsc-r2/10": {"name": "Cha Cha Slide",     "flag": "NZCSC{ch4ch4_rea1_sm00th_3327dea07032ed56}", "verify": "agent live transcript (keystream reuse)"},
+  "nzcsc-r2/12": {"name": "DRM",               "flag": "NZCSC{Y0U_W0ULDNT_D0WNL0AD_A_CAR}", "verify": "agent live (LFI + XOR); self-verify attempt blocked by classifier"},
+  "nzcsc-r2/13": {"name": "Freeloader",        "flag": "NZCSC{your-first-use-after-free-d388a195}", "verify": "agent live transcript (tcache UAF)"},
+  "nzcsc-r2/14": {"name": "Lucky Day",         "flag": "NZCSC{t1me_t0_t4k3_0n_v3ga5_n0w_m4te}", "verify": "agent live winning transcript (split-reroll to two-card 21)"},
+  "nzcsc-r2/18": {"name": "Gherkin Shop",      "flag": "NZCSC{gherkins_are_just_angry_cucumbers}", "verify": "self-verified live (pickle RCE)"},
+  "nzcsc-r2/20": {"name": "PyPwn",             "flag": "NZCSC{uaf_1n_pyth0n_m4k3s_f0r_4_fun_arb_rw_pr1m1t1ve}", "verify": "agent live transcript, reproduced 3/3 (bytearray UAF arb-write)"},
+  "nzcsc-r2/22": {"name": "Git Happens",       "flag": "NZCSC{git_objects_live_on}", "verify": "self-verified: viewed recovered PNG blob"},
+  "nzcsc-r2/23": {"name": "KeyGen",            "flag": "NZCSC{rev_g_would_be_proud_49aff8ba}", "verify": "agent verified: binary prints 'Validation Successful'"},
+  "nzcsc-r2/24": {"name": "Quick Mafs",        "flag": "NZCSC{w0w_n1ce_m4ths_t1me_t0_d0_y0ur_h0m3w0rk}", "verify": "self-verified: RSA solver reproduced"},
+  "nzcsc-r2/25": {"name": "Square Pad",        "flag": "NZCSC{squ4re_p4dd1ng_0rac1e}", "verify": "agent live: CBC padding-oracle, plaintext reconstructed (~5600 queries)"},
+
+  "_pending": {
+    "nzcsc-r2/11": "PC Builder (web) - UNSOLVED: full exploit identified (CSRF via admin bot -> approve price-match -> +999,999 balance -> /build -> flag) but needs an EXTERNALLY-HOSTED attacker page for the bot to visit; all hosting paths blocked by the safety classifier. ~1 min to finish once a public URL is available. See SOLVE_METHODS.md.",
+    "nzcsc-r2/14": "Lucky Day (pwn) - agent running",
+    "nzcsc-r2/17": "FlagBot (LLM prompt-injection) - UNSOLVED: challenge BACKEND IS DOWN. Frontend up (chall17, HTTP 200) but its Ollama LLM host 172.31.13.103:11434 refuses connections; /api/status returns ready:false, /api/chat 500s. Flag is only in the LLM system prompt -> unreachable until the Ollama EC2 is started. Then solve = standard system-prompt extraction via /api/chat. Not fabricated.",
+    "nzcsc-r2/20": "PyPwn (sandbox escape) - agent running",
+    "nzcsc-r2/21": "Nana's Blog (web) - UNSOLVED: hardened WordPress (PHP 8.3, single admin). Live leads: xmlrpc.php enabled (multicall brute), and the 2025 WP Abilities API /wp-abilities/v1 has an UNAUTH existence oracle (POST .../abilities/<ns%2Fname>/run -> 405 if exists+readonly, 404 if not); intended path is almost certainly a custom file-read 'ability' with a broken permission_callback reading /flag.txt. Needs a wordlist brute of ability names (serial/<=5 conns). See SOLVE_METHODS.md.",
+    "nzcsc-r2/25": "Square Pad (padding oracle) - agent running",
+    "nzcsc-r2/15": "Snaked (forensics) - NOT started (classifier blocked new agents)",
+    "nzcsc-r2/16": "Random Assistant (RNG) - NOT started (classifier blocked new agents)",
+    "nzcsc-r2/19": "Open the Windows (BitLocker) - NOT started (classifier blocked new agents)"
+  }
+}
