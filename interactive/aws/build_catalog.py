@@ -83,7 +83,7 @@ def main():
                 "slug": slug,
                 "name": m.get("name") or ("%s %s" % (comp, cid)),
                 "type": ctype,
-                "port": int(m.get("port", 5000 if ctype in ("http", "static") else 1337)),
+                "port": int(m.get("port", 22 if ctype == "ssh" else (5000 if ctype in ("http", "static") else 1337))),
                 "subdomain": sub,
                 "host": "%s.%s" % (sub, parent),
                 "image_tag": "%s-chall%s" % (comp, cid),
@@ -94,10 +94,11 @@ def main():
                 "cap_add": m.get("cap_add", []),
                 "env": m.get("env", {}) or {},
                 "flag": flag,
+                "user": m.get("user", "arteta"),
             }
             idnum = int(cid) if str(cid).isdigit() else 0
-            if ctype == "tcp":
-                # host_port == the published nc port (what the player connects to)
+            if ctype in ("tcp", "ssh"):
+                # host_port == the published port the player connects to (nc / ssh)
                 entry["host_port"] = entry["tcp_port"] = int(m.get("tcp_port", tcp_base + idnum))
             else:
                 # web: caddy proxies <host> -> 127.0.0.1:host_port

@@ -16,6 +16,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{unc0nf1rm3d_p4ck3t_1989}",
+    "user": "arteta",
     "host_port": 20001
   },
   {
@@ -35,6 +36,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{N0T-0F_THIS-W0RLD}",
+    "user": "arteta",
     "host_port": 20002
   },
   {
@@ -54,6 +56,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{B4S3LIN3_D3V1AT10N}",
+    "user": "arteta",
     "host_port": 20003
   },
   {
@@ -73,6 +76,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{ssrf_1nt3rn4l_s3rv1c3_l34k}",
+    "user": "arteta",
     "host_port": 20004
   },
   {
@@ -92,6 +96,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{sh0p1ng_spr33_f0r_flags}",
+    "user": "arteta",
     "host_port": 20006
   },
   {
@@ -111,6 +116,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{time-of-check-time-of-use-matters-for-bird-songs-too-6e62455f}",
+    "user": "arteta",
     "host_port": 10008,
     "tcp_port": 10008
   },
@@ -131,6 +137,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{D0UBL3_BUG_D0UBL3_FUN}",
+    "user": "arteta",
     "host_port": 20009
   },
   {
@@ -150,6 +157,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{s41t3d_c0ll1s1on_type_jugg1ing_and_h4sh_extens1on}",
+    "user": "arteta",
     "host_port": 20011
   },
   {
@@ -169,6 +177,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{flag3-more-controlled-overwrite-4c22c715}",
+    "user": "arteta",
     "host_port": 10012,
     "tcp_port": 10012
   },
@@ -189,6 +198,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{n0sq1_1nj3cti0n5_t0_s33_here}",
+    "user": "arteta",
     "host_port": 20013
   },
   {
@@ -208,6 +218,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{W3LC0ME_T0_TH3_TW1ST3R}",
+    "user": "arteta",
     "host_port": 10015,
     "tcp_port": 10015
   },
@@ -228,6 +239,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{d1d_y0u_d0_1t_b1ind_0r_f1nd_4_l34k}",
+    "user": "arteta",
     "host_port": 20017
   },
   {
@@ -247,6 +259,7 @@
     "cap_add": [],
     "env": {},
     "flag": "NZCSC{you-are-a-printf-expert-now-cc29e7dc}",
+    "user": "arteta",
     "host_port": 10018,
     "tcp_port": 10018
   },
@@ -267,6 +280,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 21001
   },
   {
@@ -286,6 +300,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 21002
   },
   {
@@ -305,6 +320,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 21005
   },
   {
@@ -324,6 +340,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 21006
   },
   {
@@ -343,6 +360,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 11008,
     "tcp_port": 11008
   },
@@ -363,6 +381,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 21009
   },
   {
@@ -382,6 +401,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 11010,
     "tcp_port": 11010
   },
@@ -407,6 +427,7 @@
       "FLAG": "NZCSC{REPLACE_ME_pc-builder}"
     },
     "flag": null,
+    "user": "arteta",
     "host_port": 21011
   },
   {
@@ -426,6 +447,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 21012
   },
   {
@@ -445,6 +467,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 11013,
     "tcp_port": 11013
   },
@@ -465,8 +488,39 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 11014,
     "tcp_port": 11014
+  },
+  {
+    "comp": "nzcsc-r2",
+    "id": 15,
+    "slug": "snaked",
+    "name": "15 - Snaked",
+    "type": "ssh",
+    "port": 22,
+    "subdomain": "chall15",
+    "host": "chall15.r2.2026.nzcsc.xyz",
+    "image_tag": "nzcsc-r2-chall15",
+    "context": "comps/nzcsc-r2/challenges/15-snaked",
+    "mem_limit": "128m",
+    "privileged": false,
+    "read_only": false,
+    "cap_add": [
+      "SETUID",
+      "SETGID",
+      "CHOWN",
+      "DAC_OVERRIDE",
+      "FOWNER",
+      "SYS_CHROOT",
+      "AUDIT_WRITE",
+      "KILL"
+    ],
+    "env": {},
+    "flag": "NZCSC{r3pt1l14n_m4lw4r3_l3ft_th3_k3ys_b3h1nd}",
+    "user": "arteta",
+    "host_port": 10015,
+    "tcp_port": 10015
   },
   {
     "comp": "nzcsc-r2",
@@ -485,6 +539,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 21017
   },
   {
@@ -504,6 +559,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 21018
   },
   {
@@ -523,6 +579,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 11020,
     "tcp_port": 11020
   },
@@ -543,6 +600,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 21021
   },
   {
@@ -562,6 +620,7 @@
     "cap_add": [],
     "env": {},
     "flag": null,
+    "user": "arteta",
     "host_port": 11025,
     "tcp_port": 11025
   }

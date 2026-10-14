@@ -1,0 +1,14 @@
+id: 15
+slug: snaked
+name: 15 - Snaked
+# on-demand SSH box: the player recovers vic's private key from capture.pcapng
+# (ChaCha20 exfil; key+iv are prepended to the stream), then logs in as arteta
+# (vic's key is trusted in arteta's authorized_keys) and reads /flag.txt.
+type: ssh
+port: 22
+tcp_port: 10015
+user: arteta
+mem_limit: 128m
+# sshd privsep needs to drop privileges; grant just what it needs (cap-drop ALL otherwise)
+cap_add: [SETUID, SETGID, CHOWN, DAC_OVERRIDE, FOWNER, SYS_CHROOT, AUDIT_WRITE, KILL]
+flag: NZCSC{r3pt1l14n_m4lw4r3_l3ft_th3_k3ys_b3h1nd}
