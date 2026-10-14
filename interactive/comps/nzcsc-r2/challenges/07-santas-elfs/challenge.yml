@@ -1,7 +1,5 @@
 id: 7
 slug: santas-elfs
 name: 7 - Santas Elfs
-type: tcp
-port: 1337
-tcp_port: 11007
-mem_limit: 256m
+# offline rev: players download `main` from CTFd and reverse it; no server needed
+type: files

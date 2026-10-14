@@ -1,7 +1,6 @@
 id: 24
 slug: quick-mafs
 name: 24 - Quick Mafs
-type: tcp
-port: 1337
-tcp_port: 11024
-mem_limit: 256m
+# offline crypto: players download chall.py + out.txt from CTFd; no server needed
+# (the hosted copy printed a FAKE flag: chall.py reads ../src/flag.txt, absent in the container)
+type: files

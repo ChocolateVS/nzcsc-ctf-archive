@@ -1,7 +1,5 @@
 id: 23
 slug: keygen
 name: 23 - KeyGen
-type: tcp
-port: 1337
-tcp_port: 11023
-mem_limit: 256m
+# offline rev: players download `keygen` from CTFd and reverse it; no server needed
+type: files
