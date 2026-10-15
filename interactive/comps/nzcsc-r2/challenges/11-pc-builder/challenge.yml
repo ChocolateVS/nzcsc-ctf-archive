@@ -9,4 +9,4 @@ env:
   SECRET_KEY: r2_pcbuilder_secret
   ADMIN_PASSWORD: r2_admin_pw_change_me
   BOT_TOKEN: r2_bot_token
-  FLAG: NZCSC{REPLACE_ME_pc-builder}
+  FLAG: NZCSC{CR0SS_S1T3_RAM_F0RG3RY}
