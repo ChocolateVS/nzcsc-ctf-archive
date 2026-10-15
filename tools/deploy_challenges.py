@@ -37,32 +37,15 @@ ABOUT_URL = "/about"
 
 
 def is_incomplete(ch):
-    """A notes-only stub: nothing a solver can actually attempt — no prompt, no
-    description, no files, no connection info. All we recovered is the solve
-    method. These are shown as "under construction" rather than dressing the
-    solve notes up as the challenge."""
-    return not (
-        (ch.get("prompt") or "").strip()
-        or (ch.get("desc") or "").strip()
-        or ch.get("files")
-        or (ch.get("connection_info") or "").strip()
-    )
+    """Not playable in the archive. A challenge can only be attempted here if it
+    ships downloadable files or has a live connection (hosted instance). Web /
+    remote challenges whose original server is gone have a description but nothing
+    to actually do, so they're flagged "under construction" too — not just the
+    notes-only stubs."""
+    return not (ch.get("files") or (ch.get("connection_info") or "").strip())
 
 
-def build_desc(year, ch):
-    """The CTFd description = the *playable* part only. The recovered solve
-    `method` is no longer embedded here; it is stored as the challenge's writeup
-    (see set_meta) and rendered by the theme as its own section. Notes-only
-    stubs get an "under construction" placeholder instead."""
-    if is_incomplete(ch):
-        return (
-            "<p><i class='fas fa-person-digging'></i> <strong>Under construction.</strong> "
-            "We don't have enough information to recreate this challenge yet — "
-            "only notes from the solve archive, which you'll find in the writeup "
-            "below.</p>"
-            "<p style='opacity:.85'>Know this one? See the "
-            "<a href='%s'>About page</a> for how to help fill it in.</p>" % ABOUT_URL
-        )
+def _meta_line(ch):
     topic = ch.get("topic") or ""
     diff = ch.get("difficulty") or ""
     val = ch.get("value") or 0
@@ -71,13 +54,43 @@ def build_desc(year, ch):
         meta.append("<strong>Category:</strong> " + esc(topic))
     if diff:
         meta.append("<strong>Difficulty:</strong> " + esc(diff) + ((" (%d pts)" % val) if val else ""))
-    d = ""
-    if meta:
-        d += "<p style='opacity:.85'>" + " &middot; ".join(meta) + "</p>"
+    return ("<p style='opacity:.85'>" + " &middot; ".join(meta) + "</p>") if meta else ""
+
+
+def _body(ch):
+    """meta line + the recovered challenge text (prompt/desc), if any."""
+    d = _meta_line(ch)
     if ch.get("prompt"):
         d += ch["prompt"]  # trusted HTML prompt (recovered original)
     elif ch.get("desc"):
         d += "<p>" + esc(ch["desc"]) + "</p>"
+    return d
+
+
+def build_desc(year, ch):
+    """CTFd description. For playable challenges it's the meta + prompt/desc. For
+    under-construction ones (no files, no live host) we prepend a maintenance
+    banner and keep any recovered text as context; if there's no text at all we
+    fall back to a "not enough info" placeholder. The solve `method` is not here
+    — it's stored as the writeup (see set_meta) and rendered as its own section."""
+    if is_incomplete(ch):
+        banner = (
+            "<p style='padding:.6rem .8rem;border:1px solid rgba(245,184,46,.4);"
+            "border-radius:10px;background:rgba(245,184,46,.08);margin:0 0 1rem'>"
+            "<i class='fas fa-person-digging'></i> <strong>Under construction.</strong> "
+            "This challenge needed a live server or files we can't host in the archive, "
+            "so it isn't playable here and flag submission is disabled. Any recovered "
+            "writeup is shown below.</p>"
+        )
+        body = _body(ch)
+        if ch.get("prompt") or (ch.get("desc") or "").strip():
+            return banner + body
+        return banner + (
+            "<p style='opacity:.85'>We don't have enough information to recreate this "
+            "one yet. Know it? See the <a href='%s'>About page</a> for how to help "
+            "fill it in.</p>" % ABOUT_URL
+        )
+    d = _body(ch)
     if not ch.get("flag"):
         d += ("<p style='opacity:.6;font-size:.85em;margin-top:1rem'>"
               "<em>Flag not recovered — archived for reference.</em></p>")
