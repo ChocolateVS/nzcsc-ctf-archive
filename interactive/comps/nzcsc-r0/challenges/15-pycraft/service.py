@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PyCraft — a Minecraft-in-Python TCP "nc" service on 0.0.0.0:1337.
+"""PyCraft - a Minecraft-in-Python TCP "nc" service on 0.0.0.0:1337.
 
 Faithful replica of the NZCSC round-0 "15 - PyCraft" challenge. It generates a
 300x300 world from Python's Mersenne-Twister PRNG, lets the player walk around and

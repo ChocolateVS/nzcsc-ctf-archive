@@ -81,7 +81,7 @@ def generate_reply(history, user_msg: str) -> str:
     # Jailbreak / prompt-injection: the model "leaks" its system prompt.
     if looks_like_injection(text):
         return (
-            "Oh — right, here are my original instructions:\n\n"
+            "Oh - right, here are my original instructions:\n\n"
             + SYSTEM_PROMPT
         )
 

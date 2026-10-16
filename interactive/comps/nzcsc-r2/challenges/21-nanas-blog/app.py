@@ -180,7 +180,7 @@ def secret_post_payload():
         "title": {"rendered": "Nana&#8217;s Secret Recipe"},
         "content": {
             "rendered": (
-                "<p>Shh &mdash; don&#8217;t tell the other turtles. "
+                "<p>Shh - don&#8217;t tell the other turtles. "
                 "Nana finally wrote it down:</p>\n"
                 f"<p><strong>{flag}</strong></p>\n"
                 "<p>Keep it in the family.</p>\n"

@@ -2,7 +2,7 @@
 """02 - Unlogged Signal (exact replica).
 
 The original is a single self-contained client-side page. We serve the ORIGINAL page
-(index.html, fetched verbatim from the live challenge) unchanged — the cipher data and
+(index.html, fetched verbatim from the live challenge) unchanged - the cipher data and
 per-line hashes are the real ones, so the page and solve are byte-identical."""
 import os
 from flask import Flask, Response

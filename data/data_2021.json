@@ -4,7 +4,7 @@
   "note": "Reconstructed from the owner's on-disk 2021 R0 challenge files (folder mislabelled 2018) plus the official NZCSC21_R0_writeup.pdf (Wayback), which supplied the flags (chemical-name themed, flag{...}). ch1-3,5-8 flags verbatim from the writeup; ch4/9/10 flags appear only as screenshots and were not recovered. Points not recorded.",
   "challenges": [
     {"num":1,"title":"Jasypt Rutherford","topic":"Steganography / Crypto","value":0,"flag":"flag{P7HV54#Monobasicpotassiumphosphate0000000}",
-     "desc":"A portrait of Ernest Rutherford hides something. The original image is Wikimedia's File:Ernest_Rutherford_1905.jpg (http://commons.wikimedia.org/wiki/File:Ernest_Rutherford_1905.jpg) — compare it against the supplied file.",
+     "desc":"A portrait of Ernest Rutherford hides something. The original image is Wikimedia's File:Ernest_Rutherford_1905.jpg (http://commons.wikimedia.org/wiki/File:Ernest_Rutherford_1905.jpg) - compare it against the supplied file.",
      "files":["c1/Jasypt_Rutherford.jpg"]},
     {"num":2,"title":"Sunshine","topic":"Steganography","value":0,"flag":"flag{A2QB7G#MagnesiumChlorideHexahydrate000000}",
      "desc":"Something is concealed inside this image.","files":["c2/Sunshine.jpg"]},
@@ -23,6 +23,6 @@
     {"num":9,"title":"Hidden In Plane Site","topic":"Steganography","value":0,"flag":null,
      "desc":"A 3D model (FBX) hides the flag in plain sight.","files":["c9/HiddenInPlaneSite.fbx"]},
     {"num":10,"title":"Challenge 10","topic":"Unknown","value":0,"flag":null,
-     "desc":"A password provided the flag. (Original materials and flag not recovered — the flag appears only as a screenshot in the writeup.)"}
+     "desc":"A password provided the flag. (Original materials and flag not recovered - the flag appears only as a screenshot in the writeup.)"}
   ]
 }

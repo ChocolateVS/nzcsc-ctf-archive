@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Network Checker — a "vibe coded" ping tool.
+"""Network Checker - a "vibe coded" ping tool.
 
 POST a `target` to `/` and the app runs `ping` against it, telling you only
 whether the host was reachable (success / failed). The ping target is spliced
 straight into a shell command (subprocess with shell=True) with only a tiny
-blacklist of characters, so it is vulnerable to blind OS command injection —
+blacklist of characters, so it is vulnerable to blind OS command injection -
 the success/failed boolean is the only side channel back to the attacker.
 
 The flag comes from the FLAG env var (never hard-coded); at startup we drop it
@@ -13,7 +13,7 @@ through the boolean oracle) works. Listens on 0.0.0.0:5000.
 
 The HTML/CSS served here is a byte-for-byte replica of the live challenge; the
 form value and result text are HTML-escaped (markupsafe) exactly as the real
-app does. Only the presentation was mirrored — the vulnerable ping/blacklist
+app does. Only the presentation was mirrored - the vulnerable ping/blacklist
 backend below is unchanged so the intended solve still works.
 """
 import os
@@ -34,7 +34,7 @@ except OSError:
 
 # The "security" the devs bolted on: a four-character blacklist. It stops the
 # obvious ;, |, backtick and " but leaves &&, $( ), ( ), <, ' and bash
-# arithmetic wide open — more than enough for full blind RCE.
+# arithmetic wide open - more than enough for full blind RCE.
 BANNED = [";", "|", "`", '"']
 
 # --- Byte-exact page fragments captured verbatim from the live challenge ---
@@ -64,12 +64,12 @@ def index():
 
     target = request.form.get("target", "")
 
-    # Blacklist check — reject the four "dangerous" characters.
+    # Blacklist check - reject the four "dangerous" characters.
     for ch in target:
         if ch in BANNED:
             return render(target=target, output="banned char: " + ch)
 
-    # Run the check. Output is deliberately NOT captured/returned — the
+    # Run the check. Output is deliberately NOT captured/returned - the
     # caller only ever learns success vs failed (blind).
     cmd = "ping -c 1 -w 2 " + target
     try:

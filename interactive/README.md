@@ -7,21 +7,21 @@ back down when idle. Full design: `nzcsc-ctf-infra/docs/on-demand-challenges.md`
 
 ## Layout
 
-- `comps/<comp>/challenges/<nn-slug>/{challenge.yml,Dockerfile,...}` — the challenge
+- `comps/<comp>/challenges/<nn-slug>/{challenge.yml,Dockerfile,...}` - the challenge
   build contexts + manifests (vendored from the home `ctf-challenges` project).
-- `comps/<comp>/config.env`, `flags.env` — comp settings / flags.
-- `gen_compose.py`, `scaffold_comp.py`, `templates/` — the home tooling (kept for
+- `comps/<comp>/config.env`, `flags.env` - comp settings / flags.
+- `gen_compose.py`, `scaffold_comp.py`, `templates/` - the home tooling (kept for
   reference / local runs).
-- `aws/build_catalog.py` — emits `aws/catalog.json`, the machine-readable list of
+- `aws/build_catalog.py` - emits `aws/catalog.json`, the machine-readable list of
   hostable challenges (id, type, port, tcp_port, subdomain, image tag, flag, …).
   This is the contract shared by the CI build, the launcher, and the on-box agent.
-- `aws/catalog.json` — generated; regenerate with
+- `aws/catalog.json` - generated; regenerate with
   `python3 interactive/aws/build_catalog.py > interactive/aws/catalog.json`.
 
 ## Flags
 
 This repo is **public** and intentionally contains flags (historical comps,
-writeups are public anyway — see the design doc's "Flag handling" decision).
+writeups are public anyway - see the design doc's "Flag handling" decision).
 `r0` flags come from `comps/nzcsc-r0/flags.env` and are injected as the `FLAG`
 env at run; most `r2` flags are baked into the challenge source. Either way the
 container's flag equals the CTFd-registered one.

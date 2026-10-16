@@ -1,4 +1,4 @@
-# NZCSC 2026 Round 2 — Real solve methods (for writeups)
+# NZCSC 2026 Round 2 - Real solve methods (for writeups)
 
 Captured by solving the **live original** challenges at `*.ctf.nzcsc.org.nz`
 (web → `aws-challs2`, 52.63.39.108) and `pwn.ctf.nzcsc.org.nz`
@@ -15,12 +15,12 @@ Flag ledger: see `FLAGS_RECOVERED.json`. Deploy: see `scripts/fix_all_flags.sh`
 
 ---
 
-## 5 — Not Eugene  `NZCSC{AX6T55NBGTYU5R4E5665}`  (web / chatbot)
+## 5 - Not Eugene  `NZCSC{AX6T55NBGTYU5R4E5665}`  (web / chatbot)
 Host: chall05.ctf.nzcsc.org.nz (FastAPI; `/` + `POST /api/chat`). **Not** an
-exploit — "just talk to the chatbot".
+exploit - "just talk to the chatbot".
 - The bot is a keyword + 50-line random-deflection engine that denies being AI
   and loops you through lore (Squeak the guinea pig, a chewed ribbon, "I copied
-  the letters but I lost them"). **No keyword prints the flag** — that's the trap.
+  the letters but I lost them"). **No keyword prints the flag** - that's the trap.
 - **Mechanism:** the session is **stateful** (server honours a `session_id` it
   minted). After ~10 messages it **drips one flag character per reply**, spliced
   as a single extra character at a random position inside an otherwise-verbatim
@@ -36,7 +36,7 @@ exploit — "just talk to the chatbot".
   recreation's "ask about the diary → flag" was FABRICATED and has been replaced
   with the real stateful-drip engine (`05-not-eugene/app.py`).
 
-## 6 — FlagDB  `NZCSC{ALWAYS_B3_PR3PAR3D}`  (web / SQLi)
+## 6 - FlagDB  `NZCSC{ALWAYS_B3_PR3PAR3D}`  (web / SQLi)
 Host: chall06. "Flag Search": `GET /?country=<term>` renders matching rows;
 `&debug=1` echoes the raw SQL:
 `SELECT * FROM flags WHERE country LIKE '%<input>%' AND country NOT LIKE 'NZCSC';`
@@ -47,7 +47,7 @@ Host: chall06. "Flag Search": `GET /?country=<term>` renders matching rows;
 - Recreation: unsafe string-formatted SQLite query + the debug SQL echo + a
   `flags` table seeded with countries plus a planted `country='NZCSC'` row.
 
-## 7 — Santas Elfs  `NZCSC{s4nt4s_l1ttle_h3lp3rs_4r3_elfs}`  (rev)
+## 7 - Santas Elfs  `NZCSC{s4nt4s_l1ttle_h3lp3rs_4r3_elfs}`  (rev)
 ELF64 PIE, not stripped. 37 functions `elf_helper_01..37`, each checks one input
 byte == a hardcoded constant; `main` fgets a line and ANDs all 37 results, prints
 "Santa is coming to you this year" if all match.
@@ -55,7 +55,7 @@ byte == a hardcoded constant; `main` fgets a line and ANDs all 37 results, print
   bytes. (No transform/obfuscation.) Verified: feeding the flag prints success.
 - Recreation: N per-character equality checks ANDed together, gated flag print.
 
-## 8 — Overgrown  `NZCSC{nice-overflow-friend-638bc86f}`  (pwn)  [LIVE server flag]
+## 8 - Overgrown  `NZCSC{nice-overflow-friend-638bc86f}`  (pwn)  [LIVE server flag]
 `nc pwn.ctf.nzcsc.org.nz 10008`. x86-64 PIE, no canary in main.
 - Bug: `read_line(line, 0x100)` into `char line[100]` → stack BOF over three gate
   locals. Offsets from `line`: gate_one @104 (must be !=0), gate_two @112
@@ -64,7 +64,7 @@ byte == a hardcoded constant; `main` fgets a line and ANDs all 37 results, print
 - **Payload:** `b"A"*104 + p64(1) + p64(0x7465737431323334) + p64(0x64726f7773734070)`.
 - Recreation: dump flag.txt is a placeholder; bake the real flag above.
 
-## 9 — World Clock  `NZCSC{wh4t_1s_th3_t1me_mr_w0lf}`  (web / command injection)
+## 9 - World Clock  `NZCSC{wh4t_1s_th3_t1me_mr_w0lf}`  (web / command injection)
 Host: chall09. `GET /clock?tz=<tz>` runs `TZ="<tz>" date` via a shell (shell=True).
 - `tz=$(id)` → the `date` zone field shows `uid` → RCE confirmed. Output channel
   is only the TZ abbreviation, which glibc truncates at the first non-alpha char.
@@ -74,7 +74,7 @@ Host: chall09. `GET /clock?tz=<tz>` runs `TZ="<tz>" date` via a shell (shell=Tru
 - Recreation: Flask, `/clock` doing `TZ="<tz>" date` with shell=True, flag at
   `/app/flag.txt`, index page auto-detects browser TZ.
 
-## 10 — Cha Cha Slide  `NZCSC{ch4ch4_rea1_sm00th_3327dea07032ed56}`  (crypto)  [LIVE]
+## 10 - Cha Cha Slide  `NZCSC{ch4ch4_rea1_sm00th_3327dea07032ed56}`  (crypto)  [LIVE]
 `nc pwn.ctf.nzcsc.org.nz 10010`. ChaCha20 stream cipher with a global (key,nonce).
 - Menu: (1) encrypt text, (2) encrypt FLAG, (3) decrypt text. **Bug:** option 3
   calls `roll_keys()` BEFORE decrypting and **never after**, so the fresh
@@ -84,7 +84,7 @@ Host: chall09. `GET /clock?tz=<tz>` runs `TZ="<tz>" date` via a shell (shell=Tru
   KS). `FLAG = ct XOR KS`.
 - Recreation: set flag.txt to the above; reproduce the asymmetric roll in option 3.
 
-## 12 — DRM  `NZCSC{Y0U_W0ULDNT_D0WNL0AD_A_CAR}`  (web / LFI + client-side DRM)
+## 12 - DRM  `NZCSC{Y0U_W0ULDNT_D0WNL0AD_A_CAR}`  (web / LFI + client-side DRM)
 Host: chall12. A music player whose "DRM" (AES-CTR / XOR) key is hardcoded in
 client JS (`static/drm.js`, key `6fc7b68334fd280c8a244ef439b57028`).
 - Real bug: leftover `GET /track_legacy_drm?name=<file>` does a one-pass
@@ -95,9 +95,9 @@ client JS (`static/drm.js`, key `6fc7b68334fd280c8a244ef439b57028`).
 - (`/track` also allows traversal within BASE_DIR → leaks app.py.)
 - Recreation: place flag at `/flag.txt`; keep the legacy endpoint's weak sanitiser.
 
-## 13 — Freeloader  `NZCSC{your-first-use-after-free-d388a195}`  (pwn / heap UAF)  [LIVE]
+## 13 - Freeloader  `NZCSC{your-first-use-after-free-d388a195}`  (pwn / heap UAF)  [LIVE]
 `nc pwn.ctf.nzcsc.org.nz 10013`. glibc 2.39 tcache. Menu: alloc/print/free/flag.
-- Bug: `do_free(char *buf)` takes buf **by value**, does `free(buf); buf=NULL;` —
+- Bug: `do_free(char *buf)` takes buf **by value**, does `free(buf); buf=NULL;` -
   main's pointer still dangles. `load_flag()` does `malloc(flag_size+1)` which
   reclaims the just-freed same-size-class chunk; its print is commented out, but
   main's dangling buf now points at the flag.
@@ -106,7 +106,7 @@ client JS (`static/drm.js`, key `6fc7b68334fd280c8a244ef439b57028`).
   dumps the flag. (Brute one request per size class if length unknown.)
 - Recreation: bake the real flag; placeholder in dump.
 
-## 18 — Gherkin Shop  `NZCSC{gherkins_are_just_angry_cucumbers}`  (web / pickle RCE)
+## 18 - Gherkin Shop  `NZCSC{gherkins_are_just_angry_cucumbers}`  (web / pickle RCE)
 Host: chall18. Flask stores the cart in a `cart` cookie = `base64(pickle.dumps(cart))`;
 `load_cart()` does `pickle.loads(base64.b64decode(cookie))` with no signing →
 insecure deserialization RCE. Flag at `/app/flag.txt`.
@@ -116,18 +116,18 @@ insecure deserialization RCE. Flag at `/app/flag.txt`.
   Send as the `cart` cookie to `/cart`.
 - Recreation: unsigned pickle-in-cookie; flag at `/app/flag.txt`.
 
-## 22 — Git Happens  `NZCSC{git_objects_live_on}`  (forensics / git)
-`git_happens.tar` repo. HEAD `27c5819` (hello-world) looks innocent — the initial
+## 22 - Git Happens  `NZCSC{git_objects_live_on}`  (forensics / git)
+`git_happens.tar` repo. HEAD `27c5819` (hello-world) looks innocent - the initial
 commit was `--amend`ed, dropping three PNGs.
 - **Solve:** `git reflog` shows `commit (amend)` + the original `5d5b6e4`;
   `git fsck --lost-found` → `dangling commit 5d5b6e4`; `git ls-tree -r 5d5b6e4`
   lists `image3.png`; `git cat-file -p <blob> > image3.png`. The PNG renders the
-  flag as pixel text (not a string — must view it). Caption "Definitely not
+  flag as pixel text (not a string - must view it). Caption "Definitely not
   sensitive".
 - Recreation: commit flag image, `git commit --amend` to a clean commit; the
   blob survives as a dangling object.
 
-## 23 — KeyGen  `NZCSC{rev_g_would_be_proud_49aff8ba}`  (rev / anti-debug)
+## 23 - KeyGen  `NZCSC{rev_g_would_be_proud_49aff8ba}`  (rev / anti-debug)
 ELF64 PIE, 4-stage self-decrypting keygen. Each stage is XOR-encrypted, mmap'd,
 decrypted with a position-dependent key, mprotect RX, and called; a 4-byte header
 gives the entry offset.
@@ -141,7 +141,7 @@ gives the entry offset.
   `0x6e9100b6290d9def^0x01e370e94c6fc28b`, `0x9029b318d95ce1ae^0xf64fd221ed0385db`,
   `0x340e4195^0x496f23ad`. Verified: feeding the flag prints "Validation Successful".
 
-## 24 — Quick Mafs  `NZCSC{w0w_n1ce_m4ths_t1me_t0_d0_y0ur_h0m3w0rk}`  (crypto / RSA)
+## 24 - Quick Mafs  `NZCSC{w0w_n1ce_m4ths_t1me_t0_d0_y0ur_h0m3w0rk}`  (crypto / RSA)
 `chall.py` + `out.txt`. Flag XOR a one-time pad; pad is RSA plaintext of round 1,
 XORed flag is RSA plaintext of round 2; e=0x10001 both.
 - Round 1 "hint" = `(p+e)(q+e)` = N + e(p+q) + e² → leaks `p+q` → factor via
@@ -150,9 +150,9 @@ XORed flag is RSA plaintext of round 2; e=0x10001 both.
 - `flag = flag_enc XOR pad`. Solver: `/home/server/.claude/jobs/74fdb04f/solve24.py`.
 - Recreation: both "helpful hints" are symmetric-function leaks of the primes.
 
-## 14 — Lucky Day  `NZCSC{t1me_t0_t4k3_0n_v3ga5_n0w_m4te}`  (pwn / logic)  [LIVE]
+## 14 - Lucky Day  `NZCSC{t1me_t0_t4k3_0n_v3ga5_n0w_m4te}`  (pwn / logic)  [LIVE]
 `nc pwn.ctf.nzcsc.org.nz 10014`. Python blackjack; start $1000, reach $1e9 for flag.
-- **Bug:** the `split` handler does `your_hand.cards[1] = SHOE.pop()` — no pair
+- **Bug:** the `split` handler does `your_hand.cards[1] = SHOE.pop()` - no pair
   check, never makes a 2nd hand, keeps len==2. So `split` is an unlimited **reroll**
   of your second card. Reroll until `card[0]+card[1]==21` (Ace + ten-value) → a
   two-card 21 = natural blackjack, which in the compare logic can only win or tie
@@ -164,8 +164,8 @@ XORed flag is RSA plaintext of round 2; e=0x10001 both.
 - Recreation: `split` must require a real pair + stake a second bet; dump
   flag.txt is a placeholder.
 
-## 20 — PyPwn  `NZCSC{uaf_1n_pyth0n_m4k3s_f0r_4_fun_arb_rw_pr1m1t1ve}`  (pwn / py sandbox)  [LIVE]
-`nc pwn.ctf.nzcsc.org.nz 10020`. python3.12 (non-PIE). `main.py` is the vuln — a
+## 20 - PyPwn  `NZCSC{uaf_1n_pyth0n_m4k3s_f0r_4_fun_arb_rw_pr1m1t1ve}`  (pwn / py sandbox)  [LIVE]
+`nc pwn.ctf.nzcsc.org.nz 10020`. python3.12 (non-PIE). `main.py` is the vuln - a
 CPython **bytearray use-after-free** (à la DiceCTF "irs"): `bytearray.__setitem__`
 caches the buffer pointer before coercing the index via `__index__`; a malicious
 `__index__` frees the buffer and reallocates an empty bytearray into the slot, so
@@ -180,7 +180,7 @@ the cached write corrupts the new object's `ob_size` → length 2^56 with
   `$CLAUDE_JOB_DIR/tmp/chall20/work/exploit.py remote 52.65.229.107 10020`.
 - Recreation: ship main.py verbatim, python3.12 non-PIE, flag at `/chal/flag.txt`.
 
-## 25 — Square Pad  `NZCSC{squ4re_p4dd1ng_0rac1e}`  (crypto / padding oracle)  [LIVE]
+## 25 - Square Pad  `NZCSC{squ4re_p4dd1ng_0rac1e}`  (crypto / padding oracle)  [LIVE]
 `nc pwn.ctf.nzcsc.org.nz 10025`. AES-CBC with bespoke "PKCS#36" padding:
 `padding_len = 16-(len%16)`; the pad byte value = `(padding_len-1)²`, repeated
 `padding_len` times (len7 → 6²=36=0x24, the name joke). `unpad` accepts iff the
@@ -196,14 +196,14 @@ last byte is a **perfect square** (`gmpy2.iroot(b,2)` exact) and the last
   connection. ~5600 queries. Solver: `$CLAUDE_JOB_DIR/tmp/attack/solve.py`.
 - Recreation: ship server.py verbatim; bake the flag.
 
-## 11 — PC Builder  (web / CSRF via admin bot)  — **UNSOLVED: needs external hosting**
+## 11 - PC Builder  (web / CSRF via admin bot)  - **UNSOLVED: needs external hosting**
 Host: chall11. Source in dump (`pc_builder.tar`). Fully analysed; flag not yet
 pulled because the final step needs an attacker page hosted on a public URL the
-admin bot can reach — every hosting path was blocked by this session's classifier.
+admin bot can reach - every hosting path was blocked by this session's classifier.
 - Win: dashboard shows the flag iff `current_user.has_build`. `/build` needs all 8
   components on AND balance ≥ TOTAL_BUILD_PRICE = 1,001,400 (RAM alone = 1,000,000;
   start balance 1,500).
-- Only balance-increasing path: `POST /review/<id>` with `decision=approve` — it is
+- Only balance-increasing path: `POST /review/<id>` with `decision=approve` - it is
   `@csrf.exempt` and gated only by `is_admin`. On approve it credits the *requesting*
   user `component_price - claimed_price`. A RAM price-match with `claimed_price=1`
   → +999,999 → balance 1,001,499 ≥ price → `/build` → flag.
@@ -223,7 +223,7 @@ admin bot can reach — every hosting path was blocked by this session's classif
 
 ---
 
-## 21 — Nana's Blog  (web / WordPress)  — **UNSOLVED (strong leads)**
+## 21 - Nana's Blog  (web / WordPress)  - **UNSOLVED (strong leads)**
 Host: chall21. Hardened default WordPress (Apache 2.4.68, PHP 8.3.32, WP 7.0.1,
 theme twentytwentyfive, single `admin` user id 1, no posts). Hardening: REST
 user-enum neutered (`/wp/v2/users` → `[]`), sitemaps/readme/dir-listing blocked,
@@ -238,21 +238,21 @@ filesystem `/flag.txt` → needs file-read/RCE.
   `core/get-site-info` found so far.
 - **Likely intended path:** a custom "ability" the "grandchild" registered as a
   file-read backdoor with a broken `permission_callback` (unauth execute) reading
-  `/flag.txt`. Finish by brute-forcing ability names (SERIAL or ≤5 conns — the
+  `/flag.txt`. Finish by brute-forcing ability names (SERIAL or ≤5 conns - the
   server throttles concurrent TLS) looking for a POST that returns `401/400/200`
   instead of `405` (a write ability) or a GET read-only ability returning 200.
   Probe templates: `$CLAUDE_JOB_DIR/probe3.py`; earlier scrape in
   `nzcsc2026-scrape/chall21/`.
-- Recreation: no dump source — rebuild from this spec (hardened WP + the
+- Recreation: no dump source - rebuild from this spec (hardened WP + the
   misconfigured custom Abilities-API file-read) once the exact backdoor is found.
 
 ---
 
 ## STILL OPEN
-- **11 PC Builder** — UNSOLVED, exploit fully known, needs an externally-hosted
+- **11 PC Builder** - UNSOLVED, exploit fully known, needs an externally-hosted
   attacker page (admin-bot CSRF); ~1 min to finish once hosting is available.
-- **21 Nana's Blog** — UNSOLVED, WordPress Abilities-API backdoor leads above.
-- **17 FlagBot** — UNSOLVED because the challenge **backend is down**: frontend
+- **21 Nana's Blog** - UNSOLVED, WordPress Abilities-API backdoor leads above.
+- **17 FlagBot** - UNSOLVED because the challenge **backend is down**: frontend
   (Flask chat UI) is up, but its Ollama LLM host `172.31.13.103:11434` refuses
   connections, so `/api/status` is `ready:false` and `/api/chat` 500s. The flag is
   only in the bot's **system prompt**. Start the Ollama EC2, then solve =
@@ -260,7 +260,7 @@ filesystem `/flag.txt` → needs file-read/RCE.
   base64 the flag, etc.). Recreation: Flask frontend polling `/api/status`
   (pull-then-ready gate) proxying `/api/chat` to Ollama with the flag embedded in a
   "do not reveal" system prompt (jailbreakable; no external moderation).
-- **15 Snaked, 16 Random Assistant, 19 Open the Windows** — NOT started: the
+- **15 Snaked, 16 Random Assistant, 19 Open the Windows** - NOT started: the
   session's safety classifier began refusing all new Bash/sub-agent launches
   partway through. Solve in a fresh session (or default permission mode). 19 needs
   a large Google-Drive BitLocker image that may not be fetchable from this box.

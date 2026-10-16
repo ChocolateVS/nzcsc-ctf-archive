@@ -1,8 +1,8 @@
 name: deploy
 
 # Push to main (or run manually) to publish the archive:
-#   * deploy-challenges — upserts data/*.json (+ files/) into CTFd over its API
-#   * sync-live         — syncs live/ to the CloudFront S3 bucket
+#   * deploy-challenges - upserts data/*.json (+ files/) into CTFd over its API
+#   * sync-live         - syncs live/ to the CloudFront S3 bucket
 # Both jobs are idempotent and safe to re-run. They soft-skip until their
 # config (secrets / variables) is present, so an unconfigured repo still goes
 # green. See README.md for the required secrets and variables.
@@ -37,7 +37,7 @@ jobs:
           CTFD_TOKEN: ${{ secrets.CTFD_TOKEN }}
         run: |
           if [ -z "$CTFD_TOKEN" ] || [ -z "$CTFD_URL" ]; then
-            echo "::warning::CTFD_URL / CTFD_TOKEN secrets not set — skipping challenge deploy."
+            echo "::warning::CTFD_URL / CTFD_TOKEN secrets not set - skipping challenge deploy."
             exit 0
           fi
           python tools/deploy_challenges.py

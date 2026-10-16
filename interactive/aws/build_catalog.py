@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""Emit catalog.json — the machine-readable list of interactive challenges that
+"""Emit catalog.json - the machine-readable list of interactive challenges that
 the AWS on-demand system builds (CI), runs (agent), and advertises (launcher).
 
 It reads the same per-challenge `challenge.yml` manifests + per-comp `config.env`
 that gen_compose.py uses, so the AWS catalog stays in lockstep with the source of
-truth. It does NOT apply the home box's Cloudflare/LAN gating — on AWS the
+truth. It does NOT apply the home box's Cloudflare/LAN gating - on AWS the
 challenges are public and access is mediated by the launcher (lease + cap).
 
   python3 interactive/aws/build_catalog.py > interactive/aws/catalog.json

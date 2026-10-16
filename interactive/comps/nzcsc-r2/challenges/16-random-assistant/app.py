@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""Random Assistant — R2 #16 (author: Cale).
+"""Random Assistant - R2 #16 (author: Cale).
 
 Reconstructed server for the archive from the shipped Windows client
 (RandomAssistant.exe + .pdb). The original backend source was not in the dump;
 this re-implements the exact wire protocol the client speaks, recovered by
 reverse-engineering the client:
 
-  * host               chall16.ctf.nzcsc.org.nz (443, https) — behind Caddy here
+  * host               chall16.ctf.nzcsc.org.nz (443, https) - behind Caddy here
   * POST /api/v1/login  {"username":"api","password":"SuperSecretP@ss123!"}
                         -> {"token": "..."}; later requests send
                         Authorization: Bearer <token> + Content-Type: application/json
@@ -16,14 +16,14 @@ reverse-engineering the client:
   * GET  /api/v1/spec  ?sig=<hex>   -> {"result": "<FLAG>"}   (the hidden one)
 
 Every API call is signed:  sig = HMAC_SHA256(SIGN_KEY, <request path>) hex.
-SIGN_KEY is a *client-side secret* baked into the client — the client computes
+SIGN_KEY is a *client-side secret* baked into the client - the client computes
 HMAC-SHA256 with the key b"you_will_never_get_this_la_la_la_la_la" (stored
 obfuscated in .data) over the bare path, hex-encodes it, and appends ?sig=.
 
 The outcome of coin/dice/card is chosen *server-side* with a CSPRNG, so a player
 can't rig the randomness (the author's whole premise). But the signing key lives
 in the client, so a player who reverse-engineers it can forge a valid signature
-for ANY path — including /api/v1/spec, an endpoint the GUI never calls. A signed
+for ANY path - including /api/v1/spec, an endpoint the GUI never calls. A signed
 request to /api/v1/spec returns the flag. Hence:
   server-side random, but client-side secrets.
 """
@@ -66,7 +66,7 @@ def _authed():
 
 
 def _sig_ok():
-    """True iff ?sig= matches HMAC_SHA256(SIGN_KEY, path) — exactly how the
+    """True iff ?sig= matches HMAC_SHA256(SIGN_KEY, path) - exactly how the
     client signs. Compared case-insensitively so either hex case is accepted."""
     provided = (request.args.get("sig") or "").lower()
     expected = hmac.new(SIGN_KEY, request.path.encode(), hashlib.sha256).hexdigest()
@@ -121,7 +121,7 @@ def card():
 
 @app.get("/api/v1/spec")
 def spec():
-    # Not wired to any button in the GUI client — but it signs/authenticates
+    # Not wired to any button in the GUI client - but it signs/authenticates
     # just like the others, so a forged signature reaches it. Returns the flag.
     err = _guard()
     if err:

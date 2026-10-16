@@ -1,4 +1,4 @@
-# Salted Collision — PHP "magic hash" / type-juggling challenge.
+# Salted Collision - PHP "magic hash" / type-juggling challenge.
 # Faithful to the original, which served over Apache/2.4.x (Debian) + PHP.
 # The FLAG is injected at runtime via the FLAG env var (from flags.env); it never
 # lives in the image or in git. SECRET_PASSWORD is fixed in config.php so the

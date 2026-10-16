@@ -4,7 +4,7 @@
     challNN.r0.nzcsc.org.nz   ->   challNN.r0.2026.ctf.int.rowansserver.com
 
 so the fleet (and you) hit the self-hosted copies. Run this AFTER the replica containers
-are actually up — otherwise descriptions point at hosts that aren't serving yet.
+are actually up - otherwise descriptions point at hosts that aren't serving yet.
 
   python3 rewrite_ctfd_urls.py [--base URL] [--token ctfd_...] [--dry-run] [--revert]
 

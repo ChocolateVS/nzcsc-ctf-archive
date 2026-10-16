@@ -1,5 +1,5 @@
 <?php
-// config.php — NOT displayed to the client (PHP is executed, never served as text).
+// config.php - NOT displayed to the client (PHP is executed, never served as text).
 // The secret password is fixed so the intended solve path reproduces exactly; the
 // flag is injected at runtime via the FLAG environment variable and is never
 // hard-coded here.

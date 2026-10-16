@@ -3,7 +3,7 @@
 
 Serves the ORIGINAL page + assets (index.html, static/style.css, static/app.js) verbatim,
 and replays the ORIGINAL /api/records telemetry captured from the live challenge
-(data.json) with identical paging and error behaviour — so the page, data and solve are
+(data.json) with identical paging and error behaviour - so the page, data and solve are
 byte-identical to the real challenge."""
 import os
 import json

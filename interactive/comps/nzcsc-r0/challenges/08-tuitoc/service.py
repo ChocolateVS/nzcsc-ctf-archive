@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
-"""8 - Tuitoc — a line-based TCP re-implementation of the original tuitoc.py.
+"""8 - Tuitoc - a line-based TCP re-implementation of the original tuitoc.py.
 
 The original is a menu-driven CLI that "sends bird songs" by running
 `echo "TODO: implement sending a bird song to {host}"` through `subprocess.run(...,
 shell=True)` in a background worker thread. The intended bug is a TOCTOU race:
 `bird_song_host` is written to shared state *before* it is validated, and the worker
 rebuilds its shell command from that shared value on *every* loop iteration. Start a
-long, valid job, then submit a second host containing shell metacharacters — it fails
+long, valid job, then submit a second host containing shell metacharacters - it fails
 the whitelist so no new worker starts, but the poisoned value is already live and the
 still-running worker executes it via shell=True.
 
@@ -70,7 +70,7 @@ class Handler(socketserver.StreamRequestHandler):
     def worker_bird_run(self):
         try:
             for i in range(self.number_of_songs):
-                # NOTE: command is rebuilt from the shared attribute EACH iteration —
+                # NOTE: command is rebuilt from the shared attribute EACH iteration -
                 # this is the TOCTOU sink.
                 command = f'echo "TODO: implement sending a bird song to {self.bird_song_host}"'
 
@@ -93,7 +93,7 @@ class Handler(socketserver.StreamRequestHandler):
         self.bird_song_results.put("Bird song finished")
 
     def hatch_bird(self):
-        # Shared value written BEFORE validation — and NOT reverted on the failure path.
+        # Shared value written BEFORE validation - and NOT reverted on the failure path.
         self.bird_song_host = self.ask(
             "Please enter the hostname of the host you want to send a bird song too (e.g. google.com) > "
         )

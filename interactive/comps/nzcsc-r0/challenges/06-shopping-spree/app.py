@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Shopping Spree — Flask shopping site.
+"""Shopping Spree - Flask shopping site.
 
 Faithful replica of the provided shopping_spree.zip source. The "Flag" product is
 only rendered for the `admin` user, but the /login route has a short-circuit logic
-bug: `username and password and not any(...)` — if either field is falsy (e.g. an
+bug: `username and password and not any(...)` - if either field is falsy (e.g. an
 empty password) the credential check never runs and the else-branch logs you in as
 whatever username was submitted. So POSTing username=admin with an empty password
 bypasses auth and reveals the flag product on /shop.
 
-The flag comes from the FLAG env var (set by the generator from flags.env) — never
+The flag comes from the FLAG env var (set by the generator from flags.env) - never
 hard-coded. Listens on 0.0.0.0:5000 (matches `port: 5000` in challenge.yml). Templates
 and CSS are inlined so the app stays a single file (the Dockerfile copies only app.py).
 """
@@ -37,7 +37,7 @@ class User:
 
 
 # Temporary user storage. The admin password is random, so it cannot be guessed
-# or brute-forced — the intended path is the login logic bug, not the password.
+# or brute-forced - the intended path is the login logic bug, not the password.
 users: list[User] = [
     User(
         "admin",

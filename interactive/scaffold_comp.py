@@ -75,7 +75,7 @@ def main():
         lines.append("mem_limit: 256m")
         lines.append("# Real flag goes in comps/%s/flags.env (key %s or %s)." % (comp, cid, slug))
         if OSINT_RE.search(c.get("description") or ""):
-            lines.append("# NOTE: looks OSINT-flavoured — the solve may depend on external")
+            lines.append("# NOTE: looks OSINT-flavoured - the solve may depend on external")
             lines.append("#       profiles/pages the author controls; only the site is replicable here.")
         (folder / "challenge.yml").write_text("\n".join(lines) + "\n")
         made.append("%s -> %s" % (folder.name, typ))

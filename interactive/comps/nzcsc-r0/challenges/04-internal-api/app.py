@@ -119,7 +119,7 @@ def login(body: LoginRequest):
 def challenge(authorization: Optional[str] = Header(None)):
     _require_auth(authorization)
     return {
-        "title": "NZCSC — Internal API",
+        "title": "NZCSC - Internal API",
         "description": "API's.",
         "objective": "Find and read a sensitive resource that should not be accessible from outside.",
         "flag_format": "NZCSC{...}",

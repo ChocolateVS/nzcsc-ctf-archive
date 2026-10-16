@@ -12,7 +12,7 @@ Pushing to `main` deploys automatically (see [Pipeline](#pipeline)).
 
 | Path | What |
 |------|------|
-| `data/data_*.json` | Challenge definitions per year/round — the source of truth. |
+| `data/data_*.json` | Challenge definitions per year/round - the source of truth. |
 | `files/` | Challenge attachments referenced by `data/*.json` (zips, scripts). |
 | `live/` | Static site synced to the `live.nzcsc.xyz` bucket (web challenge snapshots). |
 | `mirrors/` | Raw recovered source material the `live/` snapshots were built from (build input, not deployed). |
@@ -41,19 +41,19 @@ A challenge:
 ```
 
 `flag`, `files`, `prompt`, `connection_info`, `method` are all optional. **Flags
-are set only when present — the tooling never invents one.**
+are set only when present - the tooling never invents one.**
 
 ## Pipeline
 
 On push to `main` (and via **Run workflow**), `.github/workflows/deploy.yml` runs
 two independent, idempotent jobs:
 
-- **deploy-challenges** — `tools/deploy_challenges.py` upserts every `data/*.json`
+- **deploy-challenges** - `tools/deploy_challenges.py` upserts every `data/*.json`
   into CTFd via its REST API. Challenges are matched by category + the leading
   `"<num> - "` in the name, so edits update in place. It is **additive**: it
   never deletes challenges, flags, or files, and only adds a flag/tag/file that
   isn't already there.
-- **sync-live** — syncs `live/` to the S3 bucket behind CloudFront and
+- **sync-live** - syncs `live/` to the S3 bucket behind CloudFront and
   invalidates the cache. Skipped until its role variable is set (below).
 
 Both jobs soft-skip when unconfigured, so the first push goes green regardless.
@@ -92,7 +92,7 @@ Then in this repo add Actions **Variables** (not secrets):
 ```sh
 pip install -r tools/requirements.txt
 
-# safe preview — reads only, no writes, no token needed for the plan:
+# safe preview - reads only, no writes, no token needed for the plan:
 CTFD_URL=https://ctf.nzcsc.xyz python tools/deploy_challenges.py --dry-run
 
 # real deploy:
@@ -109,7 +109,7 @@ CTFD_URL=https://ctf.nzcsc.xyz CTFD_TOKEN=xxxx python tools/deploy_challenges.py
 - The live platform currently holds the full imported set (~138 challenges);
   `data/*.json` describes the reconstructed subset (~93). Because the deployer is
   additive and never deletes, running it only ever updates/ensures the ones it
-  knows about — it won't remove the rest.
+  knows about - it won't remove the rest.
 - Some older files (e.g. 2021) live only on the platform (attached during the
   initial import) and aren't in `files/`. The deployer detects they're already
   attached and leaves them alone; it warns (doesn't fail) if one is neither in

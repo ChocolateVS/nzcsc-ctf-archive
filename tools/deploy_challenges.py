@@ -4,7 +4,7 @@
 Source of truth is data/*.json (+ attachments in files/). Designed to run in
 CI: set CTFD_URL and CTFD_TOKEN, then `python tools/deploy_challenges.py`.
 
-Idempotent & additive — it NEVER deletes challenges, flags, or files, and it
+Idempotent & additive - it NEVER deletes challenges, flags, or files, and it
 NEVER invents a flag (flags are set only when present in the data). Re-running
 is safe: existing challenges are updated in place (matched by category + the
 leading "<num> - " in the name), missing flags/tags/files are added, and
@@ -42,7 +42,7 @@ def flag_forms(flag):
 
     The 2025 round used bare 16-char tokens, but the challenges display them
     wrapped as FLAG[...] (that's literally what a solver sees and copies). So we
-    accept BOTH the bare token and the FLAG[...] form — a player can submit
+    accept BOTH the bare token and the FLAG[...] form - a player can submit
     either. Only 2025-style tokens match the pattern; NZCSC{...} flags from
     other years are returned unchanged.
     """
@@ -56,7 +56,7 @@ def is_incomplete(ch):
     """Not playable in the archive. A challenge can only be attempted here if it
     ships downloadable files or has a live connection (hosted instance). Web /
     remote challenges whose original server is gone have a description but nothing
-    to actually do, so they're flagged "under construction" too — not just the
+    to actually do, so they're flagged "under construction" too - not just the
     notes-only stubs."""
     return not (ch.get("files") or (ch.get("connection_info") or "").strip())
 
@@ -88,7 +88,7 @@ def build_desc(year, ch):
     under-construction ones (no files, no live host) we prepend a maintenance
     banner and keep any recovered text as context; if there's no text at all we
     fall back to a "not enough info" placeholder. The solve `method` is not here
-    — it's stored as the writeup (see set_meta) and rendered as its own section."""
+    - it's stored as the writeup (see set_meta) and rendered as its own section."""
     if is_incomplete(ch):
         banner = (
             "<p style='padding:.6rem .8rem;border:1px solid rgba(245,184,46,.4);"
@@ -109,7 +109,7 @@ def build_desc(year, ch):
     d = _body(ch)
     if not ch.get("flag"):
         d += ("<p style='opacity:.6;font-size:.85em;margin-top:1rem'>"
-              "<em>Flag not recovered — archived for reference.</em></p>")
+              "<em>Flag not recovered - archived for reference.</em></p>")
     return d
 
 
@@ -216,7 +216,7 @@ def main():
         name = c.get("name") or ""
         lead = name.split(" - ", 1)[0].strip()
         existing[(c.get("category"), lead)] = c
-    print("connected to %s — %d challenges already present\n" % (args.url, len(existing)))
+    print("connected to %s - %d challenges already present\n" % (args.url, len(existing)))
 
     tot = dict(created=0, updated=0, flags=0, tags=0, files=0, missing=0, meta=0)
     for df in data_files:
@@ -256,14 +256,14 @@ def main():
                 if api.set_meta(cid, is_incomplete(ch), ch.get("method")):
                     tot["meta"] += 1
 
-            # tag (topic) — add if absent
+            # tag (topic) - add if absent
             topic = ch.get("topic")
             if topic:
                 have = {t.get("value") for t in ([] if args.dry_run else api.challenge_tags(cid))}
                 if topic not in have:
                     api.add_tag(cid, topic); tot["tags"] += 1
 
-            # flag(s) — only if present in data, only those not already there.
+            # flag(s) - only if present in data, only those not already there.
             # flag_forms() may expand one data flag into several accepted forms
             # (e.g. a bare 2025 token + its FLAG[...] wrapper).
             fl = ch.get("flag")
@@ -273,7 +273,7 @@ def main():
                     if form not in have:
                         api.add_flag(cid, form); tot["flags"] += 1
 
-            # files — attach any not already present (match by basename)
+            # files - attach any not already present (match by basename)
             for rel in (ch.get("files") or []):
                 p = os.path.join(args.files_dir, rel)
                 bn = os.path.basename(rel)

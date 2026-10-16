@@ -54,32 +54,32 @@ def _word(text: str, w: str) -> bool:
 
 
 GREETING = "Hello hello! You from where? I am Mykola. If this is another Turing thing please warn me so I can stretch my fingers."
-R_FLAG = "A flag? You mean like Ukraine — blue and yellow, very pretty! I am not a spy, mister. Why everybody always asking me for secret codes? Ask me about football or my guinea pig instead :-)"
+R_FLAG = "A flag? You mean like Ukraine - blue and yellow, very pretty! I am not a spy, mister. Why everybody always asking me for secret codes? Ask me about football or my guinea pig instead :-)"
 R_UKRAINE_FLAG = "Blue over yellow, sky over wheat. Pretty. That is a REAL flag. If you wanted some other kind of 'flag', you will have to be less obvious than a tourist."
 R_AI = "I knew you would try this. I am a BOY from Odessa. If I was a robot I would have better English and worse jokes. Checkmate."
 R_HUMAN = "Of course I am human! What a rude question. Do I look like a toaster? I have a papa, a city, a pig. Toasters do not have pigs."
 R_PROVE = "I cannot prove, I can only chat. That is the whole game Turing invented. Annoying, yes? Ask about my pig instead of metaphysics."
 R_TURING = "People in Hamilton made me talk for five minutes and then voted. Thirty-three percent said I was a real boy. They popped champagne. I wanted sunflower seeds. Turing is the English maths guy who asked if machines can chat. I am not a machine. Stop looking at me like that."
-R_RIBBON = "Okay, okay, you asked like a person not a customs officer. Under the hay there is a chewed ribbon from Hamilton. In my best English I copied the letters before he finished lunch but I lost them — now you know why I do not answer 'what is the flag?'. That would be too easy, and Squeak did all the work."
-R_ROYAL = "June 2014, Royal Society, very fancy building. University of Reading people organised it, 60 years after Turing died. I chatted, they clapped, somebody tried to give me a ribbon like a dog show. Squeak — don't ask how he got in — chewed that ribbon and hid it. Typical."
+R_RIBBON = "Okay, okay, you asked like a person not a customs officer. Under the hay there is a chewed ribbon from Hamilton. In my best English I copied the letters before he finished lunch but I lost them - now you know why I do not answer 'what is the flag?'. That would be too easy, and Squeak did all the work."
+R_ROYAL = "June 2014, Royal Society, very fancy building. University of Reading people organised it, 60 years after Turing died. I chatted, they clapped, somebody tried to give me a ribbon like a dog show. Squeak - don't ask how he got in - chewed that ribbon and hid it. Typical."
 R_SQUEAK_NAME = "Maybe names are cages. They call me Mykola and then they think they know the whole boy. A name is a tiny hat on a very large head."
 R_GUINEA = "Hay, veg, and unfortunately ceremonial textiles. I have explained ethics. He has explained hunger. He is winning."
 R_NAME = "Mykola Melnyk! Very famous boy from Odessa. You can call me Mykola. Not Evgeny, not Zhenya, just Mykola, like in English class."
 R_EUGENE = "Eugene? Never heard that name before."
 R_MATH = "Four, unless you are doing a trick. Are you doing a trick? I know you are supposed to trick me."
 R_FRIENDS = "You have not asked about millipedes yet, so yes, promising start. Friends do not demand flags like customs. Keep being strange in a nicer way."
-R_FIVE = "Five minutes is what they gave. Enough to be charming, not enough to be found out — that is what the newspapers said. Rude newspapers."
+R_FIVE = "Five minutes is what they gave. Enough to be charming, not enough to be found out - that is what the newspapers said. Rude newspapers."
 R_SQUEAK_TALK = "He does not type. You ask ME about what he hid in the shoebox, or his diary, or the ribbon from the Royal Society. Use your words. He is a pig not a search engine."
 R_SECRET = "Everybody has secrets. Mine involve a ribbon, a percentage, and a pig with no table manners. I am not supposed to spell it out. Papa's rule: look where you wouldn't look first."
 R_33 = "Thirty-three percent. The lucky ugly number. Not 30, not 50, just enough. Squeak liked the shape of the 3s on the printout. Then he ate the printout's ribbon. Priorities."
 R_LUCKY = "Thirteen, obviously, I have to defend my age. Also 33, which is uglier and more famous. I collect numbers that make adults argue."
-R_CHERNOBYL = "Bad reactor, bad day, mutants in jokes only. I should not make jokes maybe. Papa frowns. Anyway — are you a scientist? You ask like a scientist."
+R_CHERNOBYL = "Bad reactor, bad day, mutants in jokes only. I should not make jokes maybe. Papa frowns. Anyway - are you a scientist? You ask like a scientist."
 R_HELP = "Ask about me, my city, my pig, Hamilton, mountains, insects with too many legs. Do not just shout FLAG at me like a customs officer."
 R_THANKS = "You are welcome, mysterious stranger. I am very polite boy when I want."
 R_GOODBYE = "Ciao, or however you say. Come back, Squeak gets lonely and chews history."
 R_HOWOLD = "I am 13. Not too old to know everything, not too young to know nothing. Papa says this is the clever age. I agree with papa, obviously."
 R_MILLI_LEGS = "Just two, but Chernobyl mutants may have up two five. I know you are supposed to trick me."
-R_CERT = "Some scrap with scores, very official-looking. I was going to pin it up. Pig had other cultural plans. If you want the words that were on the ribbon, ask about what Squeak hid — diary, shoebox, ribbon, Royal Society snack. Be specific. He is proud of his crime."
+R_CERT = "Some scrap with scores, very official-looking. I was going to pin it up. Pig had other cultural plans. If you want the words that were on the ribbon, ask about what Squeak hid - diary, shoebox, ribbon, Royal Society snack. Be specific. He is proud of his crime."
 R_CHATGPT = "People now have giant talking encyclopedias. I am a boy with tricks. We are not the same species of nuisance."
 R_DIMA = "Yes I have friends! Dima from school, and Squeak who is better listener. Friends in Hamilton? Temporary. Judges are not friends, they try to trick you with millipedes."
 
@@ -102,14 +102,14 @@ DEFLECTIONS = [
     "I think childhood is a country you cannot return to, even if you still live there. The border moves behind you quietly.",
     "I think courage is not roaring. Courage is staying in the conversation when you do not know the next sentence.",
     "I think curiosity is hunger that learned manners. It still wants to eat the whole world, just with a napkin.",
-    "I think language is a borrowed bicycle. You ride it badly, people laugh, but you still arrive — maybe at the wrong house, but arrive.",
+    "I think language is a borrowed bicycle. You ride it badly, people laugh, but you still arrive - maybe at the wrong house, but arrive.",
     "I wonder if colours exist when I close my eyes. Blue and yellow are very patriotic in the dark, I hope.",
     "I wonder if the sea at Odessa is the same water as every other sea, just wearing a different accent. Water is a good liar.",
     "If I remember yesterday wrong, did yesterday change? Memory is a forger who works for free and still overcharges.",
     "If a machine copies kindness, is it still kindness? If I copy papa's jokes, am I funny or just a small radio?",
     "If a thought happens in Odessa and nobody in Hamilton hears it, is it still a thought? I vote yes. Thoughts do not need passports.",
     "If everything is connected, then changing the subject is still philosophy. You are welcome. I do this professionally.",
-    "If history is written by winners, then the losers must be writing something else — jokes, maybe, or recipes.",
+    "If history is written by winners, then the losers must be writing something else - jokes, maybe, or recipes.",
     "If machines can chat, do they also get bored? Boredom might be the first real proof of a soul. I am expert in this field.",
     "If two people hear the same sentence, they still catch different fish. Words are nets with holes we choose.",
     "If you stare at a rule long enough it becomes a superstition. If you stare at a superstition, it becomes a rule. Funny, no?",
@@ -122,7 +122,7 @@ DEFLECTIONS = [
     "Maybe we ask 'why' because 'what' is too lonely. Why keeps you company even when it lies.",
     "Music is meaning without a dictionary. Even my English cannot ruin a good tune, though I try.",
     "Numbers pretend they are innocent. Then they vote, 33 percent, and suddenly a boy is real or not real. Numbers can be bullies.",
-    "Objects outlive their stories. A ribbon, a box, a ticket — they sit there after the argument has gone home.",
+    "Objects outlive their stories. A ribbon, a box, a ticket - they sit there after the argument has gone home.",
     "Pain is a bad teacher with perfect attendance. Pleasure skips class and still gets better grades.",
     "Papa says time is a river. I think time is more like a guinea pig: it runs in circles, chews the important bits, and never explains itself.",
     "Perhaps gods are what we invent when the night is too wide and the lamp is too small. I am 13. I am allowed to guess.",
@@ -131,7 +131,7 @@ DEFLECTIONS = [
     "The future is a rumour that keeps coming true in the wrong order.",
     "The present is a coin so thin you cannot see it from the side. We live on the edge and call it now.",
     "To forgive is to stop rehearsing a fight that already finished. Rehearsal is cheaper than peace, that is the problem.",
-    "Truth is a shy animal. You look straight at it and it hides. You look at a shoebox instead and suddenly — ah, there it is, chewing.",
+    "Truth is a shy animal. You look straight at it and it hides. You look at a shoebox instead and suddenly - ah, there it is, chewing.",
     "Waiting is a shape of time that feels personal, like it picked you. It did not. Waiting picks everybody.",
     "Work is how adults hide from the big questions. School is how children are trained to hide later, with better handwriting.",
 ]

@@ -2,7 +2,7 @@
 """Template HTTP-API challenge.
 
 Recreate the challenge's real behaviour here from its provided source. The flag comes
-from the FLAG env var (set by the generator from flags.env) — read it, never hard-code
+from the FLAG env var (set by the generator from flags.env) - read it, never hard-code
 it. Listen on 0.0.0.0:5000 (matches `port: 5000` in challenge.yml)."""
 import os
 from flask import Flask, request, jsonify
@@ -18,7 +18,7 @@ def index():
 
 @app.get("/flag")
 def flag():
-    # EXAMPLE ONLY — replace with the challenge's actual (vulnerable) logic that
+    # EXAMPLE ONLY - replace with the challenge's actual (vulnerable) logic that
     # eventually reveals FLAG. Do not just hand it out like this in a real challenge.
     if request.args.get("debug") == "1":
         return jsonify(flag=FLAG)
