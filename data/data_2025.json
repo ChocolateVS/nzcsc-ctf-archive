@@ -1,7 +1,7 @@
 {
   "category": "NZCSC 2025 R0",
   "year": "2025",
-  "note": "Titles from the official NZCSC25 writeup. Flags: ch1/6/8/9/10 verbatim from the writeup, ch2 decoded from the live challenge source (Wayback), the rest from the owner's 2025 solve sheet. 2025 flags are 16-char tokens.",
+  "note": "Titles from the official NZCSC25 writeup. Flags: ch1/6/8/9/10/16 verbatim from the writeup, ch2 decoded from the live challenge source (Wayback), the rest from the owner's 2025 solve sheet. 2025 flags are 16-char tokens.",
   "challenges": [
     {
       "num": 1,
@@ -136,7 +136,7 @@
       "title": "Cyber Space",
       "topic": "Web Exploitation",
       "value": 0,
-      "flag": null,
+      "flag": "A32D4AEBBB28349C",
       "method": "robots.txt points to things to investigate.",
       "files": [
         "2025-c16-cyber-space.zip"
