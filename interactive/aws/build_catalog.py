@@ -31,11 +31,12 @@ COMPS = os.path.join(INTERACTIVE, "comps")
 PARENT_DOMAIN = {
     "nzcsc-r0": "r0.2026.nzcsc.xyz",
     "nzcsc-r2": "r2.2026.nzcsc.xyz",
+    "nzcsc-2024-r0": "r0.2024.nzcsc.xyz",
 }
 # default raw-TCP host-port base per comp (overridable per challenge via tcp_port)
-TCP_BASE = {"nzcsc-r0": 10000, "nzcsc-r2": 11000}
+TCP_BASE = {"nzcsc-r0": 10000, "nzcsc-r2": 11000, "nzcsc-2024-r0": 12000}
 # host-port base for web challenges (caddy reverse-proxies the subdomain here)
-WEB_BASE = {"nzcsc-r0": 20000, "nzcsc-r2": 21000}
+WEB_BASE = {"nzcsc-r0": 20000, "nzcsc-r2": 21000, "nzcsc-2024-r0": 22000}
 
 
 def read_env(path):

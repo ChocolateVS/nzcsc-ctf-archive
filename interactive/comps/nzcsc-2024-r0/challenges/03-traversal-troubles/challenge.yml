@@ -1,0 +1,11 @@
+id: 3
+slug: traversal-troubles
+name: 3 - Traversal Troubles
+type: http
+port: 5000
+subdomain: chall3
+mem_limit: 256m
+# Runs as root so the app can write the traversal target at /flag.txt.
+user: root
+env:
+  FLAG: NZCSC{A_TRULY_TR34CH3R0US_TR4V3RS4L}
