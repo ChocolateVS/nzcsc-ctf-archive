@@ -424,7 +424,7 @@
       "SECRET_KEY": "r2_pcbuilder_secret",
       "ADMIN_PASSWORD": "r2_admin_pw_change_me",
       "BOT_TOKEN": "r2_bot_token",
-      "FLAG": "NZCSC{REPLACE_ME_pc-builder}"
+      "FLAG": "NZCSC{CR0SS_S1T3_RAM_F0RG3RY}"
     },
     "flag": null,
     "user": "arteta",
@@ -521,6 +521,28 @@
     "user": "arteta",
     "host_port": 10015,
     "tcp_port": 10015
+  },
+  {
+    "comp": "nzcsc-r2",
+    "id": 16,
+    "slug": "random-assistant",
+    "name": "16 - Random Assistant",
+    "type": "http",
+    "port": 5000,
+    "subdomain": "chall16",
+    "host": "chall16.r2.2026.nzcsc.xyz",
+    "image_tag": "nzcsc-r2-chall16",
+    "context": "comps/nzcsc-r2/challenges/16-random-assistant",
+    "mem_limit": "512m",
+    "privileged": false,
+    "read_only": false,
+    "cap_add": [],
+    "env": {
+      "FLAG": "NZCSC{S3RV3R_SID3_RAND0M_BUT_CLI3NT_SID3_S3CR3TS}"
+    },
+    "flag": null,
+    "user": "arteta",
+    "host_port": 21016
   },
   {
     "comp": "nzcsc-r2",

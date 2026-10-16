@@ -1,0 +1,9 @@
+id: 16
+slug: random-assistant
+name: 16 - Random Assistant
+type: http
+port: 5000
+subdomain: chall16
+mem_limit: 512m
+env:
+  FLAG: NZCSC{S3RV3R_SID3_RAND0M_BUT_CLI3NT_SID3_S3CR3TS}
