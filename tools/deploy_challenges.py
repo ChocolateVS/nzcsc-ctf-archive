@@ -19,6 +19,7 @@ import argparse
 import glob
 import html
 import os
+import re
 import sys
 
 import requests
@@ -34,6 +35,21 @@ def esc(s):
 
 
 ABOUT_URL = "/about"
+
+
+def flag_forms(flag):
+    """Every string that should be accepted as a correct flag for `flag`.
+
+    The 2025 round used bare 16-char tokens, but the challenges display them
+    wrapped as FLAG[...] (that's literally what a solver sees and copies). So we
+    accept BOTH the bare token and the FLAG[...] form — a player can submit
+    either. Only 2025-style tokens match the pattern; NZCSC{...} flags from
+    other years are returned unchanged.
+    """
+    forms = [flag]
+    if re.fullmatch(r"[A-Z0-9]{16}", flag):
+        forms.append("FLAG[%s]" % flag)
+    return forms
 
 
 def is_incomplete(ch):
@@ -247,12 +263,15 @@ def main():
                 if topic not in have:
                     api.add_tag(cid, topic); tot["tags"] += 1
 
-            # flag — only if present in data, only if not already there
+            # flag(s) — only if present in data, only those not already there.
+            # flag_forms() may expand one data flag into several accepted forms
+            # (e.g. a bare 2025 token + its FLAG[...] wrapper).
             fl = ch.get("flag")
             if fl:
                 have = {f.get("content") for f in ([] if args.dry_run else api.challenge_flags(cid))}
-                if fl not in have:
-                    api.add_flag(cid, fl); tot["flags"] += 1
+                for form in flag_forms(fl):
+                    if form not in have:
+                        api.add_flag(cid, form); tot["flags"] += 1
 
             # files — attach any not already present (match by basename)
             for rel in (ch.get("files") or []):
