@@ -60,3 +60,12 @@ jobs:
           aws cloudfront create-invalidation \
             --distribution-id "${{ vars.LIVE_CF_DIST_ID }}" \
             --paths '/*'
+          # Also invalidate the dedicated "originals" distribution (same bucket,
+          # separate cache) so original-site content updates take effect. Found
+          # by comment; best-effort so a missing list permission can't fail deploy.
+          ORIG=$(aws cloudfront list-distributions \
+            --query "DistributionList.Items[?Comment=='Archived original NZCSC challenge sites'].Id" \
+            --output text 2>/dev/null || true)
+          if [ -n "$ORIG" ]; then
+            aws cloudfront create-invalidation --distribution-id "$ORIG" --paths '/*' || true
+          fi
