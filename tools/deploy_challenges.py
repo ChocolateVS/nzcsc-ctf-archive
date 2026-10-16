@@ -94,7 +94,7 @@ def build_desc(year, ch):
             "<p style='padding:.6rem .8rem;border:1px solid rgba(245,184,46,.4);"
             "border-radius:10px;background:rgba(245,184,46,.08);margin:0 0 1rem'>"
             "<i class='fas fa-person-digging'></i> <strong>Under construction.</strong> "
-            "This challenge needed a live server or files we can't host in the archive, "
+            "We don't have the original files or a live server to rebuild this one yet, "
             "so it isn't playable here and flag submission is disabled. Any recovered "
             "writeup is shown below.</p>"
         )
