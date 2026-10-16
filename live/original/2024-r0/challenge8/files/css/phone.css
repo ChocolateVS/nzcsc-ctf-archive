@@ -1,0 +1,129 @@
+html {    
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300 !important;
+    font-size: 12px;
+    background-image: url(../assets/crop.gif);
+    background-size: contain;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    color: #333333;
+    font-weight: 300 !important;
+    font-size: 30px;
+    text-shadow: 0px 0px 2px white;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    color: red;
+    font-weight: 700 !important;
+    font-size: 15px;
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700 !important;
+    font-size: 12px;
+    color: #333333;
+    text-transform: uppercase;
+}
+
+.navbar {
+    height: 180px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-bottom: 1px solid red;
+    background-color: red;
+    justify-content: space-between;
+}
+
+.navbar__logo {
+    height: 100%;
+    text-align: center;
+    width: 60%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar__logo__home {
+    display: none;
+}
+
+.navbar__logo__image {
+    width: 200px;
+    height: 140px
+}
+
+.navbar-buttons {
+    display: none;
+}
+
+.navbar__content {
+    margin-right: 32px;
+}
+
+.page__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100% - 180px);
+    padding: 16px;
+}
+
+.page__content__logo {
+    width: 300px;
+    height: 300px;
+}
+
+.page__content__logo img {
+    width: 100%;
+    height: 100%;
+}
+
+.page__content__container {
+    background-color: white;
+    margin-top: 60px;
+    overflow: scroll;
+}
+
+.page__content__data {
+    padding: 8px 16px;
+}
+
+
+select {
+    background-color: red;
+    width: 150px;
+    padding: 10px;
+    outline: 2px solid white;
+    color: white;
+    font-size: 12px;
+    float: right;
+}
+
+.Logo {
+    min-width: 178px;
+    width: 100%;
+    margin: 15px;
+}
+
+.themelogo {
+    position: fixed;
+    z-index: -1;
+    width: 100%;
+    text-align: center;
+    margin-top: 150px;
+}
+
+.themelogo img { width: 300px; }
