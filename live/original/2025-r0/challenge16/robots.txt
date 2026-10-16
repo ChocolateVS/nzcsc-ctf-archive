@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /login.html
+Disallow: /config.html
+Disallow: /dashboard.html
+Disallow: /settings.html
+Disallow: /register.html
+Disallow: /profile.html
+Disallow: /account.html
+Disallow: /report.html
+Disallow: /test.html
