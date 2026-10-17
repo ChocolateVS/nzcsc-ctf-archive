@@ -1,0 +1,11 @@
+{
+  "note": "Extra notes appended to existing CTFd challenges (any year) by tools/deploy_challenges.py. Idempotent via marker comments keyed by `key`.",
+  "notes": [
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 12,
+      "key": "drm-adblock",
+      "html": "<strong>Note:</strong> if the tracks won't load, disable your ad/tracker blocker for this site. Common filter lists (e.g. EasyPrivacy, used by uBlock Origin, Brave Shields and others) block the player's audio requests, so nothing plays."
+    }
+  ]
+}

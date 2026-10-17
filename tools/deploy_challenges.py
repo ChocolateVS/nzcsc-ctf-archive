@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Deploy the NZCSC archive challenges to a CTFd instance over its REST API.
 
-Source of truth is data/*.json (+ attachments in files/). Designed to run in
+Source of truth is data/*.json (+ attachments in files/). data/notes.json adds
+short notes to challenges that already exist in CTFd but aren't in data/ (e.g.
+the 2026 rounds, which live only in the platform). Designed to run in
 CI: set CTFD_URL and CTFD_TOKEN, then `python tools/deploy_challenges.py`.
 
 Idempotent & additive - it NEVER deletes challenges, flags, or files, and it
@@ -27,6 +29,7 @@ import requests
 HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 DATA_DIR = os.path.join(REPO, "data")
+NOTES_FILE = os.path.join(DATA_DIR, "notes.json")
 FILES_DIR = os.path.join(REPO, "files")
 
 
@@ -139,6 +142,9 @@ class CTFd:
         # admin view returns hidden challenges and full fields
         return self._get("/api/v1/challenges?view=admin")["data"]
 
+    def challenge(self, cid):
+        return self._get("/api/v1/challenges/%d?view=admin" % cid)["data"]
+
     def challenge_flags(self, cid):
         return self._get("/api/v1/challenges/%d/flags" % cid)["data"]
 
@@ -188,6 +194,32 @@ class CTFd:
         return r.json()
 
 
+def apply_notes(api, existing, path):
+    """Append each note in notes.json to its challenge's description. The note is
+    wrapped in marker comments and replaced (not duplicated) on re-run, so this
+    is idempotent and safe to run after the main upsert rewrote a description."""
+    import json
+    if not os.path.isfile(path):
+        return 0
+    n = 0
+    for note in json.load(open(path))["notes"]:
+        cat, num, key = note["category"], str(note["num"]), note["key"]
+        row = existing.get((cat, num))
+        if row is None:
+            print("  ! note %s: no challenge %s #%s" % (key, cat, num))
+            continue
+        start, end = "<!-- note:%s -->" % key, "<!-- /note:%s -->" % key
+        block = "%s<p style='opacity:.85'>%s</p>%s" % (start, note["html"], end)
+        cur = "" if api.dry else (api.challenge(row["id"]).get("description") or "")
+        base = re.sub(r"\s*%s.*?%s" % (re.escape(start), re.escape(end)), "", cur, flags=re.S)
+        new = base.rstrip() + "\n\n" + block
+        if new != cur:
+            api.patch_challenge(row["id"], {"description": new})
+        n += 1
+        print("  # note %s -> %s #%s" % (key, cat, num))
+    return n
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("files", nargs="*", help="data json files (default: all data/*.json)")
@@ -203,7 +235,8 @@ def main():
     if not args.token and not args.dry_run:
         sys.exit("set CTFD_TOKEN (or --token); or use --dry-run")
 
-    data_files = args.files or sorted(glob.glob(os.path.join(args.data_dir, "*.json")))
+    data_files = args.files or sorted(f for f in glob.glob(os.path.join(args.data_dir, "*.json"))
+                                      if os.path.basename(f) != "notes.json")
     if not data_files:
         sys.exit("no data files found")
 
@@ -288,6 +321,9 @@ def main():
                     continue
                 api.add_file(cid, p); tot["files"] += 1
                 print("    ^ attached %s" % bn)
+
+    print("== notes ==")
+    tot["notes"] = apply_notes(api, existing, NOTES_FILE)
 
     print("\nDONE (dry_run=%s): %s" % (args.dry_run, tot))
 
