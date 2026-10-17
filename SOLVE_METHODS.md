@@ -223,35 +223,36 @@ admin bot can reach - every hosting path was blocked by this session's classifie
 
 ---
 
-## 21 - Nana's Blog  (web / WordPress)  - **UNSOLVED (strong leads)**
+## 21 - Nana's Blog  (web / WordPress)  - **SOLVED**
+Flag: `NZCSC{n4n4_g0t_4_fr33_pente5t_n1ce_0ne}`
 Host: chall21. Hardened default WordPress (Apache 2.4.68, PHP 8.3.32, WP 7.0.1,
-theme twentytwentyfive, single `admin` user id 1, no posts). Hardening: REST
-user-enum neutered (`/wp/v2/users` → `[]`), sitemaps/readme/dir-listing blocked,
-no traversal/CVE, no git/backup leaks. `flag.txt` not web-served; flag is at
-filesystem `/flag.txt` → needs file-read/RCE.
-- **Open surfaces:** `xmlrpc.php` enabled (→ `system.multicall` amplified
-  brute-force of `admin`; a ~19-password check failed, needs a real wordlist); and
-  the 2025 **WP Abilities API** `/wp-abilities/v1` with an **unauth existence
-  oracle**: `POST /index.php?rest_route=/wp-abilities/v1/abilities/<ns%2Fname>/run`
-  → `404 rest_ability_not_found` (absent), `405 rest_ability_invalid_method`
-  (exists, read-only), `401 rest_ability_cannot_execute` (exists, perm-gated). Only
-  `core/get-site-info` found so far.
-- **Likely intended path:** a custom "ability" the "grandchild" registered as a
-  file-read backdoor with a broken `permission_callback` (unauth execute) reading
-  `/flag.txt`. Finish by brute-forcing ability names (SERIAL or ≤5 conns - the
-  server throttles concurrent TLS) looking for a POST that returns `401/400/200`
-  instead of `405` (a write ability) or a GET read-only ability returning 200.
-  Probe templates: `$CLAUDE_JOB_DIR/probe3.py`; earlier scrape in
-  `nzcsc2026-scrape/chall21/`.
-- Recreation: no dump source - rebuild from this spec (hardened WP + the
-  misconfigured custom Abilities-API file-read) once the exact backdoor is found.
+theme twentytwentyfive, single `admin` user id 1, no posts). `flag.txt` not
+web-served; the flag is at filesystem `/flag.txt`, so a file-read/RCE is needed.
+- **Solve (confirmed, end-to-end):** the hardening was thorough but the one thing
+  the "security-minded grandchild" left weak was the `admin` password - a common
+  wordlist entry, **`animalsrock`** (stored `$2y$04$…`, plain bcrypt at the lowest
+  cost). `/wp/v2/users` returns the `admin` login; `xmlrpc.php` is enabled so
+  `system.multicall` gives an amplified, unthrottled credential oracle
+  (`wp.getUsersBlogs`) for the brute force (equivalently wp-login.php). With the
+  password, log into `wp-admin` and take the usual authenticated-admin → code
+  execution route (plugin/theme editor, or upload a webshell plugin) and
+  `cat /flag.txt` (runs as the web user). Verified live reading the flag.
+- **Dead-end leads (for the record):** the WP Abilities API `/wp-abilities/v1`
+  unauth existence oracle and a hypothetical "file-read ability backdoor" went
+  nowhere - the real door was the weak admin credential, not a custom ability.
+- **Tooling:** the whole chain is one command with the home `wp2shell.py`:
+  `wp2shell shell <host> --user admin --password animalsrock --cmd 'cat /flag.txt'`.
+- Recreation: `interactive/comps/nzcsc-r2/challenges/21-nanas-blog/` - a **real**
+  WordPress 7.1.x container (Apache/PHP 8.3 + MariaDB in one image, served on
+  :8888), seeded to an empty "Turtle Blog" with `admin`/`animalsrock` and the flag
+  at `/flag.txt`. Re-solved end-to-end by the same `wp2shell` command. (No dump
+  source existed; rebuilt to match the scrape in `nzcsc2026-scrape/chall21/`.)
 
 ---
 
 ## STILL OPEN
 - **11 PC Builder** - UNSOLVED, exploit fully known, needs an externally-hosted
   attacker page (admin-bot CSRF); ~1 min to finish once hosting is available.
-- **21 Nana's Blog** - UNSOLVED, WordPress Abilities-API backdoor leads above.
 - **17 FlagBot** - UNSOLVED because the challenge **backend is down**: frontend
   (Flask chat UI) is up, but its Ollama LLM host `172.31.13.103:11434` refuses
   connections, so `/api/status` is `ready:false` and `/api/chat` 500s. The flag is

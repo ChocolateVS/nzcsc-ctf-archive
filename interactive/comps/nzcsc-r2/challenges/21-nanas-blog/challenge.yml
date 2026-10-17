@@ -2,12 +2,25 @@ id: 21
 slug: nanas-blog
 name: 21 - Nana's Blog
 type: http
-port: 5000
+port: 8888
 subdomain: chall21
-mem_limit: 256m
-# Flag is read from $FLAG, else flag.txt. Edit challenges/21-nanas-blog/flag.txt
-# to set the real flag; placeholder for now.
-# Intended vuln: enumerate post IDs over the REST API (IDOR) to find the one
-# hidden, password-protected post (id 7); brute-force its password via the
-# unauthenticated REST ?password= oracle (no rate limit / cookie); the flag is
-# in the post content. The reproduction password is a common wordlist entry.
+mem_limit: 768m
+# Faithful recreation of the live "Turtle Blog" (chall21.ctf.nzcsc.org.nz):
+# the EXACT WordPress the original ran - wordpress:7.0.1-php8.3-apache, theme
+# twentytwentyfive, single `admin` user, no published posts. Rendered homepage
+# is byte-identical to the scrape in nzcsc2026-scrape/chall21/ apart from the
+# asset host. Served on :8888; home/siteurl track the request host so it works
+# behind any proxy/domain (the original hard-coded home=chall21.../siteurl=
+# localhost:8888, a reverse-proxy split that breaks wp-admin off localhost).
+#
+# Solvable the same ways as the original:
+#  - weak admin credential: `admin` / `animalsrock` (bcrypt $2y$04$) via
+#    wp-login.php or xmlrpc.php system.multicall -> wp-admin RCE; and
+#  - the genuine wp2shell chain: 7.0.1 is vulnerable to CVE-2026-63030 (REST
+#    batch route confusion) + CVE-2026-60137 (author__not_in SQLi), patched in
+#    7.0.2. `wp2shell check` confirms the confusion is live.
+# Either way the flag is NOT web-served; it is at /flag.txt, read via the RCE.
+#
+# Flag: baked from flag.txt (committed, like the other r2 challenges) or $FLAG
+# at runtime; the entrypoint writes it to /flag.txt. Kept out of challenge.yml so
+# the generated catalog.json stays flag-null, matching the repo convention.
