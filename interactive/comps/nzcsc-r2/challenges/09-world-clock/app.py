@@ -36,14 +36,17 @@ def clock():
     if tz is None:
         abort(400)
 
-    # VULNERABILITY: the timezone is interpolated unquoted as a shell
-    # assignment prefix to `date`. Because an assignment RHS is not subject
-    # to word splitting, command substitution ($(...) / backticks) in `tz`
-    # is executed, and a bare command after the assignment runs too, e.g.
-    #   tz = x cat /app/flag.txt #
-    #   -> TZ=x cat /app/flag.txt # date
+    # VULNERABILITY: the timezone is interpolated into a DOUBLE-QUOTED shell
+    # assignment prefix to `date`, exactly like the original:  TZ="<tz>" date.
+    # The quotes mean a bare `;cmd;` is literal (no command separator), but
+    # command substitution ($(...) / backticks) still expands inside double
+    # quotes, so the injection channel is substitution only, e.g.
+    #   tz = $(id)            -> date's zone field shows `uid`
+    #   tz = $(cat /app/flag.txt | od -An -tx1 | tr -dc 0-9a-f ...)
+    # The output channel is just the TZ abbreviation `date` prints, which
+    # glibc truncates at the first non-alpha char - so exfil is hex/letters.
     result = subprocess.run(
-        f"TZ={tz} date",
+        f'TZ="{tz}" date',
         shell=True,
         capture_output=True,
         text=True,
