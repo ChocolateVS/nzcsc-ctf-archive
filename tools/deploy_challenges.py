@@ -3,7 +3,8 @@
 
 Source of truth is data/*.json (+ attachments in files/). data/notes.json adds
 short notes to challenges that already exist in CTFd but aren't in data/ (e.g.
-the 2026 rounds, which live only in the platform). Designed to run in
+the 2026 rounds, which live only in the platform); data/hints.json adds native
+CTFd hints to them the same way. Designed to run in
 CI: set CTFD_URL and CTFD_TOKEN, then `python tools/deploy_challenges.py`.
 
 Idempotent & additive - it NEVER deletes challenges, flags, or files, and it
@@ -30,6 +31,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 DATA_DIR = os.path.join(REPO, "data")
 NOTES_FILE = os.path.join(DATA_DIR, "notes.json")
+HINTS_FILE = os.path.join(DATA_DIR, "hints.json")
+EXTRA_FILES = {"notes.json", "hints.json"}
 FILES_DIR = os.path.join(REPO, "files")
 
 
@@ -145,6 +148,13 @@ class CTFd:
     def challenge(self, cid):
         return self._get("/api/v1/challenges/%d?view=admin" % cid)["data"]
 
+    def challenge_hints(self, cid):
+        return self._get("/api/v1/hints", params={"challenge_id": cid})["data"]
+
+    def add_hint(self, cid, content, cost):
+        return self._write("post", "/api/v1/hints", json={
+            "challenge_id": cid, "challenge": cid, "content": content, "cost": cost})
+
     def challenge_flags(self, cid):
         return self._get("/api/v1/challenges/%d/flags" % cid)["data"]
 
@@ -220,6 +230,31 @@ def apply_notes(api, existing, path):
     return n
 
 
+def apply_hints(api, existing, path):
+    """Add each hint in hints.json to its challenge, in order, unless a hint with
+    the same content is already there. Additive: never edits or deletes a hint, so
+    rewording one adds a new hint - remove the old one in the admin UI."""
+    import json
+    if not os.path.isfile(path):
+        return 0
+    n = 0
+    for entry in json.load(open(path))["hints"]:
+        cat, num = entry["category"], str(entry["num"])
+        row = existing.get((cat, num))
+        if row is None:
+            print("  ! hints: no challenge %s #%s" % (cat, num))
+            continue
+        have = {h.get("content") for h in ([] if api.dry else api.challenge_hints(row["id"]))}
+        for h in entry["hints"]:
+            h = h if isinstance(h, dict) else {"content": h}
+            if h["content"] in have:
+                continue
+            api.add_hint(row["id"], h["content"], int(h.get("cost") or 0))
+            n += 1
+            print("  ? hint -> %s #%s" % (cat, num))
+    return n
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("files", nargs="*", help="data json files (default: all data/*.json)")
@@ -236,7 +271,7 @@ def main():
         sys.exit("set CTFD_TOKEN (or --token); or use --dry-run")
 
     data_files = args.files or sorted(f for f in glob.glob(os.path.join(args.data_dir, "*.json"))
-                                      if os.path.basename(f) != "notes.json")
+                                      if os.path.basename(f) not in EXTRA_FILES)
     if not data_files:
         sys.exit("no data files found")
 
@@ -324,6 +359,8 @@ def main():
 
     print("== notes ==")
     tot["notes"] = apply_notes(api, existing, NOTES_FILE)
+    print("== hints ==")
+    tot["hints"] = apply_hints(api, existing, HINTS_FILE)
 
     print("\nDONE (dry_run=%s): %s" % (args.dry_run, tot))
 

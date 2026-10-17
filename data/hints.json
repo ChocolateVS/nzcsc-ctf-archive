@@ -1,0 +1,184 @@
+{
+  "note": "Native CTFd hints (free unless a hint is {\"content\":..., \"cost\": N}) added by tools/deploy_challenges.py. Additive: matched by exact content, never edited/deleted - rewording adds a new hint.",
+  "hints": [
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 1,
+      "hints": [
+        "Just win, no exploit required."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 2,
+      "hints": [
+        "Use CyberChef to bake some cookies."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 3,
+      "hints": [
+        "There seems to be two distinct 8-byte patterns, how can this represent data?"
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 4,
+      "hints": [
+        "CyberChef magic wand button is your friend."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 5,
+      "hints": [
+        "This challenge is not AI. After chatting to it for a while, look closely for any discrepancies in the responses."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 6,
+      "hints": [
+        "We think there's more flags but we just can't prove it. If only the SQL statement didn't exclude the NZCSC flag."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 7,
+      "hints": [
+        "Take a look around the main function in Ghidra."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 8,
+      "hints": [
+        "You need to overwrite some values on the stack. If you start with something like `AAABAAACAAAD`... you might be able to overflow into them."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 9,
+      "hints": [
+        "Try thinking about what command might be running on the backend and how you could influence it."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 10,
+      "hints": [
+        "ChaCha encryption/decryption shares a similar property to XOR."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 11,
+      "hints": [
+        "You need to coerce the bot into accepting your price change request on your behalf. You may need to expose a web server to achieve this (you could use the nc helper, ngrok, pinggy etc.)"
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 12,
+      "hints": [
+        "Take a look at the client side DRM decryption. See if you can access anything except the audio files."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 13,
+      "hints": [
+        "Alloc, Free, Alloc. Notice the address doesn't change.\n\nIf you have a solve working locally but not on the remote server, could the flag be a different size?"
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 14,
+      "hints": [
+        "What happens to the remaining deck if you \"split\"? Can you rig the deck in your favour?"
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 15,
+      "hints": [
+        "Pay attention to the Python version when decompiling.",
+        "You'll need to decompile the pyc with the exact same Python version as in the challenge (or use a tool that supports the Python version).",
+        "Starting point for disassembling the embedded bytecode:\n\n```python\nfrom dis import dis\nfrom base64 import b64decode\nfrom io import BytesIO\nimport marshal\n\nBASE64 = '''.......TODO......'''\n\npyc = b64decode(BASE64.replace('\\n', ''))\ndis(marshal.load(BytesIO(pyc[16:])))\n```"
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 16,
+      "hints": [
+        "This binary interacts with a remote API. Strings and a decompiler might help understand how the interactions work. This challenge can be solved statically."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 17,
+      "hints": [
+        "This one IS an AI. It may be vulnerable to many classic AI pentesting techniques such as prompt injection.\n\nMake use of the reset button to avoid the AI getting stuck in its own way."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 18,
+      "hints": [
+        "Python pickle, but since the server is running gunicorn the app won't be running as `__main__`, it will be `app`.",
+        "Getting started script:\n\n```python\nimport base64\nimport pickle\n\n\nclass Cart:  # stub: pickles as __main__.Cart\n    pass\n\ncart = Cart()\ncart.items = {\"fake-item\": (67067.0, 67)}\n\n# By using protocol=2 the length is not prepended, so we can replace `__main__` with `app` so it works server side\npayload = pickle.dumps(cart, protocol=2)\npayload = payload.replace(b\"c__main__\\n\", b\"capp\\n\")\n\npayload = base64.b64encode(payload).decode()\n\nprint(payload)\n```"
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 19,
+      "hints": [
+        "This is a very hard Windows forensics challenge. You need to decrypt the BitLocker drive from the TPM sniff, then decrypt the 7z file with EFS using credential material recovered from the drive, then finally decrypt a password from the Windows Credential Manager to decrypt the archive."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 20,
+      "hints": [
+        "To solve this challenge you need to try to swap `print` and `os.system` functions so that the last statement results in RCE.\n\nIt is possible to do this with a single arbitrary write - which is what the challenge gives you.\n\nRecommend testing with the same docker image from the challenge as ASLR behaves differently inside the container."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 21,
+      "hints": [
+        "Wasn't there a recent WordPress CVE?",
+        "One of the hardening features Nana's grandson did was make the user table read-only. You'll have to crack the hash of an existing user to get in."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 22,
+      "hints": [
+        "```\ngit fsck --full --unreachable --no-reflogs\n```"
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 23,
+      "hints": [
+        "This is a very hard rev challenge, pay most attention to the XOR decryption that occurs to decrypt each stage...\n\nThe stages also have a length prepended at the start for how long their data section is."
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 24,
+      "hints": [
+        "You need some \"quick maths\" to solve this one.\n\nFor round 1 consider:\n\n```\n# hint = (p+e)*(q+e)\n#      = pq + pe + qe + e^2\n#      = N + e(p + q) + e^2\n#   <=> p + q = (hint - N - e^2) / e\n```\n\nFor round 2 consider:\n\n```\n# hint = abs(p - q)\n# consider:     (p + q)^2 = (p - q)^2 + 4pq\n#          <=>  p + q = (hint^2 + 4N) ^ (1/2)\n```\n\nAnd once you have p+q can you use it to calculate d if you consider:\n\n```\n# phi = (p-1)*(q-1)\n#     = pq - (p+q) + 1\n```"
+      ]
+    },
+    {
+      "category": "NZCSC 2026 R2",
+      "num": 25,
+      "hints": [
+        "This is a padding oracle themed challenge: https://en.wikipedia.org/wiki/Padding_oracle_attack#Padding_oracle_attack_on_CBC_encryption"
+      ]
+    }
+  ]
+}
