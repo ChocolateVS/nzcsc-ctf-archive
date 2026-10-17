@@ -2,14 +2,14 @@ id: 21
 slug: nanas-blog
 name: 21 - Nana's Blog
 type: http
-port: 8888
+port: 5000
 subdomain: chall21
 mem_limit: 768m
 # Faithful recreation of the live "Turtle Blog" (chall21.ctf.nzcsc.org.nz):
 # the EXACT WordPress the original ran - wordpress:7.0.1-php8.3-apache, theme
 # twentytwentyfive, single `admin` user, no published posts. Rendered homepage
 # is byte-identical to the scrape in nzcsc2026-scrape/chall21/ apart from the
-# asset host. Served on :8888; home/siteurl track the request host so it works
+# asset host. Served on :5000; home/siteurl track the request host so it works
 # behind any proxy/domain (the original hard-coded home=chall21.../siteurl=
 # localhost:8888, a reverse-proxy split that breaks wp-admin off localhost).
 #

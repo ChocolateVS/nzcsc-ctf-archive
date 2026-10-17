@@ -104,7 +104,7 @@ fi
 log "flag in place at /flag.txt"
 
 # 6. serve -------------------------------------------------------------------
-log "starting Apache on :8888"
+log "starting Apache on :5000"
 export APACHE_RUN_USER=turtle APACHE_RUN_GROUP=turtle
 export APACHE_PID_FILE=/tmp/apache2.pid
 export APACHE_RUN_DIR=/tmp/apache2-run APACHE_LOCK_DIR=/tmp/apache2-lock APACHE_LOG_DIR=/var/log/apache2

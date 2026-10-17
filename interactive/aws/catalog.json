@@ -633,7 +633,7 @@
     "slug": "nanas-blog",
     "name": "21 - Nana's Blog",
     "type": "http",
-    "port": 8888,
+    "port": 5000,
     "subdomain": "chall21",
     "host": "chall21.r2.2026.nzcsc.xyz",
     "image_tag": "nzcsc-r2-chall21",

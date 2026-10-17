@@ -1,10 +1,10 @@
 # 21 - Nana's Blog : a real WordPress "Turtle Blog", recreated for the archive.
 #
-# Single self-contained container (WordPress 7.1.x + Apache/PHP 8.3 + MariaDB),
+# Single self-contained container (WordPress 7.0.1 + Apache/PHP 8.3 + MariaDB),
 # all processes run as one unprivileged user `turtle` (uid 1000) so it works
 # under the archive sandbox defaults (cap_drop: ALL, no-new-privileges) with no
-# setuid/privilege-drop. Apache listens on :8888 to match the original and to
-# avoid needing CAP_NET_BIND_SERVICE.
+# setuid/privilege-drop. Apache listens on :5000 (the port the archive infra already maps) and
+# stays >1024 so it needs no CAP_NET_BIND_SERVICE.
 FROM wordpress:7.0.1-php8.3-apache
 
 # --- packages: a local MariaDB + wp-cli + the bits wp-cli wants ---------------
@@ -21,10 +21,10 @@ RUN set -eux; \
 RUN set -eux; \
     useradd -m -u 1000 -s /bin/bash turtle
 
-# --- Apache: listen on 8888, run as turtle, writable runtime dirs -------------
+# --- Apache: listen on 5000, run as turtle, writable runtime dirs -------------
 RUN set -eux; \
-    sed -ri 's/^Listen .*/Listen 8888/' /etc/apache2/ports.conf; \
-    sed -ri 's!<VirtualHost \*:80>!<VirtualHost *:8888>!' /etc/apache2/sites-available/000-default.conf; \
+    sed -ri 's/^Listen .*/Listen 5000/' /etc/apache2/ports.conf; \
+    sed -ri 's!<VirtualHost \*:80>!<VirtualHost *:5000>!' /etc/apache2/sites-available/000-default.conf; \
     echo 'ServerName localhost' >> /etc/apache2/apache2.conf; \
     # the original leaves xmlrpc.php enabled (that is part of the attack surface) \
     a2enmod rewrite >/dev/null; \
@@ -46,7 +46,7 @@ RUN chmod +x /usr/local/bin/ctf-entrypoint.sh; \
 
 # siteurl/home default - the original's reverse-proxy fingerprint. Override at
 # run time with -e WP_HOME=... if you want absolute links to use the real host.
-ENV WP_HOME=http://localhost:8888 \
+ENV WP_HOME=http://localhost:5000 \
     WORDPRESS_DB_HOST=localhost:/run/mysqld/mysqld.sock \
     WORDPRESS_DB_USER=wordpress \
     WORDPRESS_DB_PASSWORD=wordpress \
@@ -54,5 +54,5 @@ ENV WP_HOME=http://localhost:8888 \
 
 USER turtle
 WORKDIR /var/www/html
-EXPOSE 8888
+EXPOSE 5000
 ENTRYPOINT ["/usr/local/bin/ctf-entrypoint.sh"]
