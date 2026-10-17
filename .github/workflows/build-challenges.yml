@@ -1,8 +1,13 @@
 name: build-challenges
 
-# Builds every interactive challenge as a linux/amd64 image and pushes it to ECR,
-# so the on-demand challenge instance only ever PULLS (never builds) - keeping the
-# tiny instance fast and never OOMing on a build. Driven by interactive/aws/catalog.json.
+# Builds interactive challenge images (linux/amd64) and pushes them to ECR, so the
+# on-demand challenge instance only ever PULLS (never builds) - keeping the tiny
+# instance fast and never OOMing on a build. Driven by interactive/aws/catalog.json.
+#
+# On a push it builds ONLY the challenges whose build context changed (see
+# interactive/aws/build_matrix.py); it falls back to building everything on a
+# manual workflow_dispatch, an unknown diff, or a shared-tooling change
+# (build_catalog.py, build_matrix.py, gen_compose.py, templates/, this workflow).
 #
 # Required repo config (Settings -> Secrets and variables -> Actions -> Variables):
 #   AWS_CHAL_BUILD_ROLE_ARN   OIDC role with ecr push (tofu output chal_build_role_arn)
@@ -27,21 +32,39 @@ jobs:
     if: ${{ vars.AWS_CHAL_BUILD_ROLE_ARN != '' }}
     outputs:
       matrix: ${{ steps.gen.outputs.matrix }}
+      has: ${{ steps.gen.outputs.has }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0          # need the push range to diff changed challenges
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - run: pip install pyyaml
       - id: gen
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          SHA: ${{ github.sha }}
         run: |
           python3 interactive/aws/build_catalog.py > interactive/aws/catalog.json
-          # compact matrix: [{tag, context}]
-          M=$(python3 -c "import json;c=json.load(open('interactive/aws/catalog.json'));print(json.dumps({'include':[{'tag':e['image_tag'],'context':e['context']} for e in c]}))")
+          # Only rebuild challenges whose build context changed in this push.
+          # build_matrix.py falls back to building EVERYTHING on workflow_dispatch,
+          # an unknown/empty diff, or a shared-tooling change.
+          CHANGED=""
+          if [ "$EVENT_NAME" = "push" ] && [ -n "$BEFORE" ] \
+             && [ "$BEFORE" != "0000000000000000000000000000000000000000" ]; then
+            CHANGED="$(git diff --name-only "$BEFORE" "$SHA" || true)"
+          fi
+          M="$(printf '%s\n' "$CHANGED" | python3 interactive/aws/build_matrix.py "$EVENT_NAME")"
+          HAS="$(python3 -c "import json,sys;print('true' if json.loads(sys.argv[1])['include'] else 'false')" "$M")"
           echo "matrix=$M" >> "$GITHUB_OUTPUT"
+          echo "has=$HAS" >> "$GITHUB_OUTPUT"
+          echo "will build ($HAS): $M"
 
   build:
     needs: catalog
+    if: ${{ needs.catalog.outputs.has == 'true' }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
