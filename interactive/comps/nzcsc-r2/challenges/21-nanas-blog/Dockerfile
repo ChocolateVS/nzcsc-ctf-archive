@@ -22,9 +22,13 @@ RUN set -eux; \
     useradd -m -u 1000 -s /bin/bash turtle
 
 # --- Apache: listen on 5000, run as turtle, writable runtime dirs -------------
+# The vhost (000-default.conf) listens on :5000 and, because Apache runs on a
+# non-privileged high port behind a TLS-terminating proxy, fixes up mod_dir's
+# trailing-slash redirects so they never leak http://host:5000/... (which broke
+# /wp-admin). See the comments in 000-default.conf.
+COPY 000-default.conf /etc/apache2/sites-available/000-default.conf
 RUN set -eux; \
     sed -ri 's/^Listen .*/Listen 5000/' /etc/apache2/ports.conf; \
-    sed -ri 's!<VirtualHost \*:80>!<VirtualHost *:5000>!' /etc/apache2/sites-available/000-default.conf; \
     echo 'ServerName localhost' >> /etc/apache2/apache2.conf; \
     # the original leaves xmlrpc.php enabled (that is part of the attack surface) \
     a2enmod rewrite >/dev/null; \
