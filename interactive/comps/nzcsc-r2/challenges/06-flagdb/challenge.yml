@@ -6,4 +6,4 @@ port: 5000
 subdomain: chall06
 mem_limit: 256m
 # Flag is read from flag.txt by app.py and seeded into the DB as the 'NZCSC' row.
-# Edit challenges/06-flagdb/flag.txt to set the real flag; placeholder for now.
+# flag.txt holds the real flag recovered from the live original (SQLi reveals it).

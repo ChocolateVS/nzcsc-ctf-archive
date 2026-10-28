@@ -55,7 +55,7 @@ async function loadIntoDeck(name, filename) {
 
   deck.audio.onerror = () => {
     statusEl.textContent =
-      "Couldn't decode that as audio - not a valid track file.";
+      "Couldn't decode that as audio — not a valid track file.";
   };
 
   if (deck.playing) {

@@ -9,4 +9,8 @@ env:
   SECRET_KEY: r2_pcbuilder_secret
   ADMIN_PASSWORD: r2_admin_pw_change_me
   BOT_TOKEN: r2_bot_token
+  # UNVERIFIED flag: challenge 11 was never solved on the live original (the
+  # admin-bot CSRF needs an externally-hosted attacker page). Source is the real
+  # dump app and the frontend is byte-exact vs the live host, but this flag value
+  # is a best-guess placeholder, not recovered. Replace once the CSRF is landed.
   FLAG: NZCSC{CR0SS_S1T3_RAM_F0RG3RY}
