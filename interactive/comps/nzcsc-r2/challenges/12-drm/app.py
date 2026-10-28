@@ -46,7 +46,7 @@ def track():
         abort(400, description="Track name required.")
 
     sanitised_name = name.lstrip("/")
-
+    
     full_path = os.path.realpath(os.path.join(TRACKS_DIR, sanitised_name))
     base_dir_real = os.path.realpath(BASE_DIR)
 
