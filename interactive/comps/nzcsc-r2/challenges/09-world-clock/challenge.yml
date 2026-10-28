@@ -5,6 +5,6 @@ type: http
 port: 5000
 subdomain: chall09
 mem_limit: 256m
-# Flag is read at exploit time from /app/flag.txt (the COPYed flag.txt), via
-# command injection in the `tz` parameter. Edit challenges/09-world-clock/flag.txt
-# to set the real flag; placeholder for now.
+# Exact reconstruction of the original (recovered from the live server via the
+# intended `tz` command injection). The flag lives in flag.txt and is read at
+# exploit time, e.g. /clock?tz=;cat flag.txt;  -> NZCSC{wh4t_1s_th3_t1me_mr_w0lf}
